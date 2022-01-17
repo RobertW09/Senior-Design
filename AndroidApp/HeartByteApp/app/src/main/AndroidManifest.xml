@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HeartByteApp">
         <activity
+            android:name=".DisplayMessageActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
