@@ -9,4 +9,5 @@
   (lib (name BM71BLE01FC2-0B04AA)(type Legacy)(uri C:/Users/garia/Downloads/LIB_BM71BLE01FC2-0B04AA/BM71BLE01FC2-0B04AA/KiCad/BM71BLE01FC2-0B04AA.lib)(options "")(descr ""))
   (lib (name STBC03JR)(type Legacy)(uri C:/Users/garia/Downloads/STBC03JR/STBC03JR.lib)(options "")(descr ""))
   (lib (name Senior_Design-eagle-import)(type Legacy)(uri ${KIPRJMOD}/Senior_Design-eagle-import.lib)(options "")(descr ""))
+  (lib (name Adafruit_PowerBoost_500C-eagle-import)(type Legacy)(uri C:/Users/garia/Downloads/Adafruit-PowerBoost-500-Charger-PCB-master/Adafruit-PowerBoost-500-Charger-PCB-master/Adafruit_PowerBoost_500C-eagle-import.lib)(options "")(descr ""))
 )
