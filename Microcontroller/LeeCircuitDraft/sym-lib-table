@@ -1,0 +1,13 @@
+(sym_lib_table
+  (lib (name MCU_Microchip_SAME)(type Legacy)(uri C:/Users/garia/Downloads/MCU_Microchip_SAME/MCU_Microchip_SAME.lib)(options "")(descr ""))
+  (lib (name BLE_Mod)(type Legacy)(uri "C:/Users/garia/Downloads/UNK_Silicon Laboratories_BLE113-A-V1/eec.lib")(options "")(descr ""))
+  (lib (name SEN-11574)(type Legacy)(uri C:/Users/garia/Downloads/SEN-11574/SEN-11574.lib)(options "")(descr ""))
+  (lib (name Sensor_Motion)(type Legacy)(uri C:/Users/garia/Downloads/Sensor_Motion/Sensor_Motion.lib)(options "")(descr ""))
+  (lib (name ADXL345)(type Legacy)(uri C:/Users/garia/Downloads/ADXL345/ADXL345.lib)(options "")(descr ""))
+  (lib (name MAX30102EFD_T)(type Legacy)(uri C:/Users/garia/Downloads/MAX30102EFD_T/MAX30102EFD_T.lib)(options "")(descr ""))
+  (lib (name ADXL345BCCZ-RL)(type Legacy)(uri C:/Users/garia/Downloads/ADXL345BCCZ-RL/ADXL345BCCZ-RL.lib)(options "")(descr ""))
+  (lib (name BM71BLE01FC2-0B04AA)(type Legacy)(uri C:/Users/garia/Downloads/LIB_BM71BLE01FC2-0B04AA/BM71BLE01FC2-0B04AA/KiCad/BM71BLE01FC2-0B04AA.lib)(options "")(descr ""))
+  (lib (name STBC03JR)(type Legacy)(uri C:/Users/garia/Downloads/STBC03JR/STBC03JR.lib)(options "")(descr ""))
+  (lib (name Senior_Design-eagle-import)(type Legacy)(uri ${KIPRJMOD}/Senior_Design-eagle-import.lib)(options "")(descr ""))
+  (lib (name Senior-Design-rescue)(type Legacy)(uri "${KIPRJMOD}/Senior Design-rescue.lib")(options "")(descr ""))
+)
