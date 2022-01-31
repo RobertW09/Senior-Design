@@ -1,0 +1,5 @@
+HealthConnectis a wearable IoT medical device powered by AVR-IoT microchip which can be wore around your arm.
+It streams your health data - ECG, Heart Rate, SpO2, Body Temperature, Activity Status, Ambient Temperature over a secured AWS platform.
+Real time data monitoring helps to diagnose the patient condition better in online consultation with physician.
+This device can be connected to your mobile phone through HealthConnect android app, which has a feature to send SOS to your family
+Doctor with a link to monitor your health data instantly. This SOS feature can helps to provide first Aid in medical emergency.
