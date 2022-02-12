@@ -37,16 +37,59 @@
         android:id="@+id/analytics_button"
         android:layout_width="170dp"
         android:layout_height="90dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="195dp" />
+        android:layout_marginTop="156dp"
+        android:text="@string/button_analytics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Spinner
         android:id="@+id/mode_spinner"
-        android:layout_width="135dp"
-        android:layout_height="33dp"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/analytics_button" />
 
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="110dp" />
+    <Button
+        android:id="@+id/hr_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_hr"
+        app:layout_constraintBottom_toTopOf="@+id/analytics_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_status"
+        app:layout_constraintEnd_toStartOf="@+id/battery_text"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode_spinner" />
+
+    <TextView
+        android:id="@+id/battery_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/text_battery"
+        app:layout_constraintEnd_toStartOf="@+id/connection_text"
+        app:layout_constraintTop_toBottomOf="@+id/mode_spinner" />
+
+    <TextView
+        android:id="@+id/connection_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/text_connection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode_spinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
