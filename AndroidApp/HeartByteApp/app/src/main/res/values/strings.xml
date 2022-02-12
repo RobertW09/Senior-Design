@@ -2,4 +2,8 @@
     <string name="app_name">HeartByteApp</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string-array name="modes_array">
+        <item>Resting</item>
+        <item>Active</item>
+    </string-array>
 </resources>
