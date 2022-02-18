@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Setup Spinner
         Spinner mode_spin = findViewById(R.id.mode_spinner);
         mode_spin.setOnItemSelectedListener(this);
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.modes_array));
         mode_spin.setAdapter(adapter);
     }
@@ -30,13 +29,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     /*
      * Called when the user taps the "Send" Button
      */
-    public void sendMessage(View view) {
-        // Do something in response to the button press.
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+//    public void sendMessage(View view) {
+//        // Do something in response to the button press.
+//        Intent intent = new Intent(this, DisplayMessageActivity.class);
+//        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
+//        String message = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, message);
+//        startActivity(intent);
+//    }
+
+    public void measureHR(View view){
+
+    }
+
+    public void viewAnalytics(View view){
+
     }
 
     @Override

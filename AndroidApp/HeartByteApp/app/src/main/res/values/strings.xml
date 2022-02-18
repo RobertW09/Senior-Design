@@ -7,6 +7,7 @@
     <string name="text_status">HeartByte Status: </string>
     <string name="text_battery">000%</string>
     <string name="text_connection">Disconnected</string>
+    <string name="spinner_default">Select Mode</string>
     <string-array name="modes_array">
         <item>Resting</item>
         <item>Active</item>
