@@ -12,4 +12,6 @@
         <item>Resting</item>
         <item>Active</item>
     </string-array>
+    <string name="text_analytics">User Analytics</string>
+    <string name="text_measure">Measuring HR...</string>
 </resources>

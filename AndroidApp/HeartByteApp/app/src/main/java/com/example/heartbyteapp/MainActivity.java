@@ -12,7 +12,7 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    public static final String EXTRA_MESSAGE = "com.example.heartbyteapp.MESSAGE";
+//    public static final String EXTRA_MESSAGE = "com.example.heartbyteapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +22,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Setup Spinner
         Spinner mode_spin = findViewById(R.id.mode_spinner);
         mode_spin.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.modes_array));
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.mode_spinner, getResources().getStringArray(R.array.modes_array));
+        adapter.setDropDownViewResource(R.layout.mode_spinner_dropdown);
         mode_spin.setAdapter(adapter);
     }
 
     /*
+     * - This is from the old tutorial
      * Called when the user taps the "Send" Button
      */
 //    public void sendMessage(View view) {
@@ -38,14 +40,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        startActivity(intent);
 //    }
 
+    /*
+     * Button press for "MEASURE HR"
+     */
     public void measureHR(View view){
-
+        Intent intent = new Intent(this, MeasureActivity.class);
+        startActivity(intent);
     }
 
+    /*
+     * Button press for "VIEW ANALYTICS"
+     */
     public void viewAnalytics(View view){
-
+        Intent intent = new Intent(this, ViewAnalyticsActivity.class);
+        startActivity(intent);
     }
 
+    /*
+     * Methods for Spinner interaction
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
