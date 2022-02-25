@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HeartByteApp</string>
+    <string name="heartbyte">HeartByte</string>
 </resources>
