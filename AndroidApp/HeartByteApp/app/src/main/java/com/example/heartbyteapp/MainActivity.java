@@ -33,19 +33,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     /*
-     * - This is from the old tutorial
-     * Called when the user taps the "Send" Button
-     */
-//    public void sendMessage(View view) {
-//        // Do something in response to the button press.
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
-//    }
-
-    /*
      * Button press for "MEASURE HR"
      */
     public void measureHR(View view){

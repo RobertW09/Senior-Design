@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">HeartByteApp</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
     <string name="button_analytics">View History</string>
     <string name="button_hr">Measure HR</string>
     <string name="text_status">HeartByte Status: </string>
