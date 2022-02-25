@@ -1,6 +1,7 @@
 package com.example.heartbyteapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Setup Toolbar
+        Toolbar toolbar = (Toolbar)findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
 
         // Setup Spinner
         Spinner mode_spin = findViewById(R.id.mode_spinner);
