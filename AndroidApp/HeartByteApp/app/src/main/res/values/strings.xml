@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">HeartByteApp</string>
     <string name="heartbyte">HeartByte</string>
+    <string name="button_analytics">View History</string>
+    <string name="button_hr">Measure HR</string>
+    <string name="text_status">HeartByte Status: </string>
+    <string name="text_battery">000%</string>
+    <string name="text_connection">Disconnected</string>
+    <string name="spinner_default">Select Mode</string>
+    <string-array name="modes_array">
+        <item>Resting</item>
+        <item>Active</item>
+    </string-array>
+    <string name="text_analytics">User Analytics</string>
+    <string name="text_measure">Measuring HR...</string>
 </resources>

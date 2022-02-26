@@ -12,6 +12,13 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+            android:name=".MeasureActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ViewAnalyticsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
