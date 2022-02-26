@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">HeartByteApp</string>
+    <string name="heartbyte">HeartByte</string>
     <string name="button_analytics">View History</string>
     <string name="button_hr">Measure HR</string>
     <string name="text_status">HeartByte Status: </string>

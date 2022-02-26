@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HeartByteApp">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
             android:name=".MeasureActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
@@ -20,6 +22,16 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
