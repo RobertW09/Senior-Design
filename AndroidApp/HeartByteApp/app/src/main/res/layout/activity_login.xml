@@ -19,14 +19,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
 
-
     <EditText
         android:id="@+id/EmailLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/LoginBanner"
         android:layout_margin="10dp"
-        android:background="@color/betterblack"
+        android:background="@drawable/rounded_edges"
         android:hint="Email"
         android:padding="20dp"
         android:textColor="@color/grey_font"
@@ -42,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/EmailLogin"
         android:layout_margin="10dp"
-        android:background="@color/betterblack"
+        android:background="@drawable/rounded_edges"
         android:hint="Password"
         android:padding="20dp"
         android:textColor="@color/grey_font"
