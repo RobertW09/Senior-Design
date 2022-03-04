@@ -12,5 +12,11 @@
         <item>Active</item>
     </string-array>
     <string name="text_analytics">User Analytics</string>
-    <string name="text_measure">Measuring HR...</string>
+    <string name="text_measure">Measuring HR…</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="text_register">Register</string>
+    <string name="text_forgot">Forgot Password</string>
+    <string name="button_login">Login</string>
+    <string name="splash_text">HeartByte \'22</string>
 </resources>

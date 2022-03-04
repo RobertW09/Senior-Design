@@ -12,20 +12,23 @@
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
-        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.26358695652173914" />
-        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/app/src/main/res/layout/activity_main.xml" value="0.26992753623188404" />
-        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.209" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_display_message.xml" value="0.5" />
-        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.196875" />
+        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.275" />
+        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_view_analytics.xml" value="0.275" />
+        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner.xml" value="0.275" />
+        <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner_dropdown.xml" value="0.196875" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/app/src/main/res/layout/activity_main.xml" value="0.26992753623188404" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_measure.xml" value="0.2734375" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_view_analytics.xml" value="0.375" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner.xml" value="0.2734375" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner_dropdown.xml" value="0.2734375" />
+        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.209" />
       </map>
     </option>
   </component>
