@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         register.setOnClickListener(this);
     }
 
-    void login(View view) {
+     public void login(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
