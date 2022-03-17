@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
-
+        // user interactive buttons
         CreateAccountButton = (Button) findViewById(R.id.CreateAccountButton);
         CreateAccountButton.setOnClickListener(this);
         SignInReturn = (TextView) findViewById(R.id.SignInReturn);
@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String Email = CreateEmail.getText().toString().trim();
         String Password = CreatePassword.getText().toString().trim();
         String FullName = Name.getText().toString().trim();
-        // Constraints
+        // Fill in checks
         if (FullName.isEmpty()) {
             Name.setError("Full name is needed");
             Name.requestFocus();
@@ -88,17 +88,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             CreatePassword.requestFocus();
             return;
         }
-        mAuth.createUserWithEmailAndPassword(Email,Password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword("test@gamil.com","passwordAS@123")
+                .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             User user = new User(FullName,Email);
-
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            FirebaseDatabase.getInstance().getReference("Users") //creates a document called "Users"
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
+                                // responses once data is sent to firestore
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
                                         Toast.makeText(RegisterActivity.this, "User has been registered", Toast.LENGTH_LONG).show();
