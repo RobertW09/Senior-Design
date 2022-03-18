@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        // initialize FirebaseAuth Instance
         mAuth = FirebaseAuth.getInstance();
         // user interactive buttons
         CreateAccountButton = (Button) findViewById(R.id.CreateAccountButton);
@@ -52,28 +52,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent( this, LoginActivity.class ));
                 break;
             case R.id.CreateAccountButton:
-                CreateAccountButton();
+                CreateUser();
                 break;
         }
     }
 
-    private void CreateAccountButton() {
+    private void CreateUser() {
         String Email = CreateEmail.getText().toString().trim();
         String Password = CreatePassword.getText().toString().trim();
         String FullName = Name.getText().toString().trim();
-        // Fill in checks
-        if (FullName.isEmpty()) {
-            Name.setError("Full name is needed");
+
+        // checks
+        if (FullName.isEmpty()){
+            Name.setError("Please enter a name");
             Name.requestFocus();
             return;
         }
-        if (Email.isEmpty()) {
-            CreateEmail.setError("Enter your Email");
+        if (Password.isEmpty()){
+            CreatePassword.setError("Please enter a password");
+            CreatePassword.requestFocus();
+            return;
+        }
+        if (Email.isEmpty()){
+            CreateEmail.setError("Please enter a email");
             CreateEmail.requestFocus();
             return;
         }
-        if (Password.isEmpty()){
-            CreatePassword.setError("Enter a Password");
+        if (Password.length() < 6 ){
+            CreatePassword.setError("Password must be larger than 6 characters");
             CreatePassword.requestFocus();
             return;
         }
@@ -82,37 +88,29 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             CreateEmail.requestFocus();
             return;
         }
-        // consider removing
-        if (Password.length() < 6){
-            CreatePassword.setError("Please make the password 6 characters or longer");
-            CreatePassword.requestFocus();
-            return;
-        }
-        mAuth.createUserWithEmailAndPassword("test@gamil.com","passwordAS@123")
-                .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            User user = new User(FullName,Email);
-                            FirebaseDatabase.getInstance().getReference("Users") //creates a document called "Users"
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                // responses once data is sent to firestore
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this, "User has been registered", Toast.LENGTH_LONG).show();
-                                    }
-                                    // redirect to login layout
-                                    else{
-                                        Toast.makeText( RegisterActivity.this, "Failed to register Try again12", Toast.LENGTH_LONG).show();
-                                    }
-                                }
-                            });
-                        } else{
-                            Toast.makeText(RegisterActivity.this, "Failed to register Try again", Toast.LENGTH_LONG).show();
+        // Task is an API that represents asynchronous method call
+        mAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    User user = new User(FullName,Email);
+                    FirebaseDatabase.getInstance().getReference("Users")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText( RegisterActivity.this, "User has been registered", Toast.LENGTH_LONG).show();
+                            }else{
+                                Toast.makeText(RegisterActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                } else{
+                    Toast.makeText(RegisterActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 }
