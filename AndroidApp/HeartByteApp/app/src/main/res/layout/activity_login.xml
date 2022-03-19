@@ -36,7 +36,7 @@
         android:drawablePadding="20dp"/>
 
     <EditText
-        android:id="@+id/passwordlogin"
+        android:id="@+id/PasswordLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/EmailLogin"
@@ -60,7 +60,7 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintRight_toLeftOf="@id/login_button"
-        app:layout_constraintTop_toBottomOf="@id/passwordlogin" />
+        app:layout_constraintTop_toBottomOf="@id/PasswordLogin" />
 
     <TextView
         android:id="@+id/register"
@@ -71,7 +71,7 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/login_button"
-        app:layout_constraintTop_toBottomOf="@id/passwordlogin"
+        app:layout_constraintTop_toBottomOf="@id/PasswordLogin"
         android:layout_marginTop = "10sp"/>
 
     <Button
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordlogin"
+        app:layout_constraintTop_toBottomOf="@id/PasswordLogin"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/grey_font"/>
 
