@@ -9,11 +9,14 @@
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_loading_heart_temp.xml" value="0.1695" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_real_heart.xml" value="0.1695" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/login_image.xml" value="0.164" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/password_key.xml" value="0.195" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/rounded_edges.xml" value="0.1" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/splash_background.xml" value="0.1695" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_register.xml" value="0.15579710144927536" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_reset_password.xml" value="0.18802083333333333" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_display_message.xml" value="0.5" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.5" />
