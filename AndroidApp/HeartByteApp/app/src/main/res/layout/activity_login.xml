@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@color/poop_brown">
+    tools:context=".LoginActivity">
+<!--    android:background="@color/poop_brown">-->
+
 
     <TextView
-            android:id ="@+id/LoginBanner"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text= "@string/heartbyte"
-            android:textSize="50dp"
-            android:textAlignment="center"
-            android:layout_margin="60dp"
-            android:fontFamily="sans-serif-light"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+        android:id ="@+id/login_banner_text"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text= "@string/heartbyte"
+        android:textSize="50sp"
+        android:textAlignment="center"
+        android:layout_margin="60dp"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <EditText
-        android:id="@+id/EmailLogin"
+        android:id="@+id/email_login_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/LoginBanner"
+        android:layout_below="@id/login_banner_text"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_edges"
         android:hint="Email"
         android:padding="20dp"
         android:textColor="@color/grey_font"
         android:textColorHint="@color/grey_font"
-        app:layout_constraintTop_toBottomOf="@id/LoginBanner"
+        app:layout_constraintTop_toBottomOf="@id/login_banner_text"
         android:layout_marginTop="40dp"
         android:drawableStart="@drawable/login_image"
         android:drawablePadding="20dp"/>
@@ -39,14 +40,14 @@
         android:id="@+id/PasswordLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/EmailLogin"
+        android:layout_below="@id/email_login_text"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_edges"
         android:hint="Password"
         android:padding="20dp"
         android:textColor="@color/grey_font"
         android:textColorHint="@color/grey_font"
-        app:layout_constraintTop_toBottomOf="@id/EmailLogin"
+        app:layout_constraintTop_toBottomOf="@id/email_login_text"
         android:drawableStart="@drawable/password_key"
         android:drawablePadding="20dp"/>
 
@@ -55,20 +56,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Forgot Password"
+        android:text="@string/text_forgot"
         android:textColor="@color/grey_font"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintRight_toLeftOf="@id/login_button"
         app:layout_constraintTop_toBottomOf="@id/PasswordLogin" />
 
     <TextView
-        android:id="@+id/register"
+        android:id="@+id/register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/text_register"
         android:textColor="@color/grey_font"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/login_button"
         app:layout_constraintTop_toBottomOf="@id/PasswordLogin"

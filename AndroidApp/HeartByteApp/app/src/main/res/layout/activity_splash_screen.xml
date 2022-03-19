@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background ="#ffffff"
     tools:context=".SplashScreenActivity">
 
     <ImageView
@@ -21,8 +20,7 @@
         android:textSize = "12sp"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom= "true"
-        android:text="HeartByte 22'"
-        android:textColor="@color/black"/>
+        android:text="@string/splash_text"/>
 
 
     </RelativeLayout>
