@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707123642525",
+    "project_id": "heartbyte",
+    "storage_bucket": "heartbyte.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707123642525:android:ab59ed59bcc84e15815474",
+        "android_client_info": {
+          "package_name": "com.example.heartbyteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707123642525-2sn7q5756cj4b3h3icieqa91vj8162la.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAscPO8w-e53ZJnR6KLJ2VZO0MjlDDRLRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707123642525-2sn7q5756cj4b3h3icieqa91vj8162la.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
