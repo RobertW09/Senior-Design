@@ -31,13 +31,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // register
-        register = (TextView) findViewById(R.id.register);
+        register = (TextView) findViewById(R.id.register_text);
         register.setOnClickListener(this);
         // Sign IN Button
         SignIn = (Button) findViewById(R.id.login_button);
         SignIn.setOnClickListener(this);
         // Initialize Login Email, Password
-        Email = (EditText) findViewById(R.id.EmailLogin);
+        Email = (EditText) findViewById(R.id.email_login_text);
         Password = (EditText) findViewById(R.id.PasswordLogin);
         // forgotpassword
         ForgotPassword = (TextView) findViewById(R.id.ForgotPassword);
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // cases to switch into various different activities
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.register:
+            case R.id.register_text:
                 startActivity(new Intent( this, RegisterActivity.class ));
                 break;
                 // login in verification with firebase connection
@@ -118,6 +118,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(LoginActivity.this, "Failed to login, please try again", Toast.LENGTH_LONG).show();
                 }
             }
-        }
+        });
     }
 }
