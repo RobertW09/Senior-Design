@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,21 +25,33 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
 //    public static final String EXTRA_MESSAGE = "com.example.heartbyteapp.MESSAGE";
     private FirebaseUser user;
     private DatabaseReference refrence;
 
     private String userID;
-
+    private Button SettingsButton;
+    private Button HomeButton;
+    private Button DashboardButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      
+
+        SettingsButton = (Button) findViewById(R.id.settings_button);
+        SettingsButton.setOnClickListener(this);
+        HomeButton = (Button) findViewById(R.id.home_button);
+        HomeButton.setOnClickListener(this);
+        DashboardButton = (Button) findViewById(R.id.dashboard_button);
+        DashboardButton.setOnClickListener(this);
+
+
+
+
         // Setup Toolbar
         Toolbar toolbar = (Toolbar)findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
@@ -76,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
+
     /*
      * Button press for "MEASURE HR"
      */
@@ -105,5 +120,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-
+    // switch activities
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.home_button:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
+            case R.id.settings_button:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+            case R.id.dashboard_button:
+                startActivity(new Intent(this, DashboardActivity.class));
+                break;
+        }
+    }
 }

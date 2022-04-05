@@ -1,5 +1,6 @@
 package com.example.heartbyteapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -8,20 +9,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
-
+public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button SettingsButton;
     private Button HomeButton;
     private Button DashboardButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
-
+        setContentView(R.layout.activity_dashboard);
 
         SettingsButton = (Button) findViewById(R.id.settings_button);
         SettingsButton.setOnClickListener(this);
@@ -30,9 +31,35 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         DashboardButton = (Button) findViewById(R.id.dashboard_button);
         DashboardButton.setOnClickListener(this);
 
-        // Setup Toolbar
-        Toolbar toolbar = (Toolbar)findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
+
+
+
+
+        // setup graph
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
+        });
+        graph.addSeries(series);
+
+        // activate horizontal zooming and scrolling
+        graph.getViewport().setScalable(true);
+        graph.getViewport().setScrollable(true);
+
+        // set axis titles
+        graph.getGridLabelRenderer().setVerticalAxisTitle("BPM");
+        graph.getGridLabelRenderer().setHorizontalAxisTitle("Time");
+
+        graph.setTitle("BPM History");
+        graph.setTitleTextSize(75);
+
+        // Setup graph for showing dates
+        graph.getGridLabelRenderer().setHumanRounding(false);
+
     }
 
     @Override

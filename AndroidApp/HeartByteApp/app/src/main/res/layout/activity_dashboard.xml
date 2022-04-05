@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".DashboardActivity">
 
-    tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/main_toolbar"
@@ -18,51 +18,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-    <TextView
-        android:id = "@+id/users_name_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:layout_marginStart="10sp"
-        android:text="Hello"
-        android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@id/main_toolbar"
-        />
 
-    <Button
-        android:id="@+id/hr_button"
-        android:layout_width="170dp"
-        android:layout_height="90dp"
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="0dp"
+        android:layout_height="200dip"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
-        android:onClick="measureHR"
-        android:text="@string/button_hr"
-        app:layout_constraintBottom_toTopOf="@+id/analytics_button"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/users_name_text" />
-
-    <Button
-        android:id="@+id/analytics_button"
-        android:layout_width="170dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="20dp"
-        android:onClick="viewAnalytics"
-        android:text="@string/button_analytics"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hr_button" />
-    <!--        app:layout_constraintHorizontal_bias="0.497"-->
-
-    <Spinner
-        android:id="@+id/mode_spinner"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
-        android:contentDescription="@string/spinner_default"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/analytics_button" />
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -95,5 +63,7 @@
             android:drawableTop="@drawable/ic_settings"
             android:text="Settings" />
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
