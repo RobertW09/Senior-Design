@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "707123642525",
-    "project_id": "heartbyte",
-    "storage_bucket": "heartbyte.appspot.com"
+    "project_number": "853572996086",
+    "firebase_url": "https://heartbyte-346322-default-rtdb.firebaseio.com",
+    "project_id": "heartbyte-346322",
+    "storage_bucket": "heartbyte-346322.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:707123642525:android:ab59ed59bcc84e15815474",
+        "mobilesdk_app_id": "1:853572996086:android:ac762c0ea8142e8cced5d7",
         "android_client_info": {
           "package_name": "com.example.heartbyteapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "707123642525-2sn7q5756cj4b3h3icieqa91vj8162la.apps.googleusercontent.com",
+          "client_id": "853572996086-dctqvhbaqdi7ekha3s6qu5cvhaco7cr4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAscPO8w-e53ZJnR6KLJ2VZO0MjlDDRLRU"
+          "current_key": "AIzaSyBIbecSHyNc7i2Yjee66AJ1AQTv-OPJR2Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "707123642525-2sn7q5756cj4b3h3icieqa91vj8162la.apps.googleusercontent.com",
+              "client_id": "853572996086-dctqvhbaqdi7ekha3s6qu5cvhaco7cr4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -48,6 +48,64 @@
             android:text="Settings" />
     </LinearLayout>
 
+    <!-- first row of buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toTopOf="parent">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"/>
+        <Button
+            android:id="@+id/settings_family_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_shape"
+            android:drawableTop="@drawable/ic_family"
+            android:text="Family"
+            />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"/>
+        <Button
+            android:id="@+id/settings_user_info_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_shape"
+            android:drawableTop="@drawable/ic_info"
+            android:text="Info"
+
+            />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"/>
+        <Button
+            android:id="@+id/settings_logout_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_shape"
+            android:drawableTop="@drawable/ic_logout"
+            android:text="Logout"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"/>
+
+        <!-- finish adding info page -->
+
+
+    </LinearLayout>
+
+
 
 
 
