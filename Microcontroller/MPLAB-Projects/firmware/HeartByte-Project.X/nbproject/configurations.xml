@@ -6,18 +6,6 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="DevBoard" projectFiles="true">
-          <logicalFolder name="f3" displayName="bt" projectFiles="true">
-            <logicalFolder name="f1" displayName="driver" projectFiles="true">
-              <logicalFolder name="f1" displayName="bm71" projectFiles="true">
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71.h</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_ble.h</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_command_decode.h</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_command_send.h</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_gpio.h</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_uart.h</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="f4" displayName="osal" projectFiles="true">
             <itemPath>../src/config/DevBoard/osal/osal.h</itemPath>
             <itemPath>../src/config/DevBoard/osal/osal_definitions.h</itemPath>
@@ -237,19 +225,6 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="DevBoard" projectFiles="true">
-          <logicalFolder name="f4" displayName="bt" projectFiles="true">
-            <logicalFolder name="f1" displayName="driver" projectFiles="true">
-              <logicalFolder name="f1" displayName="bm71" projectFiles="true">
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_local.h</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71.c</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_ble.c</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_command_decode.c</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_command_send.c</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_gpio.c</itemPath>
-                <itemPath>../src/config/DevBoard/bt/driver/bm71/drv_bm71_uart.c</itemPath>
-              </logicalFolder>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f1" displayName="clk" projectFiles="true">
               <itemPath>../src/config/DevBoard/peripheral/clk/plib_clk.c</itemPath>
@@ -315,25 +290,23 @@
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="DevBoard.mhc" projectFiles="true">
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/bluetooth_bm71.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/bm71_bluetooth.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/core.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/efc.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/GraphSettings.yml</itemPath>
         <itemPath>../src/config/DevBoard/DevBoard.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/project.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/rtc.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/rtt.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/supc.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/DevBoard/DevBoard.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/core.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/cmsis.yml</itemPath>
         <itemPath>../src/config/DevBoard/DevBoard.mhc/twihs0.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/project.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/rtt.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/rtc.yml</itemPath>
         <itemPath>../src/config/DevBoard/DevBoard.mhc/usart0.yml</itemPath>
         <itemPath>../src/config/DevBoard/DevBoard.mhc/usart1.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/DevBoard/DevBoard.mhc/supc.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/DevBoard/harmony-manifest-success.yml</itemPath>
@@ -353,7 +326,7 @@
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.00</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>4</platform>
       </toolsSet>
       <packs>
         <pack name="SAME70_DFP" vendor="Microchip" version="4.6.98"/>

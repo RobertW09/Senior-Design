@@ -1,60 +1,11 @@
 files:
-- generatedChecksum: 3C13720844166A5D97CF4EAD9DDB9FE2
+- generatedChecksum: null
   logicalPath: ''
   name: app.c
   physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3C13720844166A5D97CF4EAD9DDB9FE2
-- generatedChecksum: 49CFD066878B32FB447307A230B2895C
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71.c
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 49CFD066878B32FB447307A230B2895C
-- generatedChecksum: 1FF4C6A494D43D0BABC578317C7F9EFF
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_ble.c
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 1FF4C6A494D43D0BABC578317C7F9EFF
-- generatedChecksum: B753F5144739AEBA437ED31D28CA5F6F
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_command_decode.c
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: B753F5144739AEBA437ED31D28CA5F6F
-- generatedChecksum: 5CC0BA61AF2C74CC4B2C3D42C1CA10B5
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_command_send.c
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 5CC0BA61AF2C74CC4B2C3D42C1CA10B5
-- generatedChecksum: 62600D59BA59AE9319C7F202EEBCD6BE
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_gpio.c
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 62600D59BA59AE9319C7F202EEBCD6BE
-- generatedChecksum: AF38CC7383A953A8D6C0B823B5195794
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_local.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: AF38CC7383A953A8D6C0B823B5195794
-- generatedChecksum: 4D351C5AB726B5FCDDC5C2F24D4BE9DF
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_uart.c
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 4D351C5AB726B5FCDDC5C2F24D4BE9DF
+  userChecksum: null
 - generatedChecksum: 6069C4FD56993BDA3B1FC223DD5BAA4A
   logicalPath: config/DevBoard
   name: exceptions.c
@@ -62,13 +13,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 6069C4FD56993BDA3B1FC223DD5BAA4A
-- generatedChecksum: EB77A0097F1BEDE22DE585F09881B987
+- generatedChecksum: 8A952D5FD0C733BF96AB690371468A8C
   logicalPath: config/DevBoard
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: EB77A0097F1BEDE22DE585F09881B987
+  userChecksum: 8A952D5FD0C733BF96AB690371468A8C
 - generatedChecksum: 7F8F2B671D0756FB512EC4F6AF4850B2
   logicalPath: config/DevBoard
   name: interrupts.c
@@ -83,13 +34,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 6513F2461B8F476B68CA73906086047F
-- generatedChecksum: F81A00E640818EDFB9E79C9BD241AEF4
+- generatedChecksum: null
   logicalPath: ''
   name: main.c
   physicalPath: ../..
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F81A00E640818EDFB9E79C9BD241AEF4
+  userChecksum: null
 - generatedChecksum: C9F446E412F3001B300A1805DBFC5442
   logicalPath: config/DevBoard/peripheral/clk
   name: plib_clk.c
@@ -111,13 +62,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 5FE8C6A5478B4E42F96C990DA4415365
-- generatedChecksum: 25A46C96BE7124FF11DD65EDE9B3C678
+- generatedChecksum: FB5276E8A1C822845A59CAB9D9BA962F
   logicalPath: config/DevBoard/peripheral/pio
   name: plib_pio.c
   physicalPath: peripheral/pio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 25A46C96BE7124FF11DD65EDE9B3C678
+  userChecksum: FB5276E8A1C822845A59CAB9D9BA962F
 - generatedChecksum: C8020A2CF9831BD8F83363EC1837D665
   logicalPath: config/DevBoard/peripheral/rtc
   name: plib_rtc.c
@@ -195,13 +146,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
-- generatedChecksum: 1C50393B5259F4B771808C828F3FE3E1
+- generatedChecksum: DE51BB8F6FDBC39FB049CB2A14E56B25
   logicalPath: config/DevBoard
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1C50393B5259F4B771808C828F3FE3E1
+  userChecksum: DE51BB8F6FDBC39FB049CB2A14E56B25
 - generatedChecksum: A9148A612F837BC6C6DD7F5A62D3A104
   logicalPath: config/DevBoard/stdio
   name: xc32_monitor.c
@@ -258,13 +209,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2C90E805AD24AF4947D947E7D36702D1
-- generatedChecksum: 452F7AB915EEA4B1529959D0FF80C3F7
+- generatedChecksum: null
   logicalPath: ''
   name: app.h
   physicalPath: ../..
   security: NON_SECURE
   type: HEADER
-  userChecksum: 452F7AB915EEA4B1529959D0FF80C3F7
+  userChecksum: null
 - generatedChecksum: 14F1AD56D242EFD0AF76849C6ADFECC4
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cachel1_armv7.h
@@ -335,13 +286,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
-- generatedChecksum: 22A2884C921E86ED5C93A9C3C2F55EF6
+- generatedChecksum: F9B63867A8521A37C5597C8877364E54
   logicalPath: config/DevBoard
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 22A2884C921E86ED5C93A9C3C2F55EF6
+  userChecksum: F9B63867A8521A37C5597C8877364E54
 - generatedChecksum: 948CEA542F04017255B040816F368DF8
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm7.h
@@ -363,13 +314,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 7BC1BE794D03E10C6F8174EAA2D16110
-- generatedChecksum: BD3F037139E70C9E43B84443C817C1E7
+- generatedChecksum: F4071466C060C6180DADA0466380FF07
   logicalPath: config/DevBoard
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: BD3F037139E70C9E43B84443C817C1E7
+  userChecksum: F4071466C060C6180DADA0466380FF07
 - generatedChecksum: C679A77E2A1338BE090B760AD405B86C
   logicalPath: config/DevBoard
   name: device.h
@@ -391,48 +342,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 56C5CF9C2C712CAA93EFB1BA10BD1DEB
-- generatedChecksum: 5CD4504EEB40FDC4A4F78CEE275375AB
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 5CD4504EEB40FDC4A4F78CEE275375AB
-- generatedChecksum: 1B547266EF1374EBBEF5C69BC52910DB
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_ble.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 1B547266EF1374EBBEF5C69BC52910DB
-- generatedChecksum: FEE1E112F225D3F7C7765F3875886035
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_command_decode.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: FEE1E112F225D3F7C7765F3875886035
-- generatedChecksum: A8A4970277EA780C21AAE95CDB93394C
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_command_send.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: A8A4970277EA780C21AAE95CDB93394C
-- generatedChecksum: 73E4FEF4BA6F8A3AE82AB8F43217DB4A
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_gpio.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 73E4FEF4BA6F8A3AE82AB8F43217DB4A
-- generatedChecksum: 1B205C163AE8D18288F90089961324CD
-  logicalPath: config/DevBoard/bt/driver/bm71
-  name: drv_bm71_uart.h
-  physicalPath: bt/driver/bm71
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 1B205C163AE8D18288F90089961324CD
 - generatedChecksum: E50DD25E65E8306D05DFB89E75D07455
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: efc.h
@@ -1217,13 +1126,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CBFFEE875D664564AEA62D395E7C9109
-- generatedChecksum: 4B3C3EF8A318908A22B78500515C3288
+- generatedChecksum: null
   logicalPath: config/DevBoard
   name: user.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 4B3C3EF8A318908A22B78500515C3288
+  userChecksum: null
 - generatedChecksum: 2B20ED4C5FCE0E34245805E3A18E955A
   logicalPath: packs/ATSAME70Q21B_DFP/component
   name: utmi.h

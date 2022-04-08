@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: bm71_bluetooth}
-children:
-- type: ElementPosition
-  attributes: {x: '761', y: '219', id: bm71_bluetooth}

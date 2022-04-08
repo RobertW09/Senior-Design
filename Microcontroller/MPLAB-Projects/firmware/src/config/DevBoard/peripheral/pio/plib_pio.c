@@ -66,6 +66,8 @@ uint8_t portNumCb[PIO_MAX_NUM_OF_CHANNELS + 1] = {0, 1, 1, 1, 1, 1};
 void PIO_Initialize ( void )
 {
     MATRIX_REGS->CCFG_SYSIO = 0x0;
+    /* Selected System IO pins are configured as GPIO */
+    MATRIX_REGS->CCFG_SYSIO |= 0x10;
 
     /************************ PIO A Initialization ************************/
     /* PORTA PIO Disable and Peripheral Enable*/
@@ -95,11 +97,11 @@ void PIO_Initialize ( void )
 
     /************************ PIO B Initialization ************************/
     /* PORTB Peripheral Function Selection */
-    ((pio_registers_t*)PIO_PORT_B)->PIO_ABCDSR[0]= 0x0;
-    ((pio_registers_t*)PIO_PORT_B)->PIO_ABCDSR[1]= 0x3;
+    ((pio_registers_t*)PIO_PORT_B)->PIO_ABCDSR[0]= 0x10;
+    ((pio_registers_t*)PIO_PORT_B)->PIO_ABCDSR[1]= 0x13;
     /* PORTB PIO Disable and Peripheral Enable*/
-    ((pio_registers_t*)PIO_PORT_B)->PIO_PDR = 0x3;
-    ((pio_registers_t*)PIO_PORT_B)->PIO_PER = ~0x3;
+    ((pio_registers_t*)PIO_PORT_B)->PIO_PDR = 0x13;
+    ((pio_registers_t*)PIO_PORT_B)->PIO_PER = ~0x13;
     ((pio_registers_t*)PIO_PORT_B)->PIO_MDDR = 0xFFFFFFFF;
     /* PORTB Pull Up Enable/Disable as per MHC selection */
     ((pio_registers_t*)PIO_PORT_B)->PIO_PUDR = 0xFFFFFFFF;
