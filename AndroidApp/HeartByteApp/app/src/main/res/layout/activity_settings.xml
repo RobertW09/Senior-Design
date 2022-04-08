@@ -65,6 +65,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:textSize="10dp"
             android:background="@drawable/circle_shape"
             android:drawableTop="@drawable/ic_family"
             android:text="Family"
@@ -78,6 +79,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:textSize="10dp"
             android:background="@drawable/circle_shape"
             android:drawableTop="@drawable/ic_info"
             android:text="Info"
@@ -92,6 +94,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:textSize="10dp"
             android:background="@drawable/circle_shape"
             android:drawableTop="@drawable/ic_logout"
             android:text="Logout"/>

@@ -36,22 +36,11 @@
         android:layout_marginTop="100dp"
         android:onClick="measureHR"
         android:text="@string/button_hr"
-        app:layout_constraintBottom_toTopOf="@+id/analytics_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/users_name_text" />
 
-    <Button
-        android:id="@+id/analytics_button"
-        android:layout_width="170dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="20dp"
-        android:onClick="viewAnalytics"
-        android:text="@string/button_analytics"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hr_button" />
     <!--        app:layout_constraintHorizontal_bias="0.497"-->
 
     <Spinner
@@ -59,10 +48,11 @@
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:contentDescription="@string/spinner_default"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/analytics_button" />
+        app:layout_constraintTop_toBottomOf="@+id/hr_button" />
 
     <LinearLayout
         android:layout_width="match_parent"

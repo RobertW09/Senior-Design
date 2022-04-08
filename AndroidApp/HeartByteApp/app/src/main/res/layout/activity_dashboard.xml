@@ -25,12 +25,54 @@
         android:layout_width="0dp"
         android:layout_height="200dip"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
+
+    <EditText
+        android:id="@+id/heart_rate_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edges"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:textAlignment="center"
+        android:hint="Heart Rate"
+        android:textColor="@color/grey_font"
+        android:textColorHint="@color/grey_font"
+        android:drawablePadding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/graph"/>
+    <EditText
+        android:id="@+id/SpO2_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edges"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:textAlignment="center"
+        android:hint="SpO2"
+        android:textColor="@color/grey_font"
+        android:textColorHint="@color/grey_font"
+        android:drawablePadding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/heart_rate_edittext"/>
+    <Button
+        android:id="@+id/user_sub_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heart_rate_edittext"
+        android:text="Submit"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
