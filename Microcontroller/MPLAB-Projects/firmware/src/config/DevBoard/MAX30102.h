@@ -25,6 +25,8 @@
 
 #define MAX30102_ADDRESS    0x57 //7-bit I2C Address
 //Note that MAX30102 has the same I2C address and Part ID
+#define T_BUF               750 // this is the amount of time to wait between
+                                // I2C transfers
 
 #define A_FULL_FLAG         0x80
 #define PPG_RDY_FLAG        0x40
@@ -52,7 +54,7 @@ struct MAX30102{
     uint8_t almostFullThresh;
 };
 
-void setI2CAddr(struct MAX30102 *ppg);
+void initMAX30102(struct MAX30102 *ppg);
 
 uint32_t * getRed(struct MAX30102 *ppg); //Returns RED sample array
 uint32_t * getIR(struct MAX30102 *ppg); //Returns IR sample array

@@ -35,11 +35,11 @@
 #define FIFO_DUMP_AMT   31
 #define MAX_TIMESTAMPS  50                      // number of timestamps to record
 #define FIFO_AVG        4                       // average every 4 samples
-#define SAMPLE_RATE     1000                    // sps
+#define SAMPLE_RATE     400                    // sps
 #define ALMOST_FULL     32-FIFO_DUMP_AMT     // int at 31 samples
 #define LED_MODE        3                       // IR + RED
 #define ADC_RANGE       4096                    // nA
-#define PULSE_WIDTH     118                     // uS -> 16 bit resolution
+#define PULSE_WIDTH     411                     // uS -> 16 bit resolution
 #define PROX_THRESH     3                       // proximity mode threshold
 
 // *****************************************************************************
@@ -82,6 +82,16 @@ struct MAX30102 ppg;
 // State transition conditions
 //bool measureComplete = false;
 
+void readPostWakeUp()
+{
+    bool status;
+    uint8_t originalContents, value;
+    uint8_t reg = 0x09;
+    status = TWIHS0_WriteRead(0x57, &reg, 1, &value, 1);
+    while(TWIHS0_IsBusy());
+    originalContents = (status) ? value : 0;
+    printf("Reading registers 0x09 address: %d \n\r", originalContents);
+}
 // States
 enum STATES{
     BOOT_UP,
@@ -95,7 +105,7 @@ enum STATES state;
 int main ( void )
 {
 //    LED_Toggle();
-    setI2CAddr(&ppg);
+    
     uint64_t i=0;
     struct tm sys_time;
     
@@ -113,6 +123,7 @@ int main ( void )
     //Sets up the system time for the RTC
     setTimers();
     
+    initMAX30102(&ppg);
     //Starts the RTT timer (Configured by MPLAB to be sourced by 1 Hz clock)
 //    startTimers();
     
@@ -132,6 +143,7 @@ int main ( void )
 //                if(!ppgPwrRdyInt)
 //                    SUPC_SleepModeEnter();
                 ppgSetup();
+                setPulseAmplitudeRed(&ppg, 0x0A);
                 startTimers();
                 state = INIT_MEASURE;
                 break;
@@ -145,8 +157,10 @@ int main ( void )
                         sys_time.tm_hour, sys_time.tm_min, sys_time.tm_sec);
 
                 /* Start PPG Sensor for sampling */
+//                readPostWakeUp();
                 wakeUp(&ppg); // need to test if this causes an interrupt
-                clearFIFO(&ppg);
+//                readPostWakeUp();
+//                clearFIFO(&ppg);
                 measuredSamples = 0;
                 state = WAIT_FOR_INT;
                 break;
@@ -313,25 +327,25 @@ void loadBuffers(void) {
 }
 // setup registers for ppg sensor
 void ppgSetup(void) {
-//    softReset(&ppg)
+    softReset(&ppg);
     shutDown(&ppg);
+    setFIFOAverage(&ppg, FIFO_AVG);
+    
+//    enableFIFORollover(&ppg);
     
     // led mode
-    setLEDMode(&ppg, LED_MODE);
+    setLEDMode(&ppg, 0x07);
     setFIFOAlmostFull(&ppg, ALMOST_FULL);
-    
+//    readPostWakeUp();
     // sampling config
     // 16 bit samples at 250 Hz (1000 Hz with decimate of 4)
-    setFIFOAverage(&ppg, FIFO_AVG);
+    
     setADCRange(&ppg, ADC_RANGE);
+//    readPostWakeUp();
     setSampleRate(&ppg, SAMPLE_RATE);
+//    readPostWakeUp();
     setPulseWidth(&ppg, PULSE_WIDTH);
-    
-   
-    
-    // not needed for SpO2 mode
-    // set IR and RED to slots 1 and 2 respectively
-    //enableSlot(1, )
+//    readPostWakeUp();
     
     // set proximity threshold
     setProximityThreshold(&ppg, PROX_THRESH);
@@ -341,13 +355,15 @@ void ppgSetup(void) {
     enablePROXINT(&ppg);
     enableDIETEMPRDY(&ppg);
     setPulseAmplitudeRed(&ppg, 0x1F);
-    enableSlot(&ppg, 1, 0x01); //See pg 21 of datasheet
+    
     setPulseAmplitudeIR(&ppg, 0x1F);
     
+    enableSlot(&ppg, 1, 0x01); //See pg 21 of datasheet
+    enableSlot(&ppg, 2, 0x02);
+    
      // fifo config
-    
+//    readPostWakeUp();
     clearFIFO(&ppg);
-    
 }
 
 /*
@@ -383,6 +399,7 @@ static void MAX30102_IntHandler(PIO_PIN pin, uintptr_t context) {
         printf("Part ID: %2X\n\r", pid);
         printf("Revision ID: %2X\n\r", rid);
         ppgSetup();
+        setPulseAmplitudeRed(&ppg, 0x0A);
         startTimers();
         state = INIT_MEASURE;
     }

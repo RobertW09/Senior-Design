@@ -80,12 +80,6 @@ static   uint8_t MAX30102_INT_DIE_TEMP_RDY_ENABLE = 0x02;
 static   uint8_t MAX30102_INT_DIE_TEMP_RDY_DISABLE = 0x00;
 
 static   uint8_t MAX30102_SAMPLEAVG_MASK =	(uint8_t)~0b11100000;
-//static   uint8_t MAX30102_SAMPLEAVG_1 = 	0x00;
-//static   uint8_t MAX30102_SAMPLEAVG_2 = 	0x20;
-//static   uint8_t MAX30102_SAMPLEAVG_4 = 	0x40;
-//static   uint8_t MAX30102_SAMPLEAVG_8 = 	0x60;
-//static   uint8_t MAX30102_SAMPLEAVG_16 = 	0x80;
-//static   uint8_t MAX30102_SAMPLEAVG_32 = 	0xA0;
 
 static   uint8_t MAX30102_ROLLOVER_MASK = 	0xEF;
 static   uint8_t MAX30102_ROLLOVER_ENABLE = 0x10;
@@ -102,24 +96,13 @@ static   uint8_t MAX30102_RESET_MASK = 		0xBF;
 static   uint8_t MAX30102_RESET = 			0x40;
 
 static   uint8_t MAX30102_MODE_MASK = 		0xF8;
-//static   uint8_t MAX30102_MODE_REDONLY = 	0x02;
-//static   uint8_t MAX30102_MODE_REDIRONLY = 	0x03;
-//static   uint8_t MAX30102_MODE_MULTILED = 	0x07;
 
 // Particle sensing configuration commands (pgs 19-20)
 static   uint8_t MAX30102_ADCRANGE_MASK = 	0x9F;
-//static   uint8_t MAX30102_ADCRANGE_2048 = 	0x00;
-//static   uint8_t MAX30102_ADCRANGE_4096 = 	0x20;
-//static   uint8_t MAX30102_ADCRANGE_8192 = 	0x40;
-//static   uint8_t MAX30102_ADCRANGE_16384 = 	0x60;
 
 static   uint8_t MAX30102_SAMPLERATE_MASK = 0xE3;
 
 static   uint8_t MAX30102_PULSEWIDTH_MASK = 0xFC;
-//static   uint8_t MAX30102_PULSEWIDTH_69 = 	0x00;
-//static   uint8_t MAX30102_PULSEWIDTH_118 = 	0x01;
-//static   uint8_t MAX30102_PULSEWIDTH_215 = 	0x02;
-//static   uint8_t MAX30102_PULSEWIDTH_411 = 	0x03;
 #define MAX_RESOLUTION                          18
 
 //Multi-LED Mode configuration (pg 22)
@@ -127,40 +110,6 @@ static   uint8_t MAX30102_SLOT1_MASK = 		0xF8;
 static   uint8_t MAX30102_SLOT2_MASK = 		0x8F;
 static   uint8_t MAX30102_SLOT3_MASK = 		0xF8;
 static   uint8_t MAX30102_SLOT4_MASK = 		0x8F;
-
-//static   uint8_t SLOT_NONE = 				0x00;
-//static   uint8_t SLOT_RED_LED = 			0x01;
-//static   uint8_t SLOT_IR_LED = 				0x02;
-//static   uint8_t SLOT_NONE_PILOT = 			0x04;
-//static   uint8_t SLOT_RED_PILOT =			0x05;
-//static   uint8_t SLOT_IR_PILOT = 			0x06;
-//static   uint8_t SLOT_GREEN_PILOT = 		0x07;
-
-//static   uint8_t MAX_30102_EXPECTEDPARTID = 0x15;
-
-
-//bool begin(TwoWire &wirePort, uint32_t i2cSpeed, uint8_t i2caddr) {
-//
-//  _i2cPort = &wirePort; //Grab which port the user wants us to use
-//
-//  _i2cPort->begin();
-//  _i2cPort->setClock(i2cSpeed);
-//
-//  _i2caddr = i2caddr;
-//
-//  // Step 1: Initial Communication and Verification
-//  // Check that a MAX30102 is connected
-//  if (readPartID() != MAX_30102_EXPECTEDPARTID) {
-//    // Error -- Part ID read from MAX30102 does not match expected part ID.
-//    // This may mean there is a physical connectivity problem (broken wire, unpowered, etc).
-//    return false;
-//  }
-//
-//  // Populate revision ID
-//  readRevisionID();
-//  
-//  return true;
-//}
 
 //
 // Configuration
@@ -172,13 +121,21 @@ static   uint8_t MAX30102_SLOT4_MASK = 		0x8F;
 uint8_t getINT1(struct MAX30102 *ppg) {
     bool status;
     uint8_t value;
+    volatile uint16_t delay;
     status = TWIHS0_WriteRead(MAX30102_ADDRESS, &MAX30102_INTSTAT1, 1, &value, 1);
+    while(TWIHS0_IsBusy());
+    delay = 0;
+    while(delay < T_BUF){delay++;}
     return (status) ? value : -1;
 }
 uint8_t getINT2(struct MAX30102 *ppg) {
     bool status;
     uint8_t value;
+    volatile uint16_t delay;
     status = TWIHS0_WriteRead(MAX30102_ADDRESS, &MAX30102_INTSTAT2, 1, &value, 1);
+    while(TWIHS0_IsBusy());
+    delay = 0;
+    while(delay<T_BUF){delay++;}
     return (status) ? value : -1;
 //    return (readRegister8(_i2caddr, MAX30102_INTSTAT2, 1));
 }
@@ -230,9 +187,11 @@ void disableDIETEMPRDY(struct MAX30102 *ppg) {
 
 //End Interrupt configuration
 
-void setI2CAddr(struct MAX30102 *ppg)
+void initMAX30102(struct MAX30102 *ppg)
 {
     ppg->_i2caddr = MAX30102_ADDRESS;
+    ppg->ledMode = 0;
+    
 }
 
 // This simply write the reset bit. We need to wait for the interrupt signal and
@@ -260,12 +219,14 @@ void softReset(struct MAX30102 *ppg) {
 // not update with or take new readings (such as temperature)
 void shutDown(struct MAX30102 *ppg) {
     bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_SHUTDOWN_MASK, MAX30102_SHUTDOWN);
+    bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_MODE_MASK, ppg->ledMode);
 //  bitMask(MAX30102_MODECONFIG, MAX30102_SHUTDOWN_MASK, MAX30102_SHUTDOWN);
 }
 
 // Pull IC out of low power mode (datasheet pg. 19)
 void wakeUp(struct MAX30102 *ppg) {
     bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_SHUTDOWN_MASK, MAX30102_WAKEUP);
+    bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_MODE_MASK, ppg->ledMode);
 //  bitMask(MAX30102_MODECONFIG, MAX30102_SHUTDOWN_MASK, MAX30102_WAKEUP);
 }
 
@@ -438,10 +399,16 @@ void enableSlot(struct MAX30102 *ppg, uint8_t slotNumber, uint8_t device) {
 //Clears all slot assignments
 void disableSlots(struct MAX30102 *ppg) {
     uint8_t buff[3];
+    volatile uint16_t delay;
+    
     buff[0] = MAX30102_MULTILEDCONFIG1;
     buff[1] = 0;
     buff[2] = 0;
+    
     TWIHS0_Write(ppg->_i2caddr, buff, 2);
+    delay = 0;
+    while(delay<T_BUF){delay++;}
+    
 }
 
 //
@@ -481,27 +448,28 @@ void setFIFOAverage(struct MAX30102 *ppg, uint8_t numberOfSamples) {
 //Resets all points to start in a known state
 //Page 15 recommends clearing FIFO before beginning a read
 void clearFIFO(struct MAX30102 *ppg) {
-    uint8_t buff[3];
+    uint8_t buff[4];
+    volatile uint16_t delay;
+    
     buff[0] = MAX30102_FIFOWRITEPTR;
     buff[1] = 0;
     buff[2] = 0;
     buff[3] = 0;
+    
     TWIHS0_Write(ppg->_i2caddr, buff, 4);
     while(TWIHS0_IsBusy());
-    
-//  writeRegister(MAX30102_FIFOWRITEPTR, 0);
-//  writeRegister(MAX30102_FIFOOVERFLOW, 0);
-//  writeRegister(MAX30102_FIFOREADPTR, 0);
+    delay = 0;
+    while(delay<T_BUF){delay++;}
 }
 
 //Enable roll over if FIFO over flows
 void enableFIFORollover(struct MAX30102 *ppg) {
-  bitMask(ppg->_i2caddr, MAX30102_FIFOCONFIG, MAX30102_ROLLOVER_MASK, MAX30102_ROLLOVER_ENABLE);
+    bitMask(ppg->_i2caddr, MAX30102_FIFOCONFIG, MAX30102_ROLLOVER_MASK, MAX30102_ROLLOVER_ENABLE);
 }
 
 //Disable roll over if FIFO over flows
 void disableFIFORollover(struct MAX30102 *ppg) {
-  bitMask(ppg->_i2caddr, MAX30102_FIFOCONFIG, MAX30102_ROLLOVER_MASK, MAX30102_ROLLOVER_DISABLE);
+    bitMask(ppg->_i2caddr, MAX30102_FIFOCONFIG, MAX30102_ROLLOVER_MASK, MAX30102_ROLLOVER_DISABLE);
 }
 
 //Set number of samples to trigger the almost full interrupt (Page 18)
@@ -516,7 +484,10 @@ void setFIFOAlmostFull(struct MAX30102 *ppg, uint8_t almostFull) {
 uint8_t getWritePointer(struct MAX30102 *ppg) {
     bool status;
     uint8_t value;
+    volatile uint16_t delay;
+    
     status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_FIFOWRITEPTR, 1, &value, 1);
+    while(delay<T_BUF){delay++;}
     return (status) ? value : -1;
 }
 
@@ -524,7 +495,11 @@ uint8_t getWritePointer(struct MAX30102 *ppg) {
 uint8_t getReadPointer(struct MAX30102 *ppg) {
     bool status;
     uint8_t value;
+    volatile uint16_t delay;
+    
     status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_FIFOREADPTR, 1, &value, 1);
+    delay = 0;
+    while(delay<T_BUF){delay++;}
     return (status) ? value : -1;
 }
 
@@ -540,15 +515,22 @@ float readTemperature(struct MAX30102 *ppg) {
     uint8_t tempFrac;
     uint8_t value;
     bool status;
+    volatile uint16_t delay;
+    
     // read integer part
     status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_DIETEMPINT, 1, &value, 1);
     while(TWIHS0_IsBusy());
+    delay = 0;
+    while(delay<T_BUF){delay++;}
     tempInt = (status) ? value : -1;
+    
     // read fractional part
     status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_DIETEMPFRAC, 1, &value, 1);
     while(TWIHS0_IsBusy());
-    tempFrac = (status) ? value : -1;
-    
+    delay = 0;
+    while(delay<T_BUF){delay++;}
+    tempFrac =  (status) ? value : -1;
+
     // Step 3: Calculate temperature (datasheet pg. 23)
     return (float)tempInt + ((float)tempFrac * 0.0625);
 }
@@ -573,23 +555,28 @@ void setPROXINTTHRESH(struct MAX30102 *ppg, uint8_t val) {
 uint8_t readPartID(struct MAX30102 *ppg) {
     bool status;
     uint8_t value;
-//    status = TWIHS0_Write(MAX30102_ADDRESS, &MAX30102_PARTID, 1);
-//    while(TWIHS0_IsBusy());
-//    status = TWIHS0_Read(MAX30102_ADDRESS, &value, 1);
+    volatile uint16_t delay;
+
     status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_PARTID, 1, &value, 1);
+    // wait for the wire to clear up
     while(TWIHS0_IsBusy());
+    // busy wait for 1.3 uS
+    // See datasheet p. 4 of the data  sheet. t_buf
+    delay=0;
+    while(delay<T_BUF){delay++;}
     return (status) ? value : -1;
 }
 
 uint8_t readRevisionID(struct MAX30102 *ppg) {
     bool status;
     uint8_t value;
-//    status = TWIHS0_Write(MAX30102_ADDRESS, &MAX30102_REVISIONID, 1);
-//    while(TWIHS0_IsBusy());
-//    status = TWIHS0_Read(MAX30102_ADDRESS, &value, 1);
+    volatile uint16_t delay;
+
     status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_REVISIONID, 1, &value, 1);
     while(TWIHS0_IsBusy());
     ppg->revisionID = (status) ? value : -5;
+    delay=0;
+    while(delay<T_BUF){delay++;}
     return (status) ? value : -1;
 }   
 
@@ -695,10 +682,13 @@ bool dumpFIFO(struct MAX30102 *ppg, uint8_t samples) {
     uint8_t data[32*6];
     uint16_t bytes;
     uint8_t padding;
+    volatile uint16_t delay = 0;
     if(ppg->ledMode == 2) { // Red LED only
         bytes = samples * 3;
         status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_FIFODATA, 1, data, bytes);
         while(TWIHS0_IsBusy());
+        delay=0;
+        while(delay<T_BUF){delay++;}
         padding = MAX_RESOLUTION - ppg->resolution;
         for(i=0; i<samples; i++) {
             redSamplesBuffer[i] = ((data[i*3]     << (16-padding))
@@ -713,6 +703,8 @@ bool dumpFIFO(struct MAX30102 *ppg, uint8_t samples) {
         // read data from fifo into byte array
         status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_FIFODATA, 1, data, bytes);
         while(TWIHS0_IsBusy());
+        delay=0;
+        while(delay<T_BUF){delay++;}
         padding = MAX_RESOLUTION - ppg->resolution;
         // packs bytes into sample arrays
         for(i=0; i<samples; i++) {
@@ -748,6 +740,8 @@ void bitMask(uint8_t addr, uint8_t reg, uint8_t mask, uint8_t thing) {
     uint8_t originalContents, value;
     status = TWIHS0_WriteRead(addr, &reg, 1, &value, 1);
     while(TWIHS0_IsBusy());
+    volatile uint16_t i = 0;
+    while(i<T_BUF){i++;}
     originalContents = (status) ? value : 0;
 
     // Zero-out the portions of the register we're interested in
@@ -758,9 +752,11 @@ void bitMask(uint8_t addr, uint8_t reg, uint8_t mask, uint8_t thing) {
 }
 
 void writeRegister(uint8_t addr, uint8_t reg, uint8_t value) {
-    uint8_t buff[3];
+    uint8_t buff[2];
     buff[0] = reg;
     buff[1] = value;
     TWIHS0_Write(addr, buff, 2);
     while(TWIHS0_IsBusy());
+    volatile uint16_t i = 0;
+    while(i<T_BUF){i++;}
 }
