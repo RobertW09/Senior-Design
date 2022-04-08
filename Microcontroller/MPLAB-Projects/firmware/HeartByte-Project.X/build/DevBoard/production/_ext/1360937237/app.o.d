@@ -132,12 +132,12 @@ build/DevBoard/production/_ext/1360937237/app.o: ../src/app.c \
  ../src/config/DevBoard/peripheral/rtt/plib_rtt_common.h \
  ../src/config/DevBoard/peripheral/usart/plib_usart1.h \
  ../src/config/DevBoard/peripheral/usart/plib_usart_common.h \
- ../src/config/DevBoard/peripheral/usart/plib_usart0.h \
  ../src/config/DevBoard/bt/driver/bm71/drv_bm71.h \
  ../src/config/DevBoard/driver_common.h \
  ../src/config/DevBoard/osal/osal.h \
  ../src/config/DevBoard/osal/osal_definitions.h \
  ../src/config/DevBoard/osal/osal_impl_basic.h \
+ ../src/config/DevBoard/peripheral/usart/plib_usart0.h \
  ../src/config/DevBoard/system/int/sys_int.h \
  ../src/config/DevBoard/system/cache/sys_cache.h \
  ../src/config/DevBoard/osal/osal.h \
@@ -414,8 +414,6 @@ build/DevBoard/production/_ext/1360937237/app.o: ../src/app.c \
 
 ../src/config/DevBoard/peripheral/usart/plib_usart_common.h:
 
-../src/config/DevBoard/peripheral/usart/plib_usart0.h:
-
 ../src/config/DevBoard/bt/driver/bm71/drv_bm71.h:
 
 ../src/config/DevBoard/driver_common.h:
@@ -425,6 +423,8 @@ build/DevBoard/production/_ext/1360937237/app.o: ../src/app.c \
 ../src/config/DevBoard/osal/osal_definitions.h:
 
 ../src/config/DevBoard/osal/osal_impl_basic.h:
+
+../src/config/DevBoard/peripheral/usart/plib_usart0.h:
 
 ../src/config/DevBoard/system/int/sys_int.h:
 

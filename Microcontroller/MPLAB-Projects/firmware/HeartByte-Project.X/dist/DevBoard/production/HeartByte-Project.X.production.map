@@ -177,228 +177,228 @@ section                    address  length [bytes]      (dec)  Description
 .text.__fmt_x             0x402130          0x124         292   
 .text.DRV_BM71_CommandD   0x402254           0xf8         248   
 .text.free                0x40234c           0xf8         248   
-.text.MAX30102_IntHandl   0x402444           0xe4         228   
-.text.PIO_Initialize      0x402528           0xdc         220   
-.text.SYS_TIME_PLIBCall   0x402604           0xd4         212   
-.text.DRV_BM71_CommandH   0x4026d8           0xc8         200   
-.text.RTC_TimeGet         0x4027a0           0xc4         196   
-.text.getIR               0x402864            0x4           4   
-.text.floor               0x402868           0xc4         196   
-.text.DRV_BM71_SendByte   0x40292c           0xc0         192   
-.text.SYS_TIME_HwTimerC   0x4029ec           0xb4         180   
-.text.SYS_TIME_TimerObj   0x402aa0           0xb0         176   
-.text.__fmt_d             0x402b50           0xa8         168   
-.text.SYS_TIME_Initiali   0x402bf8           0xa4         164   
-.text.TWIHS0_InitiateTr   0x402c9c           0xa0         160   
-.text.__pop_int           0x402d3c           0xa0         160   
-.text.SYS_TIME_AddToLis   0x402ddc           0x90         144   
-.text.ppgSetup            0x402e6c           0x90         144   
-.text.__write_buffered    0x402efc           0x8a         138   
-.text.Dummy_Handler       0x402f86            0x2           2   
-.text.readRevisionID      0x402f88           0x88         136   
-.text.__pic32c_data_ini   0x403010           0x88         136   
-.text.__pad               0x403098           0x7e         126   
-.text.NonMaskableInt_Ha   0x403116            0x2           2   
-.text.SYS_Initialize      0x403118           0x7c         124   
-.text.__pop_ptr           0x403194           0x7c         124   
-.text.DRV_BM71_Open       0x403210           0x78         120   
-.text.__cvt_u             0x403288           0x78         120   
-.text.__stdio_write_buf   0x403300           0x76         118   
-.text.HardFault_Handler   0x403376            0x2           2   
-.text.loadBuffers         0x403378           0x74         116   
-.text.__fmt_o             0x4033ec           0x72         114   
-.text.DebugMonitor_Hand   0x40345e            0x2           2   
-.text.DRV_BM71_AddBytes   0x403460           0x70         112   
-.text.DRV_BM71_BLE_Writ   0x4034d0           0x70         112   
-.text.USART0_Write        0x403540           0x70         112   
-.text.bitMask             0x4035b0           0x6e         110   
-.text.DRV_BM71_SendSPPD   0x40361e           0x6a         106   
-.text.DRV_BM71_UART_Tra   0x403688           0x68         104   
-.text.CLOCK_Initialize    0x4036f0           0x68         104   
-.text.RTT_InterruptHand   0x403758           0x68         104   
-.text.DRV_BM71_UART_Tas   0x4037c0           0x64         100   
-.text.PIO_PinInterruptC   0x403824           0x64         100   
-.text.clearFIFO           0x403888           0x64         100   
-.text.__stdio_close_rw    0x4038ec           0x64         100   
-.text.APP_Tasks           0x403950           0x60          96   
-.text.__stdio_read        0x4039b0           0x60          96   
-.text.DRV_BM71_BLE_SetA   0x403a10           0x5c          92   
-.text.NVIC_Initialize     0x403a6c           0x5c          92   
-.text.getINT1             0x403ac8           0x5c          92   
-.text.getINT2             0x403b24           0x5c          92   
-.text.readPartID          0x403b80           0x5c          92   
-.text.__libc_start_init   0x403bdc           0x5c          92   
-.rodata                   0x403c38           0x5c          92  Read-only const 
-.text.DRV_BM71_Initiali   0x403c94           0x58          88   
-.text._PIO_Interrupt_Ha   0x403cec           0x58          88   
-.text.SYS_TIME_TimerSta   0x403d44           0x58          88   
-.text.unbin               0x403d9c           0x58          88   
-.text.__fmt_s             0x403df4           0x58          88   
-.text.__fmt_u             0x403e4c           0x56          86   
-.text.MemoryManagement_   0x403ea2            0x2           2   
-.text.SYS_TIME_RemoveFr   0x403ea4           0x54          84   
-.text.SYS_TIME_Callback   0x403ef8           0x54          84   
-.text.setSampleRate       0x403f4c           0x54          84   
-.text.enableSlot          0x403fa0           0x50          80   
-.text.setFIFOAverage      0x403ff0           0x4e          78   
-.text.__overflow          0x40403e           0x4e          78   
-.rodata                   0x40408c           0x4c          76  Read-only const 
-.text.DRV_BM71_UART_Tra   0x4040d8           0x4c          76   
-.text.USART1_Write        0x404124           0x4c          76   
-.text.writeRegister       0x404170           0x4c          76   
-.text.setvbuf             0x4041bc           0x4c          76   
-.text.DRV_BM71_BLE_Enab   0x404208           0x48          72   
-.text.atoi                0x404250           0x46          70   
-.text.BusFault_Handler    0x404296            0x2           2   
-.text.DRV_BM71_UART_Rec   0x404298           0x44          68   
-.text.SYS_INT_SourceDis   0x4042dc           0x44          68   
-.text._bleTasks           0x404320           0x44          68   
-.text                     0x404364           0x40          64  App's exec code 
-.text.DRV_BM71_CommandS   0x4043a4           0x40          64   
-.text.USART0_Initialize   0x4043e4           0x40          64   
-.text.USART0_Read         0x404424           0x40          64   
-.text.SYS_TIME_TimerAdd   0x404464           0x40          64   
-.text.adjust_size         0x4044a4           0x40          64   
-.text.write               0x4044e4           0x40          64   
-.text.DRV_BM71_BLE_Enab   0x404524           0x3e          62   
-.text.__putc              0x404562           0x3e          62   
-.text.TWIHS0_Initialize   0x4045a0           0x3c          60   
-.text.SYS_TIME_GetTimer   0x4045dc           0x3c          60   
-.text.SYS_TIME_TimerDes   0x404618           0x3c          60   
-.text.__out               0x404654           0x3a          58   
-.text.UsageFault_Handle   0x40468e            0x2           2   
-.text.SYS_TIME_Resource   0x404690           0x38          56   
-.text.setTimers           0x4046c8           0x38          56   
-.text.__putc_unbuffered   0x404700           0x38          56   
-.text.bin_index           0x404738           0x38          56   
-.text.__fmt_state         0x404770           0x38          56   
-.text.DRV_BM71_EUSART_R   0x4047a8           0x34          52   
-.text.TWIHS0_InitiateRe   0x4047dc           0x34          52   
-.text.SYS_TIME_Resource   0x404810           0x34          52   
-.text._bleEventHandler    0x404844           0x34          52   
-.text.DRV_BM71_SPPBuffC   0x404878           0x30          48   
-.rodata                   0x4048a8           0x30          48  Read-only const 
-.text.DRV_BM71_CommandD   0x4048d8           0x30          48   
-.text.SYS_TIME_UpdateTi   0x404908           0x30          48   
-.text.RTT_AlarmHandler    0x404938           0x30          48   
-.text.alloc_rev           0x404968           0x30          48   
-.text                     0x404998           0x30          48  App's exec code 
-.text.trim                0x4049c8           0x2e          46   
-.text.Dummy_App_Func      0x4049f6            0x2           2   
-.text.TWIHS0_Write        0x4049f8           0x2c          44   
-.text.TWIHS0_WriteRead    0x404a24           0x2c          44   
-.text.USART0_ErrorClear   0x404a50           0x2c          44   
-.text.APP_Initialize      0x404a7c           0x2c          44   
-.text.setADCRange         0x404aa8           0x2c          44   
-.text.__readv             0x404ad4           0x2c          44   
-.text.alloc_fwd           0x404b00           0x2c          44   
-.text.__writev            0x404b2c           0x2c          44   
-.text._sbrk               0x404b58           0x2c          44   
-.text.setPulseWidth       0x404b84           0x2a          42   
-.text.fwrite              0x404bae           0x2a          42   
-.text.__pop_float         0x404bd8           0x2a          42   
-.text.__dummy             0x404c02            0x2           2   
-.text.DRV_BM71_Timer1MS   0x404c04           0x28          40   
-.text.puts                0x404c2c           0x28          40   
-.text.__towrite_rw        0x404c54           0x28          40   
-.text.DRV_BM71_CommandS   0x404c7c           0x24          36   
-.text.DRV_BM71_UART_Ini   0x404ca0           0x24          36   
-.text.RTT_AlarmValueSet   0x404cc4           0x24          36   
-.text.TC0_CH0_TimerInit   0x404ce8           0x24          36   
-.text.TC0_CH0_Interrupt   0x404d0c           0x24          36   
-.text.printf              0x404d30           0x24          36   
-.text.fputs               0x404d54           0x22          34   
-.text.__dummy             0x404d76            0x2           2   
-.text.DRV_BM71_CommandD   0x404d78           0x20          32   
-.text.SYS_TIME_GetElaps   0x404d98           0x20          32   
-.text.setHandlers         0x404db8           0x20          32   
-.text.lock_bin            0x404dd8           0x20          32   
-.text.shutDown            0x404df8           0x1e          30   
-.text.wakeUp              0x404e16           0x1e          30   
-.text._clientCallBack     0x404e34           0x1c          28   
-.text.DRV_BM71_CommandS   0x404e50           0x1c          28   
-.text.SUPC_SleepModeEnt   0x404e6c           0x1c          28   
-.text.USART1_Initialize   0x404e88           0x1c          28   
-.text._mon_putc           0x404ea4           0x1c          28   
-.text.SYS_TIME_Counter6   0x404ec0           0x1c          28   
-.rodata.sysTimePlibAPI    0x404edc           0x1c          28   
-.text.vfprintf            0x404ef8           0x1c          28   
-.rodata                   0x404f14           0x1c          28  Read-only const 
-.text.DRV_BM71_EUSART_W   0x404f30           0x18          24   
-.text.RTT_Enable          0x404f48           0x18          24   
-.text.RTT_TimerValueGet   0x404f60           0x18          24   
-.text.SUPC_Initialize     0x404f78           0x18          24   
-.rodata                   0x404f90           0x18          24  Read-only const 
-.text.__towrite           0x404fa8           0x18          24   
-.text.__syscall_ret       0x404fc0           0x18          24   
-.text.__fwrite            0x404fd8           0x18          24   
-.text.memcpy              0x404ff0           0x16          22   
-.text.__expand_heap       0x405006           0x16          22   
-.text.DRV_BM71_GetPower   0x40501c           0x14          20   
-.text.DRV_BM71_SendData   0x405030           0x14          20   
-.rodata                   0x405044           0x14          20  Read-only const 
-.text.RTC_Initialize      0x405058           0x14          20   
-.text.RTT_Initialize      0x40506c           0x14          20   
-.text.TWIHS0_IsBusy       0x405080           0x14          20   
-.text.setFIFOAlmostFull   0x405094           0x14          20   
-.text.__init_stdout       0x4050a8           0x14          20   
-.text.DRV_BM71_EventHan   0x4050bc           0x12          18   
-.text.NVIC_INT_Disable    0x4050ce           0x12          18   
-.text.NVIC_INT_Restore    0x4050e0           0x12          18   
-.text.setLEDMode          0x4050f2           0x12          18   
-.text.stpcpy              0x405104           0x12          18   
-.text.__dummy             0x405116            0x2           2   
-.text.DRV_BM71_RESET_Se   0x405118           0x10          16   
+.text.PIO_Initialize      0x402444           0xec         236   
+.text.MAX30102_IntHandl   0x402530           0xe4         228   
+.text.SYS_TIME_PLIBCall   0x402614           0xd4         212   
+.text.DRV_BM71_CommandH   0x4026e8           0xc8         200   
+.text.RTC_TimeGet         0x4027b0           0xc4         196   
+.text.getIR               0x402874            0x4           4   
+.text.floor               0x402878           0xc4         196   
+.text.DRV_BM71_SendByte   0x40293c           0xc0         192   
+.text.SYS_TIME_HwTimerC   0x4029fc           0xb4         180   
+.text.SYS_TIME_TimerObj   0x402ab0           0xb0         176   
+.text.__fmt_d             0x402b60           0xa8         168   
+.text.SYS_TIME_Initiali   0x402c08           0xa4         164   
+.text.TWIHS0_InitiateTr   0x402cac           0xa0         160   
+.text.__pop_int           0x402d4c           0xa0         160   
+.text.SYS_TIME_AddToLis   0x402dec           0x90         144   
+.text.ppgSetup            0x402e7c           0x90         144   
+.text.__write_buffered    0x402f0c           0x8a         138   
+.text.Dummy_Handler       0x402f96            0x2           2   
+.text.readRevisionID      0x402f98           0x88         136   
+.text.__pic32c_data_ini   0x403020           0x88         136   
+.text.__pad               0x4030a8           0x7e         126   
+.text.NonMaskableInt_Ha   0x403126            0x2           2   
+.text.SYS_Initialize      0x403128           0x7c         124   
+.text.__pop_ptr           0x4031a4           0x7c         124   
+.text.DRV_BM71_Open       0x403220           0x78         120   
+.text.__cvt_u             0x403298           0x78         120   
+.text.__stdio_write_buf   0x403310           0x76         118   
+.text.HardFault_Handler   0x403386            0x2           2   
+.text.loadBuffers         0x403388           0x74         116   
+.text.__fmt_o             0x4033fc           0x72         114   
+.text.DebugMonitor_Hand   0x40346e            0x2           2   
+.text.DRV_BM71_AddBytes   0x403470           0x70         112   
+.text.DRV_BM71_BLE_Writ   0x4034e0           0x70         112   
+.text.USART0_Write        0x403550           0x70         112   
+.text.bitMask             0x4035c0           0x6e         110   
+.text.DRV_BM71_SendSPPD   0x40362e           0x6a         106   
+.text.DRV_BM71_UART_Tra   0x403698           0x68         104   
+.text.CLOCK_Initialize    0x403700           0x68         104   
+.text.RTT_InterruptHand   0x403768           0x68         104   
+.text.DRV_BM71_UART_Tas   0x4037d0           0x64         100   
+.text.PIO_PinInterruptC   0x403834           0x64         100   
+.text.clearFIFO           0x403898           0x64         100   
+.text.__stdio_close_rw    0x4038fc           0x64         100   
+.text.APP_Tasks           0x403960           0x60          96   
+.text.__stdio_read        0x4039c0           0x60          96   
+.text.DRV_BM71_BLE_SetA   0x403a20           0x5c          92   
+.text.NVIC_Initialize     0x403a7c           0x5c          92   
+.text.getINT1             0x403ad8           0x5c          92   
+.text.getINT2             0x403b34           0x5c          92   
+.text.readPartID          0x403b90           0x5c          92   
+.text.__libc_start_init   0x403bec           0x5c          92   
+.rodata                   0x403c48           0x5c          92  Read-only const 
+.text.DRV_BM71_Initiali   0x403ca4           0x58          88   
+.text._PIO_Interrupt_Ha   0x403cfc           0x58          88   
+.text.SYS_TIME_TimerSta   0x403d54           0x58          88   
+.text.unbin               0x403dac           0x58          88   
+.text.__fmt_s             0x403e04           0x58          88   
+.text.__fmt_u             0x403e5c           0x56          86   
+.text.MemoryManagement_   0x403eb2            0x2           2   
+.text.SYS_TIME_RemoveFr   0x403eb4           0x54          84   
+.text.SYS_TIME_Callback   0x403f08           0x54          84   
+.text.setSampleRate       0x403f5c           0x54          84   
+.text.enableSlot          0x403fb0           0x50          80   
+.text.setFIFOAverage      0x404000           0x4e          78   
+.text.__overflow          0x40404e           0x4e          78   
+.rodata                   0x40409c           0x4c          76  Read-only const 
+.text.DRV_BM71_UART_Tra   0x4040e8           0x4c          76   
+.text.USART1_Write        0x404134           0x4c          76   
+.text.writeRegister       0x404180           0x4c          76   
+.text.setvbuf             0x4041cc           0x4c          76   
+.text.DRV_BM71_BLE_Enab   0x404218           0x48          72   
+.text.atoi                0x404260           0x46          70   
+.text.BusFault_Handler    0x4042a6            0x2           2   
+.text.DRV_BM71_UART_Rec   0x4042a8           0x44          68   
+.text.SYS_INT_SourceDis   0x4042ec           0x44          68   
+.text._bleTasks           0x404330           0x44          68   
+.text                     0x404374           0x40          64  App's exec code 
+.text.DRV_BM71_CommandS   0x4043b4           0x40          64   
+.text.USART0_Initialize   0x4043f4           0x40          64   
+.text.USART0_Read         0x404434           0x40          64   
+.text.SYS_TIME_TimerAdd   0x404474           0x40          64   
+.text.adjust_size         0x4044b4           0x40          64   
+.text.write               0x4044f4           0x40          64   
+.text.DRV_BM71_BLE_Enab   0x404534           0x3e          62   
+.text.__putc              0x404572           0x3e          62   
+.text.TWIHS0_Initialize   0x4045b0           0x3c          60   
+.text.SYS_TIME_GetTimer   0x4045ec           0x3c          60   
+.text.SYS_TIME_TimerDes   0x404628           0x3c          60   
+.text.__out               0x404664           0x3a          58   
+.text.UsageFault_Handle   0x40469e            0x2           2   
+.text.SYS_TIME_Resource   0x4046a0           0x38          56   
+.text.setTimers           0x4046d8           0x38          56   
+.text.__putc_unbuffered   0x404710           0x38          56   
+.text.bin_index           0x404748           0x38          56   
+.text.__fmt_state         0x404780           0x38          56   
+.text.DRV_BM71_EUSART_R   0x4047b8           0x34          52   
+.text.TWIHS0_InitiateRe   0x4047ec           0x34          52   
+.text.SYS_TIME_Resource   0x404820           0x34          52   
+.text._bleEventHandler    0x404854           0x34          52   
+.text.DRV_BM71_SPPBuffC   0x404888           0x30          48   
+.rodata                   0x4048b8           0x30          48  Read-only const 
+.text.DRV_BM71_CommandD   0x4048e8           0x30          48   
+.text.SYS_TIME_UpdateTi   0x404918           0x30          48   
+.text.RTT_AlarmHandler    0x404948           0x30          48   
+.text.alloc_rev           0x404978           0x30          48   
+.text                     0x4049a8           0x30          48  App's exec code 
+.text.trim                0x4049d8           0x2e          46   
+.text.Dummy_App_Func      0x404a06            0x2           2   
+.text.TWIHS0_Write        0x404a08           0x2c          44   
+.text.TWIHS0_WriteRead    0x404a34           0x2c          44   
+.text.USART0_ErrorClear   0x404a60           0x2c          44   
+.text.setADCRange         0x404a8c           0x2c          44   
+.text.APP_Initialize      0x404ab8           0x2c          44   
+.text.__readv             0x404ae4           0x2c          44   
+.text.alloc_fwd           0x404b10           0x2c          44   
+.text.__writev            0x404b3c           0x2c          44   
+.text._sbrk               0x404b68           0x2c          44   
+.text.setPulseWidth       0x404b94           0x2a          42   
+.text.fwrite              0x404bbe           0x2a          42   
+.text.__pop_float         0x404be8           0x2a          42   
+.text.__dummy             0x404c12            0x2           2   
+.text.DRV_BM71_Timer1MS   0x404c14           0x28          40   
+.text.puts                0x404c3c           0x28          40   
+.text.__towrite_rw        0x404c64           0x28          40   
+.text.DRV_BM71_CommandS   0x404c8c           0x24          36   
+.text.DRV_BM71_UART_Ini   0x404cb0           0x24          36   
+.text.RTT_AlarmValueSet   0x404cd4           0x24          36   
+.text.TC0_CH0_TimerInit   0x404cf8           0x24          36   
+.text.TC0_CH0_Interrupt   0x404d1c           0x24          36   
+.text.printf              0x404d40           0x24          36   
+.text.fputs               0x404d64           0x22          34   
+.text.__dummy             0x404d86            0x2           2   
+.text.DRV_BM71_CommandD   0x404d88           0x20          32   
+.text.SYS_TIME_GetElaps   0x404da8           0x20          32   
+.text.setHandlers         0x404dc8           0x20          32   
+.text.lock_bin            0x404de8           0x20          32   
+.text.shutDown            0x404e08           0x1e          30   
+.text.wakeUp              0x404e26           0x1e          30   
+.text._clientCallBack     0x404e44           0x1c          28   
+.text.DRV_BM71_CommandS   0x404e60           0x1c          28   
+.text.SUPC_SleepModeEnt   0x404e7c           0x1c          28   
+.text.USART1_Initialize   0x404e98           0x1c          28   
+.text._mon_putc           0x404eb4           0x1c          28   
+.text.SYS_TIME_Counter6   0x404ed0           0x1c          28   
+.rodata.sysTimePlibAPI    0x404eec           0x1c          28   
+.text.vfprintf            0x404f08           0x1c          28   
+.rodata                   0x404f24           0x1c          28  Read-only const 
+.text.DRV_BM71_EUSART_W   0x404f40           0x18          24   
+.text.RTT_Enable          0x404f58           0x18          24   
+.text.RTT_TimerValueGet   0x404f70           0x18          24   
+.text.SUPC_Initialize     0x404f88           0x18          24   
+.rodata                   0x404fa0           0x18          24  Read-only const 
+.text.__towrite           0x404fb8           0x18          24   
+.text.__syscall_ret       0x404fd0           0x18          24   
+.text.__fwrite            0x404fe8           0x18          24   
+.text.memcpy              0x405000           0x16          22   
+.text.__expand_heap       0x405016           0x16          22   
+.text.DRV_BM71_GetPower   0x40502c           0x14          20   
+.text.DRV_BM71_SendData   0x405040           0x14          20   
+.rodata                   0x405054           0x14          20  Read-only const 
+.text.RTC_Initialize      0x405068           0x14          20   
+.text.RTT_Initialize      0x40507c           0x14          20   
+.text.TWIHS0_IsBusy       0x405090           0x14          20   
+.text.setFIFOAlmostFull   0x4050a4           0x14          20   
+.text.__init_stdout       0x4050b8           0x14          20   
+.text.DRV_BM71_EventHan   0x4050cc           0x12          18   
+.text.NVIC_INT_Disable    0x4050de           0x12          18   
+.text.NVIC_INT_Restore    0x4050f0           0x12          18   
+.text.setLEDMode          0x405102           0x12          18   
+.text.stpcpy              0x405114           0x12          18   
+.text.__dummy             0x405126            0x2           2   
 .text.DRV_BM71_RESET_Se   0x405128           0x10          16   
-.text.DRV_BM71_UART_Tra   0x405138           0x10          16   
-.text.EFC_Initialize      0x405148           0x10          16   
-.text.PIOA_InterruptHan   0x405158           0x10          16   
-.text.setPulseAmplitude   0x405168           0x10          16   
+.text.DRV_BM71_RESET_Se   0x405138           0x10          16   
+.text.DRV_BM71_UART_Tra   0x405148           0x10          16   
+.text.EFC_Initialize      0x405158           0x10          16   
+.text.PIOA_InterruptHan   0x405168           0x10          16   
 .text.setPulseAmplitude   0x405178           0x10          16   
-.text.enableAFULL         0x405188           0x10          16   
-.text.enablePROXINT       0x405198           0x10          16   
-.text.enableDIETEMPRDY    0x4051a8           0x10          16   
-.text.softReset           0x4051b8           0x10          16   
-.text.setbuf              0x4051c8           0x10          16   
-.text.memset              0x4051d8           0x10          16   
-.text.strlen              0x4051e8           0x10          16   
-.text.__init_stdio        0x4051f8           0x10          16   
-.rodata                   0x405208           0x20          32  Read-only const 
-.text.setProximityThres   0x405228            0xe          14   
-.text.tolower             0x405236            0xe          14   
-.text.toupper             0x405244            0xe          14   
-.text.DRV_BM71_Status     0x405254            0xc          12   
-.text.DRV_BM71_Timer_1m   0x405260            0xc          12   
-.text.DRV_BM71_UpdateCl   0x40526c            0xc          12   
-.text.RTT_CallbackRegis   0x405278            0xc          12   
-.text.TC0_CH0_TimerStar   0x405284            0xc          12   
-.text.TC0_CH0_TimerStop   0x405290            0xc          12   
-.text.TC0_CH0_TimerPeri   0x40529c            0xc          12   
-.text.TC0_CH0_TimerComp   0x4052a8            0xc          12   
-.text.TC0_CH0_TimerCoun   0x4052b4            0xc          12   
-.text.TC0_CH0_TimerCall   0x4052c0            0xc          12   
-.text.USART0_WriteCallb   0x4052cc            0xc          12   
-.text.USART0_ReadCallba   0x4052d8            0xc          12   
-.text.USART0_WriteIsBus   0x4052e4            0xc          12   
-.text.SYS_Tasks           0x4052f0            0xc          12   
-.text.strcpy              0x4052fc            0xc          12   
-.text.initMAX30102        0x405308            0xa          10   
-.text.TC0_CH0_TimerFreq   0x405314            0x8           8   
-.text.SYS_INT_Disable     0x40531c            0x8           8   
-.text.SYS_INT_Restore     0x405324            0x8           8   
-.rodata.sysTimeInitData   0x40532c            0x8           8   
-.text.putc                0x405334            0x8           8   
-.text.__get_stdout        0x40533c            0x8           8   
-.text.__read              0x405344            0x8           8   
-.text.close               0x40534c            0x8           8   
-.rodata                   0x405354            0x7           7  Read-only const 
-.text.__dummy             0x40535c            0x6           6   
-.text.__fwrite_min        0x405362            0x6           6   
-.text                     0x405368            0x4           4  App's exec code 
-.text.lseek               0x40536c            0x4           4   
-      Total ROM used  :      0x536b       21355  1.0% of 0x200000
+.text.setPulseAmplitude   0x405188           0x10          16   
+.text.enableAFULL         0x405198           0x10          16   
+.text.enablePROXINT       0x4051a8           0x10          16   
+.text.enableDIETEMPRDY    0x4051b8           0x10          16   
+.text.softReset           0x4051c8           0x10          16   
+.text.setbuf              0x4051d8           0x10          16   
+.text.memset              0x4051e8           0x10          16   
+.text.strlen              0x4051f8           0x10          16   
+.text.__init_stdio        0x405208           0x10          16   
+.rodata                   0x405218           0x20          32  Read-only const 
+.text.setProximityThres   0x405238            0xe          14   
+.text.tolower             0x405246            0xe          14   
+.text.toupper             0x405254            0xe          14   
+.text.DRV_BM71_Status     0x405264            0xc          12   
+.text.DRV_BM71_Timer_1m   0x405270            0xc          12   
+.text.DRV_BM71_UpdateCl   0x40527c            0xc          12   
+.text.RTT_CallbackRegis   0x405288            0xc          12   
+.text.TC0_CH0_TimerStar   0x405294            0xc          12   
+.text.TC0_CH0_TimerStop   0x4052a0            0xc          12   
+.text.TC0_CH0_TimerPeri   0x4052ac            0xc          12   
+.text.TC0_CH0_TimerComp   0x4052b8            0xc          12   
+.text.TC0_CH0_TimerCoun   0x4052c4            0xc          12   
+.text.TC0_CH0_TimerCall   0x4052d0            0xc          12   
+.text.USART0_WriteCallb   0x4052dc            0xc          12   
+.text.USART0_ReadCallba   0x4052e8            0xc          12   
+.text.USART0_WriteIsBus   0x4052f4            0xc          12   
+.text.SYS_Tasks           0x405300            0xc          12   
+.text.strcpy              0x40530c            0xc          12   
+.text.initMAX30102        0x405318            0xa          10   
+.text.TC0_CH0_TimerFreq   0x405324            0x8           8   
+.text.SYS_INT_Disable     0x40532c            0x8           8   
+.text.SYS_INT_Restore     0x405334            0x8           8   
+.rodata.sysTimeInitData   0x40533c            0x8           8   
+.text.putc                0x405344            0x8           8   
+.text.__get_stdout        0x40534c            0x8           8   
+.text.__read              0x405354            0x8           8   
+.text.close               0x40535c            0x8           8   
+.rodata                   0x405364            0x7           7  Read-only const 
+.text.__dummy             0x40536c            0x6           6   
+.text.__fwrite_min        0x405372            0x6           6   
+.text                     0x405378            0x4           4  App's exec code 
+.text.lseek               0x40537c            0x4           4   
+      Total ROM used  :      0x537b       21371  1.0% of 0x200000
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x536b       21355  1.0% of 0x200000
+         Total Program Memory used  :      0x537b       21371  1.0% of 0x200000
         --------------------------------------------------------------------------
 
 
@@ -458,16 +458,16 @@ section                    address  length [bytes]      (dec)  Description
 .bss.UR_TxBufStatus     0x20400f26            0x1           1   
 .bss.DRV_BM71_eusartRxC 0x20400f27            0x1           1   
 .bss.DRV_BM71_txByteQue 0x20400f28            0x1           1   
-.bss.pid                0x20400f29            0x1           1   
-.bss.ppgPwrRdyInt       0x20400f2a            0x1           1   
-.bss.rid                0x20400f2b            0x1           1   
-.bss.state              0x20400f2c            0x1           1   
-.bss.MAX30102_INTSTAT1  0x20400f2d            0x1           1   
-.data.MAX30102_FIFODATA 0x20400f2e            0x1           1   
-.data.MAX30102_FIFOWRIT 0x20400f2f            0x1           1   
-.data.MAX30102_INTSTAT2 0x20400f30            0x1           1   
-.data.MAX30102_PARTID   0x20400f31            0x1           1   
-.data.MAX30102_REVISION 0x20400f32            0x1           1   
+.bss.MAX30102_INTSTAT1  0x20400f29            0x1           1   
+.data.MAX30102_FIFODATA 0x20400f2a            0x1           1   
+.data.MAX30102_FIFOWRIT 0x20400f2b            0x1           1   
+.data.MAX30102_INTSTAT2 0x20400f2c            0x1           1   
+.data.MAX30102_PARTID   0x20400f2d            0x1           1   
+.data.MAX30102_REVISION 0x20400f2e            0x1           1   
+.bss.pid                0x20400f2f            0x1           1   
+.bss.ppgPwrRdyInt       0x20400f30            0x1           1   
+.bss.rid                0x20400f31            0x1           1   
+.bss.state              0x20400f32            0x1           1   
          Total RAM used  :       0xf33        3891  1.0% of 0x60000
         --------------------------------------------------------------------------
             Total Data Memory used  :       0xf33        3891  1.0% of 0x60000
@@ -795,26 +795,6 @@ Discarded input sections
  .text          0x00000000        0x0 build/DevBoard/production/_ext/1844592860/tasks.o
  .data          0x00000000        0x0 build/DevBoard/production/_ext/1844592860/tasks.o
  .bss           0x00000000        0x0 build/DevBoard/production/_ext/1844592860/tasks.o
- .text          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/main.o
- .data          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/main.o
- .bss           0x00000000        0x0 build/DevBoard/production/_ext/1360937237/main.o
- .text.readPostWakeUp
-                0x00000000       0x40 build/DevBoard/production/_ext/1360937237/main.o
- .text.test     0x00000000      0x220 build/DevBoard/production/_ext/1360937237/main.o
- .text.startTimers
-                0x00000000        0x8 build/DevBoard/production/_ext/1360937237/main.o
- .bss.ppgFifoFullInt
-                0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
- .bss.ppgProxInt
-                0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
- .bss.ppgTmpRdyInt
-                0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
- .bss.timerInt  0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
- .text          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/app.o
- .data          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/app.o
- .bss           0x00000000        0x0 build/DevBoard/production/_ext/1360937237/app.o
- .bss.tmrHandle
-                0x00000000        0x4 build/DevBoard/production/_ext/1360937237/app.o
  .text          0x00000000        0x0 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .data          0x00000000        0x0 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .bss           0x00000000        0x0 build/DevBoard/production/_ext/1844592860/MAX30102.o
@@ -858,6 +838,26 @@ Discarded input sections
                 0x00000000        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .data.MAX30102_FIFOREADPTR
                 0x00000000        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .text          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/main.o
+ .data          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/main.o
+ .bss           0x00000000        0x0 build/DevBoard/production/_ext/1360937237/main.o
+ .text.readPostWakeUp
+                0x00000000       0x40 build/DevBoard/production/_ext/1360937237/main.o
+ .text.test     0x00000000      0x220 build/DevBoard/production/_ext/1360937237/main.o
+ .text.startTimers
+                0x00000000        0x8 build/DevBoard/production/_ext/1360937237/main.o
+ .bss.ppgFifoFullInt
+                0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
+ .bss.ppgProxInt
+                0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
+ .bss.ppgTmpRdyInt
+                0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
+ .bss.timerInt  0x00000000        0x1 build/DevBoard/production/_ext/1360937237/main.o
+ .text          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/app.o
+ .data          0x00000000        0x0 build/DevBoard/production/_ext/1360937237/app.o
+ .bss           0x00000000        0x0 build/DevBoard/production/_ext/1360937237/app.o
+ .bss.tmrHandle
+                0x00000000        0x4 build/DevBoard/production/_ext/1360937237/app.o
  .text          0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .data          0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .xc_stack_usage
@@ -1759,9 +1759,9 @@ LOAD build/DevBoard/production/_ext/1844592860/exceptions.o
 LOAD build/DevBoard/production/_ext/1844592860/startup_xc32.o
 LOAD build/DevBoard/production/_ext/1844592860/libc_syscalls.o
 LOAD build/DevBoard/production/_ext/1844592860/tasks.o
+LOAD build/DevBoard/production/_ext/1844592860/MAX30102.o
 LOAD build/DevBoard/production/_ext/1360937237/main.o
 LOAD build/DevBoard/production/_ext/1360937237/app.o
-LOAD build/DevBoard/production/_ext/1844592860/MAX30102.o
                 0x00000001                __MPLAB_BUILD = 0x1
                 0x00600000                __rom_end = (ORIGIN (rom) + LENGTH (rom))
                 0x20460000                __ram_end = (ORIGIN (ram) + LENGTH (ram))
@@ -1930,11 +1930,11 @@ LOAD data_init
  .ARM.attributes
                 0x00000500       0x32 build/DevBoard/production/_ext/1844592860/tasks.o
  .ARM.attributes
-                0x00000532       0x32 build/DevBoard/production/_ext/1360937237/main.o
+                0x00000532       0x32 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .ARM.attributes
-                0x00000564       0x32 build/DevBoard/production/_ext/1360937237/app.o
+                0x00000564       0x32 build/DevBoard/production/_ext/1360937237/main.o
  .ARM.attributes
-                0x00000596       0x32 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00000596       0x32 build/DevBoard/production/_ext/1360937237/app.o
  .ARM.attributes
                 0x000005c8       0x32 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .ARM.attributes
@@ -2086,9 +2086,9 @@ LOAD data_init
  .comment       0x00000053       0x54 build/DevBoard/production/_ext/1844592860/exceptions.o
  .comment       0x00000053       0x54 build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .comment       0x00000053       0x54 build/DevBoard/production/_ext/1844592860/tasks.o
+ .comment       0x00000053       0x54 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .comment       0x00000053       0x54 build/DevBoard/production/_ext/1360937237/main.o
  .comment       0x00000053       0x54 build/DevBoard/production/_ext/1360937237/app.o
- .comment       0x00000053       0x54 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
@@ -2174,9 +2174,9 @@ LOAD data_init
  .debug_info    0x00016179      0x623 build/DevBoard/production/_ext/1844592860/exceptions.o
  .debug_info    0x0001679c      0xe4b build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .debug_info    0x000175e7      0x582 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_info    0x00017b69     0x25af build/DevBoard/production/_ext/1360937237/main.o
- .debug_info    0x0001a118     0x1313 build/DevBoard/production/_ext/1360937237/app.o
- .debug_info    0x0001b42b     0x231c build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_info    0x00017b69     0x231c build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_info    0x00019e85     0x25af build/DevBoard/production/_ext/1360937237/main.o
+ .debug_info    0x0001c434     0x1313 build/DevBoard/production/_ext/1360937237/app.o
  .debug_info    0x0001d747      0x2e1 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_info    0x0001da28      0x6b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_info    0x0001e0e1      0x5e5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
@@ -2263,9 +2263,9 @@ LOAD data_init
  .debug_abbrev  0x000031de       0xf0 build/DevBoard/production/_ext/1844592860/exceptions.o
  .debug_abbrev  0x000032ce      0x24f build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .debug_abbrev  0x0000351d      0x122 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_abbrev  0x0000363f      0x316 build/DevBoard/production/_ext/1360937237/main.o
- .debug_abbrev  0x00003955      0x241 build/DevBoard/production/_ext/1360937237/app.o
- .debug_abbrev  0x00003b96      0x2e9 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_abbrev  0x0000363f      0x2e9 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_abbrev  0x00003928      0x316 build/DevBoard/production/_ext/1360937237/main.o
+ .debug_abbrev  0x00003c3e      0x241 build/DevBoard/production/_ext/1360937237/app.o
  .debug_abbrev  0x00003e7f       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_abbrev  0x00003ead      0x126 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_abbrev  0x00003fd3       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
@@ -2348,9 +2348,9 @@ LOAD data_init
  .debug_loc     0x00005b10       0x45 build/DevBoard/production/_ext/1844592860/initialization.o
  .debug_loc     0x00005b55       0xa7 build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .debug_loc     0x00005bfc       0x20 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_loc     0x00005c1c      0x373 build/DevBoard/production/_ext/1360937237/main.o
- .debug_loc     0x00005f8f       0xb9 build/DevBoard/production/_ext/1360937237/app.o
- .debug_loc     0x00006048     0x152f build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_loc     0x00005c1c     0x152f build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_loc     0x0000714b      0x373 build/DevBoard/production/_ext/1360937237/main.o
+ .debug_loc     0x000074be       0xb9 build/DevBoard/production/_ext/1360937237/app.o
  .debug_loc     0x00007577       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_loc     0x0000758b       0x51 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_loc     0x000075dc       0x25 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
@@ -2455,11 +2455,11 @@ LOAD data_init
  .debug_aranges
                 0x00000858       0x20 build/DevBoard/production/_ext/1844592860/tasks.o
  .debug_aranges
-                0x00000878       0x68 build/DevBoard/production/_ext/1360937237/main.o
+                0x00000878      0x178 build/DevBoard/production/_ext/1844592860/MAX30102.o
  .debug_aranges
-                0x000008e0       0x38 build/DevBoard/production/_ext/1360937237/app.o
+                0x000009f0       0x68 build/DevBoard/production/_ext/1360937237/main.o
  .debug_aranges
-                0x00000918      0x178 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00000a58       0x38 build/DevBoard/production/_ext/1360937237/app.o
  .debug_aranges
                 0x00000a90       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_aranges
@@ -2605,9 +2605,9 @@ LOAD data_init
  .debug_ranges  0x00000888       0x38 build/DevBoard/production/_ext/1844592860/exceptions.o
  .debug_ranges  0x000008c0       0x48 build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .debug_ranges  0x00000908       0x10 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_ranges  0x00000918       0x58 build/DevBoard/production/_ext/1360937237/main.o
- .debug_ranges  0x00000970       0x28 build/DevBoard/production/_ext/1360937237/app.o
- .debug_ranges  0x00000998      0x168 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_ranges  0x00000918      0x168 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_ranges  0x00000a80       0x58 build/DevBoard/production/_ext/1360937237/main.o
+ .debug_ranges  0x00000ad8       0x28 build/DevBoard/production/_ext/1360937237/app.o
  .debug_ranges  0x00000b00       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_ranges  0x00000b10       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_ranges  0x00000b50       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
@@ -2663,7 +2663,7 @@ LOAD data_init
  .debug_ranges  0x000011f8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(sbrk.o)
  .debug_ranges  0x00001208       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(write.o)
 
-.debug_line     0x00000000    0x11482
+.debug_line     0x00000000    0x1148a
  .debug_line    0x00000000      0x95a build/DevBoard/production/_ext/1164684806/drv_bm71.o
  .debug_line    0x0000095a      0x53a build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
  .debug_line    0x00000e94      0x414 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
@@ -2673,84 +2673,84 @@ LOAD data_init
  .debug_line    0x00001c84      0x1b2 build/DevBoard/production/_ext/975527002/plib_clk.o
  .debug_line    0x00001e36      0x3dc build/DevBoard/production/_ext/975528730/plib_efc.o
  .debug_line    0x00002212      0x3ab build/DevBoard/production/_ext/176903338/plib_nvic.o
- .debug_line    0x000025bd      0x4f0 build/DevBoard/production/_ext/975539406/plib_pio.o
- .debug_line    0x00002aad      0x451 build/DevBoard/production/_ext/975541657/plib_rtc.o
- .debug_line    0x00002efe      0x34b build/DevBoard/production/_ext/975541674/plib_rtt.o
- .debug_line    0x00003249      0x470 build/DevBoard/production/_ext/177051549/plib_supc.o
- .debug_line    0x000036b9      0x266 build/DevBoard/production/_ext/522720201/plib_tc0.o
- .debug_line    0x0000391f      0x78a build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
- .debug_line    0x000040a9      0x43c build/DevBoard/production/_ext/1195404349/plib_usart1.o
- .debug_line    0x000044e5      0x693 build/DevBoard/production/_ext/1195404349/plib_usart0.o
- .debug_line    0x00004b78      0x246 build/DevBoard/production/_ext/1583257634/xc32_monitor.o
- .debug_line    0x00004dbe      0x2c7 build/DevBoard/production/_ext/1497937361/sys_int.o
- .debug_line    0x00005085     0x11d4 build/DevBoard/production/_ext/1790450025/sys_time.o
- .debug_line    0x00006259      0x540 build/DevBoard/production/_ext/1844592860/initialization.o
- .debug_line    0x00006799      0x1b3 build/DevBoard/production/_ext/1844592860/interrupts.o
- .debug_line    0x0000694c      0x20c build/DevBoard/production/_ext/1844592860/exceptions.o
- .debug_line    0x00006b58      0x46a build/DevBoard/production/_ext/1844592860/startup_xc32.o
- .debug_line    0x00006fc2      0x1e4 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_line    0x000071a6      0x711 build/DevBoard/production/_ext/1360937237/main.o
- .debug_line    0x000078b7      0x36a build/DevBoard/production/_ext/1360937237/app.o
- .debug_line    0x00007c21      0xc3a build/DevBoard/production/_ext/1844592860/MAX30102.o
- .debug_line    0x0000885b      0x110 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
- .debug_line    0x0000896b      0x24c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
- .debug_line    0x00008bb7      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
- .debug_line    0x00008ce9      0x1dd c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
- .debug_line    0x00008ec6      0x208 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdout.o)
- .debug_line    0x000090ce      0x16e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(printf.o)
- .debug_line    0x0000923c      0x1df c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(puts.o)
- .debug_line    0x0000941b      0x13b c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setbuf.o)
- .debug_line    0x00009556       0xf2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
- .debug_line    0x00009648       0xea c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
- .debug_line    0x00009732      0x19f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
- .debug_line    0x000098d1      0x24e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fputs.o)
- .debug_line    0x00009b1f      0x2cc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_read.o)
- .debug_line    0x00009deb      0x202 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite_rw.o)
- .debug_line    0x00009fed      0x287 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fwrite.o)
- .debug_line    0x0000a274      0x2a4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(putc.o)
- .debug_line    0x0000a518      0x2af c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setvbuf.o)
- .debug_line    0x0000a7c7      0x209 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(vfprintf.o)
- .debug_line    0x0000a9d0       0xe6 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strlen.o)
- .debug_line    0x0000aab6      0x250 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(readv.o)
- .debug_line    0x0000ad06      0xad3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
- .debug_line    0x0000b7d9      0x1ee c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(expand_heap.o)
- .debug_line    0x0000b9c7      0x1eb c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__init_stdio.o)
- .debug_line    0x0000bbb2      0x2b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__out.o)
- .debug_line    0x0000be6b      0x71f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
- .debug_line    0x0000c58a      0x1f8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__putc.o)
- .debug_line    0x0000c782      0x1f3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stderr.o)
- .debug_line    0x0000c975      0x30f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_close.o)
- .debug_line    0x0000cc84      0x3c4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_write.o)
- .debug_line    0x0000d048      0x1f3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdout.o)
- .debug_line    0x0000d23b      0x20f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite.o)
- .debug_line    0x0000d44a      0x177 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(atoi.o)
- .debug_line    0x0000d5c1      0x248 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(read.o)
- .debug_line    0x0000d809      0x251 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(writev.o)
- .debug_line    0x0000da5a      0x1dc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(tolower.o)
- .debug_line    0x0000dc36      0x1ad c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__errno_location.o)
- .debug_line    0x0000dde3      0x1e7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(syscall_ret.o)
- .debug_line    0x0000dfca      0x217 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__overflow.o)
- .debug_line    0x0000e1e1      0x6b5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_a.o)
- .debug_line    0x0000e896      0x2af c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_d.o)
- .debug_line    0x0000eb45      0x68b c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_fp.o)
- .debug_line    0x0000f1d0      0x259 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_o.o)
- .debug_line    0x0000f429      0x29a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_s.o)
- .debug_line    0x0000f6c3      0x2e3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_u.o)
- .debug_line    0x0000f9a6      0x38e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_x.o)
- .debug_line    0x0000fd34      0x27c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fwrite.o)
- .debug_line    0x0000ffb0      0x1f7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_float.o)
- .debug_line    0x000101a7      0x28d c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_int.o)
- .debug_line    0x00010434      0x272 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_ptr.o)
- .debug_line    0x000106a6       0xb5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strcpy.o)
- .debug_line    0x0001075b      0x1dc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(toupper.o)
- .debug_line    0x00010937      0x1d4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stpcpy.o)
- .debug_line    0x00010b0b       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_line    0x00010ba7      0x57e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
- .debug_line    0x00011125       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
- .debug_line    0x000111c1       0x9e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(close.o)
- .debug_line    0x0001125f       0x9e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(lseek.o)
- .debug_line    0x000112fd       0xb5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(sbrk.o)
- .debug_line    0x000113b2       0xd0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(write.o)
+ .debug_line    0x000025bd      0x4f8 build/DevBoard/production/_ext/975539406/plib_pio.o
+ .debug_line    0x00002ab5      0x451 build/DevBoard/production/_ext/975541657/plib_rtc.o
+ .debug_line    0x00002f06      0x34b build/DevBoard/production/_ext/975541674/plib_rtt.o
+ .debug_line    0x00003251      0x470 build/DevBoard/production/_ext/177051549/plib_supc.o
+ .debug_line    0x000036c1      0x266 build/DevBoard/production/_ext/522720201/plib_tc0.o
+ .debug_line    0x00003927      0x78a build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+ .debug_line    0x000040b1      0x43c build/DevBoard/production/_ext/1195404349/plib_usart1.o
+ .debug_line    0x000044ed      0x693 build/DevBoard/production/_ext/1195404349/plib_usart0.o
+ .debug_line    0x00004b80      0x246 build/DevBoard/production/_ext/1583257634/xc32_monitor.o
+ .debug_line    0x00004dc6      0x2c7 build/DevBoard/production/_ext/1497937361/sys_int.o
+ .debug_line    0x0000508d     0x11d4 build/DevBoard/production/_ext/1790450025/sys_time.o
+ .debug_line    0x00006261      0x540 build/DevBoard/production/_ext/1844592860/initialization.o
+ .debug_line    0x000067a1      0x1b3 build/DevBoard/production/_ext/1844592860/interrupts.o
+ .debug_line    0x00006954      0x20c build/DevBoard/production/_ext/1844592860/exceptions.o
+ .debug_line    0x00006b60      0x46a build/DevBoard/production/_ext/1844592860/startup_xc32.o
+ .debug_line    0x00006fca      0x1e4 build/DevBoard/production/_ext/1844592860/tasks.o
+ .debug_line    0x000071ae      0xc3a build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_line    0x00007de8      0x711 build/DevBoard/production/_ext/1360937237/main.o
+ .debug_line    0x000084f9      0x36a build/DevBoard/production/_ext/1360937237/app.o
+ .debug_line    0x00008863      0x110 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+ .debug_line    0x00008973      0x24c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+ .debug_line    0x00008bbf      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
+ .debug_line    0x00008cf1      0x1dd c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
+ .debug_line    0x00008ece      0x208 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdout.o)
+ .debug_line    0x000090d6      0x16e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(printf.o)
+ .debug_line    0x00009244      0x1df c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(puts.o)
+ .debug_line    0x00009423      0x13b c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setbuf.o)
+ .debug_line    0x0000955e       0xf2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+ .debug_line    0x00009650       0xea c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+ .debug_line    0x0000973a      0x19f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__environ.o)
+ .debug_line    0x000098d9      0x24e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fputs.o)
+ .debug_line    0x00009b27      0x2cc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_read.o)
+ .debug_line    0x00009df3      0x202 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite_rw.o)
+ .debug_line    0x00009ff5      0x287 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fwrite.o)
+ .debug_line    0x0000a27c      0x2a4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(putc.o)
+ .debug_line    0x0000a520      0x2af c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setvbuf.o)
+ .debug_line    0x0000a7cf      0x209 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(vfprintf.o)
+ .debug_line    0x0000a9d8       0xe6 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strlen.o)
+ .debug_line    0x0000aabe      0x250 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(readv.o)
+ .debug_line    0x0000ad0e      0xad3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+ .debug_line    0x0000b7e1      0x1ee c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(expand_heap.o)
+ .debug_line    0x0000b9cf      0x1eb c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__init_stdio.o)
+ .debug_line    0x0000bbba      0x2b9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__out.o)
+ .debug_line    0x0000be73      0x71f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
+ .debug_line    0x0000c592      0x1f8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__putc.o)
+ .debug_line    0x0000c78a      0x1f3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stderr.o)
+ .debug_line    0x0000c97d      0x30f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_close.o)
+ .debug_line    0x0000cc8c      0x3c4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_write.o)
+ .debug_line    0x0000d050      0x1f3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdout.o)
+ .debug_line    0x0000d243      0x20f c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite.o)
+ .debug_line    0x0000d452      0x177 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(atoi.o)
+ .debug_line    0x0000d5c9      0x248 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(read.o)
+ .debug_line    0x0000d811      0x251 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(writev.o)
+ .debug_line    0x0000da62      0x1dc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(tolower.o)
+ .debug_line    0x0000dc3e      0x1ad c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__errno_location.o)
+ .debug_line    0x0000ddeb      0x1e7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(syscall_ret.o)
+ .debug_line    0x0000dfd2      0x217 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__overflow.o)
+ .debug_line    0x0000e1e9      0x6b5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_a.o)
+ .debug_line    0x0000e89e      0x2af c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_d.o)
+ .debug_line    0x0000eb4d      0x68b c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_fp.o)
+ .debug_line    0x0000f1d8      0x259 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_o.o)
+ .debug_line    0x0000f431      0x29a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_s.o)
+ .debug_line    0x0000f6cb      0x2e3 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_u.o)
+ .debug_line    0x0000f9ae      0x38e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_x.o)
+ .debug_line    0x0000fd3c      0x27c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fwrite.o)
+ .debug_line    0x0000ffb8      0x1f7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_float.o)
+ .debug_line    0x000101af      0x28d c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_int.o)
+ .debug_line    0x0001043c      0x272 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_ptr.o)
+ .debug_line    0x000106ae       0xb5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strcpy.o)
+ .debug_line    0x00010763      0x1dc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(toupper.o)
+ .debug_line    0x0001093f      0x1d4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stpcpy.o)
+ .debug_line    0x00010b13       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x00010baf      0x57e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_line    0x0001112d       0x9c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+ .debug_line    0x000111c9       0x9e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(close.o)
+ .debug_line    0x00011267       0x9e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(lseek.o)
+ .debug_line    0x00011305       0xb5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(sbrk.o)
+ .debug_line    0x000113ba       0xd0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(write.o)
 
 .debug_str      0x00000000      0xd01
  .debug_str     0x00000000      0x1d6 build/DevBoard/production/_ext/1164684806/drv_bm71.o
@@ -2778,9 +2778,9 @@ LOAD data_init
  .debug_str     0x000006bd        0x0 build/DevBoard/production/_ext/1844592860/exceptions.o
  .debug_str     0x000006bd       0x2f build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .debug_str     0x000006ec       0x19 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_str     0x00000705      0x201 build/DevBoard/production/_ext/1360937237/main.o
- .debug_str     0x00000906       0x83 build/DevBoard/production/_ext/1360937237/app.o
- .debug_str     0x00000989       0x6a build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_str     0x00000705       0x6a build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_str     0x0000076f      0x201 build/DevBoard/production/_ext/1360937237/main.o
+ .debug_str     0x00000970       0x83 build/DevBoard/production/_ext/1360937237/app.o
  .debug_str     0x000009f3        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_str     0x000009f3        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_str     0x000009f3        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(libc.o)
@@ -2867,9 +2867,9 @@ LOAD data_init
  .debug_frame   0x000011d8       0x70 build/DevBoard/production/_ext/1844592860/exceptions.o
  .debug_frame   0x00001248       0x38 build/DevBoard/production/_ext/1844592860/startup_xc32.o
  .debug_frame   0x00001280       0x28 build/DevBoard/production/_ext/1844592860/tasks.o
- .debug_frame   0x000012a8      0x134 build/DevBoard/production/_ext/1360937237/main.o
- .debug_frame   0x000013dc       0x60 build/DevBoard/production/_ext/1360937237/app.o
- .debug_frame   0x0000143c      0x498 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_frame   0x000012a8      0x498 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .debug_frame   0x00001740      0x134 build/DevBoard/production/_ext/1360937237/main.o
+ .debug_frame   0x00001874       0x60 build/DevBoard/production/_ext/1360937237/app.o
  .debug_frame   0x000018d4       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
  .debug_frame   0x0000190c       0x3c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
  .debug_frame   0x00001948       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
@@ -3364,52 +3364,52 @@ __xc_reference_data
                 0x20400f28        0x1 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
                 0x20400f28                DRV_BM71_txByteQueued
 
-.bss.pid%59     0x20400f29        0x1
- .bss.pid       0x20400f29        0x1 build/DevBoard/production/_ext/1360937237/main.o
-                0x20400f29                pid
-
-.bss.ppgPwrRdyInt%60
-                0x20400f2a        0x1
- .bss.ppgPwrRdyInt
-                0x20400f2a        0x1 build/DevBoard/production/_ext/1360937237/main.o
-
-.bss.rid%61     0x20400f2b        0x1
- .bss.rid       0x20400f2b        0x1 build/DevBoard/production/_ext/1360937237/main.o
-                0x20400f2b                rid
-
-.bss.state%62   0x20400f2c        0x1
- .bss.state     0x20400f2c        0x1 build/DevBoard/production/_ext/1360937237/main.o
-                0x20400f2c                state
-
-.bss.MAX30102_INTSTAT1%63
-                0x20400f2d        0x1
+.bss.MAX30102_INTSTAT1%59
+                0x20400f29        0x1
  .bss.MAX30102_INTSTAT1
+                0x20400f29        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+
+.data.MAX30102_FIFODATA%60
+                0x20400f2a        0x1
+ .data.MAX30102_FIFODATA
+                0x20400f2a        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+
+.data.MAX30102_FIFOWRITEPTR%61
+                0x20400f2b        0x1
+ .data.MAX30102_FIFOWRITEPTR
+                0x20400f2b        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+
+.data.MAX30102_INTSTAT2%62
+                0x20400f2c        0x1
+ .data.MAX30102_INTSTAT2
+                0x20400f2c        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+
+.data.MAX30102_PARTID%63
+                0x20400f2d        0x1
+ .data.MAX30102_PARTID
                 0x20400f2d        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
 
-.data.MAX30102_FIFODATA%64
+.data.MAX30102_REVISIONID%64
                 0x20400f2e        0x1
- .data.MAX30102_FIFODATA
+ .data.MAX30102_REVISIONID
                 0x20400f2e        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
 
-.data.MAX30102_FIFOWRITEPTR%65
-                0x20400f2f        0x1
- .data.MAX30102_FIFOWRITEPTR
-                0x20400f2f        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+.bss.pid%65     0x20400f2f        0x1
+ .bss.pid       0x20400f2f        0x1 build/DevBoard/production/_ext/1360937237/main.o
+                0x20400f2f                pid
 
-.data.MAX30102_INTSTAT2%66
+.bss.ppgPwrRdyInt%66
                 0x20400f30        0x1
- .data.MAX30102_INTSTAT2
-                0x20400f30        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+ .bss.ppgPwrRdyInt
+                0x20400f30        0x1 build/DevBoard/production/_ext/1360937237/main.o
 
-.data.MAX30102_PARTID%67
-                0x20400f31        0x1
- .data.MAX30102_PARTID
-                0x20400f31        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+.bss.rid%67     0x20400f31        0x1
+ .bss.rid       0x20400f31        0x1 build/DevBoard/production/_ext/1360937237/main.o
+                0x20400f31                rid
 
-.data.MAX30102_REVISIONID%68
-                0x20400f32        0x1
- .data.MAX30102_REVISIONID
-                0x20400f32        0x1 build/DevBoard/production/_ext/1844592860/MAX30102.o
+.bss.state%68   0x20400f32        0x1
+ .bss.state     0x20400f32        0x1 build/DevBoard/production/_ext/1360937237/main.o
+                0x20400f32                state
 
 .eh_frame%z1    0x00000000        0x0
  .eh_frame      0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
@@ -3510,1164 +3510,1164 @@ __xc_reference_data
  .text.free     0x0040234c       0xf8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
                 0x0040234c                free
 
-.text.MAX30102_IntHandler%87
-                0x00402444       0xe4
- .text.MAX30102_IntHandler
-                0x00402444       0xe4 build/DevBoard/production/_ext/1360937237/main.o
-
-.text.PIO_Initialize%88
-                0x00402528       0xdc
+.text.PIO_Initialize%87
+                0x00402444       0xec
  .text.PIO_Initialize
-                0x00402528       0xdc build/DevBoard/production/_ext/975539406/plib_pio.o
-                0x00402528                PIO_Initialize
+                0x00402444       0xec build/DevBoard/production/_ext/975539406/plib_pio.o
+                0x00402444                PIO_Initialize
+
+.text.MAX30102_IntHandler%88
+                0x00402530       0xe4
+ .text.MAX30102_IntHandler
+                0x00402530       0xe4 build/DevBoard/production/_ext/1360937237/main.o
 
 .text.SYS_TIME_PLIBCallback%89
-                0x00402604       0xd4
+                0x00402614       0xd4
  .text.SYS_TIME_PLIBCallback
-                0x00402604       0xd4 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00402614       0xd4 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.DRV_BM71_CommandHandler%90
-                0x004026d8       0xc8
+                0x004026e8       0xc8
  .text.DRV_BM71_CommandHandler
-                0x004026d8       0xc8 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
-                0x004026d8                DRV_BM71_CommandHandler
+                0x004026e8       0xc8 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
+                0x004026e8                DRV_BM71_CommandHandler
 
 .text.RTC_TimeGet%91
-                0x004027a0       0xc4
+                0x004027b0       0xc4
  .text.RTC_TimeGet
-                0x004027a0       0xc4 build/DevBoard/production/_ext/975541657/plib_rtc.o
-                0x004027a0                RTC_TimeGet
+                0x004027b0       0xc4 build/DevBoard/production/_ext/975541657/plib_rtc.o
+                0x004027b0                RTC_TimeGet
 
-.text.floor%92  0x00402868       0xc4
- .text.floor    0x00402868       0xc4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libm-emfloat.a(lib_a-_FLOOR.o)
-                0x00402868                floor
+.text.floor%92  0x00402878       0xc4
+ .text.floor    0x00402878       0xc4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libm-emfloat.a(lib_a-_FLOOR.o)
+                0x00402878                floor
 
 .text.DRV_BM71_SendBytesAsCompleteCommand%93
-                0x0040292c       0xc0
+                0x0040293c       0xc0
  .text.DRV_BM71_SendBytesAsCompleteCommand
-                0x0040292c       0xc0 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
-                0x0040292c                DRV_BM71_SendBytesAsCompleteCommand
+                0x0040293c       0xc0 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
+                0x0040293c                DRV_BM71_SendBytesAsCompleteCommand
 
 .text.SYS_TIME_HwTimerCompareUpdate%94
-                0x004029ec       0xb4
+                0x004029fc       0xb4
  .text.SYS_TIME_HwTimerCompareUpdate
-                0x004029ec       0xb4 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x004029fc       0xb4 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.SYS_TIME_TimerObjectCreate%95
-                0x00402aa0       0xb0
+                0x00402ab0       0xb0
  .text.SYS_TIME_TimerObjectCreate
-                0x00402aa0       0xb0 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00402ab0       0xb0 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.__fmt_d%96
-                0x00402b50       0xa8
- .text.__fmt_d  0x00402b50       0xa8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_d.o)
-                0x00402b50                __fmt_d
-                0x00402b50                __fmt_d_needed
+                0x00402b60       0xa8
+ .text.__fmt_d  0x00402b60       0xa8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_d.o)
+                0x00402b60                __fmt_d
+                0x00402b60                __fmt_d_needed
 
 .text.SYS_TIME_Initialize%97
-                0x00402bf8       0xa4
+                0x00402c08       0xa4
  .text.SYS_TIME_Initialize
-                0x00402bf8       0xa4 build/DevBoard/production/_ext/1790450025/sys_time.o
-                0x00402bf8                SYS_TIME_Initialize
+                0x00402c08       0xa4 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00402c08                SYS_TIME_Initialize
 
 .text.TWIHS0_InitiateTransfer%98
-                0x00402c9c       0xa0
+                0x00402cac       0xa0
  .text.TWIHS0_InitiateTransfer
-                0x00402c9c       0xa0 build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+                0x00402cac       0xa0 build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
 
 .text.__pop_int%99
-                0x00402d3c       0xa0
+                0x00402d4c       0xa0
  .text.__pop_int
-                0x00402d3c       0xa0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_int.o)
-                0x00402d3c                __pop_int_needed
-                0x00402d3c                __pop_int
+                0x00402d4c       0xa0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_int.o)
+                0x00402d4c                __pop_int_needed
+                0x00402d4c                __pop_int
 
 .text.SYS_TIME_AddToList%100
-                0x00402ddc       0x90
+                0x00402dec       0x90
  .text.SYS_TIME_AddToList
-                0x00402ddc       0x90 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00402dec       0x90 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.ppgSetup%101
-                0x00402e6c       0x90
+                0x00402e7c       0x90
  .text.ppgSetup
-                0x00402e6c       0x90 build/DevBoard/production/_ext/1360937237/main.o
-                0x00402e6c                ppgSetup
+                0x00402e7c       0x90 build/DevBoard/production/_ext/1360937237/main.o
+                0x00402e7c                ppgSetup
 
 .text.__write_buffered%102
-                0x00402efc       0x8a
+                0x00402f0c       0x8a
  .text.__write_buffered
-                0x00402efc       0x8a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_write.o)
-                0x00402efc                __do_write
+                0x00402f0c       0x8a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_write.o)
+                0x00402f0c                __do_write
 
 .text.readRevisionID%103
-                0x00402f88       0x88
+                0x00402f98       0x88
  .text.readRevisionID
-                0x00402f88       0x88 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00402f88                readRevisionID
+                0x00402f98       0x88 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00402f98                readRevisionID
 
 .text.__pic32c_data_initialization%104
-                0x00403010       0x88
+                0x00403020       0x88
  .text.__pic32c_data_initialization
-                0x00403010       0x88 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
-                0x00403010                __pic32c_data_initialization
+                0x00403020       0x88 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(data_init.o)
+                0x00403020                __pic32c_data_initialization
 
 .text.__pad%105
-                0x00403098       0x7e
- .text.__pad    0x00403098       0x7e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
-                0x00403098                __pad
+                0x004030a8       0x7e
+ .text.__pad    0x004030a8       0x7e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
+                0x004030a8                __pad
 
 .text.SYS_Initialize%106
-                0x00403118       0x7c
+                0x00403128       0x7c
  .text.SYS_Initialize
-                0x00403118       0x7c build/DevBoard/production/_ext/1844592860/initialization.o
-                0x00403118                SYS_Initialize
+                0x00403128       0x7c build/DevBoard/production/_ext/1844592860/initialization.o
+                0x00403128                SYS_Initialize
 
 .text.__pop_ptr%107
-                0x00403194       0x7c
+                0x004031a4       0x7c
  .text.__pop_ptr
-                0x00403194       0x7c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_ptr.o)
-                0x00403194                __pop_ptr
-                0x00403194                __pop_ptr_needed
+                0x004031a4       0x7c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_ptr.o)
+                0x004031a4                __pop_ptr
+                0x004031a4                __pop_ptr_needed
 
 .text.DRV_BM71_Open%108
-                0x00403210       0x78
+                0x00403220       0x78
  .text.DRV_BM71_Open
-                0x00403210       0x78 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00403210                DRV_BM71_Open
+                0x00403220       0x78 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00403220                DRV_BM71_Open
 
 .text.__cvt_u%109
-                0x00403288       0x78
- .text.__cvt_u  0x00403288       0x78 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_u.o)
-                0x00403288                __cvt_u
+                0x00403298       0x78
+ .text.__cvt_u  0x00403298       0x78 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_u.o)
+                0x00403298                __cvt_u
 
 .text.__stdio_write_buffered%110
-                0x00403300       0x76
+                0x00403310       0x76
  .text.__stdio_write_buffered
-                0x00403300       0x76 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_write.o)
-                0x00403300                __stdio_write_buffered
+                0x00403310       0x76 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_write.o)
+                0x00403310                __stdio_write_buffered
 
 .text.loadBuffers%111
-                0x00403378       0x74
+                0x00403388       0x74
  .text.loadBuffers
-                0x00403378       0x74 build/DevBoard/production/_ext/1360937237/main.o
-                0x00403378                loadBuffers
+                0x00403388       0x74 build/DevBoard/production/_ext/1360937237/main.o
+                0x00403388                loadBuffers
 
 .text.__fmt_o%112
-                0x004033ec       0x72
- .text.__fmt_o  0x004033ec       0x72 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_o.o)
-                0x004033ec                __fmt_o
-                0x004033ec                __fmt_o_needed
+                0x004033fc       0x72
+ .text.__fmt_o  0x004033fc       0x72 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_o.o)
+                0x004033fc                __fmt_o
+                0x004033fc                __fmt_o_needed
 
 .text.DRV_BM71_AddBytesToSPPBuff%113
-                0x00403460       0x70
+                0x00403470       0x70
  .text.DRV_BM71_AddBytesToSPPBuff
-                0x00403460       0x70 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00403460                DRV_BM71_AddBytesToSPPBuff
+                0x00403470       0x70 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00403470                DRV_BM71_AddBytesToSPPBuff
 
 .text.DRV_BM71_BLE_WriteAdvertisingData%114
-                0x004034d0       0x70
+                0x004034e0       0x70
  .text.DRV_BM71_BLE_WriteAdvertisingData
-                0x004034d0       0x70 build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
-                0x004034d0                DRV_BM71_BLE_WriteAdvertisingData
+                0x004034e0       0x70 build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
+                0x004034e0                DRV_BM71_BLE_WriteAdvertisingData
 
 .text.USART0_Write%115
-                0x00403540       0x70
+                0x00403550       0x70
  .text.USART0_Write
-                0x00403540       0x70 build/DevBoard/production/_ext/1195404349/plib_usart0.o
-                0x00403540                USART0_Write
+                0x00403550       0x70 build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x00403550                USART0_Write
 
 .text.bitMask%116
-                0x004035b0       0x6e
- .text.bitMask  0x004035b0       0x6e build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x004035b0                bitMask
+                0x004035c0       0x6e
+ .text.bitMask  0x004035c0       0x6e build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x004035c0                bitMask
 
 .text.DRV_BM71_SendSPPData%117
-                0x0040361e       0x6a
+                0x0040362e       0x6a
  .text.DRV_BM71_SendSPPData
-                0x0040361e       0x6a build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
-                0x0040361e                DRV_BM71_SendSPPData
+                0x0040362e       0x6a build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
+                0x0040362e                DRV_BM71_SendSPPData
 
 .text.DRV_BM71_UART_TransferNextByte%118
-                0x00403688       0x68
+                0x00403698       0x68
  .text.DRV_BM71_UART_TransferNextByte
-                0x00403688       0x68 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
-                0x00403688                DRV_BM71_UART_TransferNextByte
+                0x00403698       0x68 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
+                0x00403698                DRV_BM71_UART_TransferNextByte
 
 .text.CLOCK_Initialize%119
-                0x004036f0       0x68
+                0x00403700       0x68
  .text.CLOCK_Initialize
-                0x004036f0       0x68 build/DevBoard/production/_ext/975527002/plib_clk.o
-                0x004036f0                CLOCK_Initialize
+                0x00403700       0x68 build/DevBoard/production/_ext/975527002/plib_clk.o
+                0x00403700                CLOCK_Initialize
 
 .text.RTT_InterruptHandler%120
-                0x00403758       0x68
+                0x00403768       0x68
  .text.RTT_InterruptHandler
-                0x00403758       0x68 build/DevBoard/production/_ext/975541674/plib_rtt.o
-                0x00403758                RTT_InterruptHandler
+                0x00403768       0x68 build/DevBoard/production/_ext/975541674/plib_rtt.o
+                0x00403768                RTT_InterruptHandler
 
 .text.DRV_BM71_UART_Tasks%121
-                0x004037c0       0x64
+                0x004037d0       0x64
  .text.DRV_BM71_UART_Tasks
-                0x004037c0       0x64 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
-                0x004037c0                DRV_BM71_UART_Tasks
+                0x004037d0       0x64 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
+                0x004037d0                DRV_BM71_UART_Tasks
 
 .text.PIO_PinInterruptCallbackRegister%122
-                0x00403824       0x64
+                0x00403834       0x64
  .text.PIO_PinInterruptCallbackRegister
-                0x00403824       0x64 build/DevBoard/production/_ext/975539406/plib_pio.o
-                0x00403824                PIO_PinInterruptCallbackRegister
+                0x00403834       0x64 build/DevBoard/production/_ext/975539406/plib_pio.o
+                0x00403834                PIO_PinInterruptCallbackRegister
 
 .text.clearFIFO%123
-                0x00403888       0x64
+                0x00403898       0x64
  .text.clearFIFO
-                0x00403888       0x64 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403888                clearFIFO
+                0x00403898       0x64 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00403898                clearFIFO
 
 .text.__stdio_close_rw%124
-                0x004038ec       0x64
+                0x004038fc       0x64
  .text.__stdio_close_rw
-                0x004038ec       0x64 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_close.o)
-                0x004038ec                __stdio_close_rw
+                0x004038fc       0x64 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_close.o)
+                0x004038fc                __stdio_close_rw
 
 .text.APP_Tasks%125
-                0x00403950       0x60
+                0x00403960       0x60
  .text.APP_Tasks
-                0x00403950       0x60 build/DevBoard/production/_ext/1360937237/app.o
-                0x00403950                APP_Tasks
+                0x00403960       0x60 build/DevBoard/production/_ext/1360937237/app.o
+                0x00403960                APP_Tasks
 
 .text.__stdio_read%126
-                0x004039b0       0x60
+                0x004039c0       0x60
  .text.__stdio_read
-                0x004039b0       0x60 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_read.o)
-                0x004039b0                __stdio_read
+                0x004039c0       0x60 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdio_read.o)
+                0x004039c0                __stdio_read
 
 .text.DRV_BM71_BLE_SetAdvertisingParams%127
-                0x00403a10       0x5c
+                0x00403a20       0x5c
  .text.DRV_BM71_BLE_SetAdvertisingParams
-                0x00403a10       0x5c build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
-                0x00403a10                DRV_BM71_BLE_SetAdvertisingParams
+                0x00403a20       0x5c build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
+                0x00403a20                DRV_BM71_BLE_SetAdvertisingParams
 
 .text.NVIC_Initialize%128
-                0x00403a6c       0x5c
+                0x00403a7c       0x5c
  .text.NVIC_Initialize
-                0x00403a6c       0x5c build/DevBoard/production/_ext/176903338/plib_nvic.o
-                0x00403a6c                NVIC_Initialize
+                0x00403a7c       0x5c build/DevBoard/production/_ext/176903338/plib_nvic.o
+                0x00403a7c                NVIC_Initialize
 
 .text.getINT1%129
-                0x00403ac8       0x5c
- .text.getINT1  0x00403ac8       0x5c build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403ac8                getINT1
+                0x00403ad8       0x5c
+ .text.getINT1  0x00403ad8       0x5c build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00403ad8                getINT1
 
 .text.getINT2%130
-                0x00403b24       0x5c
- .text.getINT2  0x00403b24       0x5c build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403b24                getINT2
+                0x00403b34       0x5c
+ .text.getINT2  0x00403b34       0x5c build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00403b34                getINT2
 
 .text.readPartID%131
-                0x00403b80       0x5c
+                0x00403b90       0x5c
  .text.readPartID
-                0x00403b80       0x5c build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403b80                readPartID
+                0x00403b90       0x5c build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00403b90                readPartID
 
 .text.__libc_start_init%132
-                0x00403bdc       0x5c
+                0x00403bec       0x5c
  .text.__libc_start_init
-                0x00403bdc       0x5c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
-                0x00403bdc                __libc_init_array
+                0x00403bec       0x5c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x00403bec                __libc_init_array
 
-.rodata%133     0x00403c38       0x5c
- .rodata        0x00403c38       0x5c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+.rodata%133     0x00403c48       0x5c
+ .rodata        0x00403c48       0x5c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.DRV_BM71_Initialize%134
-                0x00403c94       0x58
+                0x00403ca4       0x58
  .text.DRV_BM71_Initialize
-                0x00403c94       0x58 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00403c94                DRV_BM71_Initialize
+                0x00403ca4       0x58 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00403ca4                DRV_BM71_Initialize
 
 .text._PIO_Interrupt_Handler%135
-                0x00403cec       0x58
+                0x00403cfc       0x58
  .text._PIO_Interrupt_Handler
-                0x00403cec       0x58 build/DevBoard/production/_ext/975539406/plib_pio.o
-                0x00403cec                _PIO_Interrupt_Handler
+                0x00403cfc       0x58 build/DevBoard/production/_ext/975539406/plib_pio.o
+                0x00403cfc                _PIO_Interrupt_Handler
 
 .text.SYS_TIME_TimerStart%136
-                0x00403d44       0x58
+                0x00403d54       0x58
  .text.SYS_TIME_TimerStart
-                0x00403d44       0x58 build/DevBoard/production/_ext/1790450025/sys_time.o
-                0x00403d44                SYS_TIME_TimerStart
+                0x00403d54       0x58 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00403d54                SYS_TIME_TimerStart
 
 .text.unbin%137
-                0x00403d9c       0x58
- .text.unbin    0x00403d9c       0x58 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+                0x00403dac       0x58
+ .text.unbin    0x00403dac       0x58 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.__fmt_s%138
-                0x00403df4       0x58
- .text.__fmt_s  0x00403df4       0x58 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_s.o)
-                0x00403df4                __fmt_s
-                0x00403df4                __fmt_0_needed
-                0x00403df4                __fmt_s_needed
+                0x00403e04       0x58
+ .text.__fmt_s  0x00403e04       0x58 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_s.o)
+                0x00403e04                __fmt_s
+                0x00403e04                __fmt_0_needed
+                0x00403e04                __fmt_s_needed
 
 .text.__fmt_u%139
-                0x00403e4c       0x56
- .text.__fmt_u  0x00403e4c       0x56 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_u.o)
-                0x00403e4c                __fmt_u_needed
-                0x00403e4c                __fmt_u
+                0x00403e5c       0x56
+ .text.__fmt_u  0x00403e5c       0x56 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_u.o)
+                0x00403e5c                __fmt_u_needed
+                0x00403e5c                __fmt_u
 
 .text.SYS_TIME_RemoveFromList%140
-                0x00403ea4       0x54
+                0x00403eb4       0x54
  .text.SYS_TIME_RemoveFromList
-                0x00403ea4       0x54 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00403eb4       0x54 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.SYS_TIME_CallbackRegisterMS%141
-                0x00403ef8       0x54
+                0x00403f08       0x54
  .text.SYS_TIME_CallbackRegisterMS
-                0x00403ef8       0x54 build/DevBoard/production/_ext/1790450025/sys_time.o
-                0x00403ef8                SYS_TIME_CallbackRegisterMS
+                0x00403f08       0x54 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00403f08                SYS_TIME_CallbackRegisterMS
 
 .text.setSampleRate%142
-                0x00403f4c       0x54
+                0x00403f5c       0x54
  .text.setSampleRate
-                0x00403f4c       0x54 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403f4c                setSampleRate
+                0x00403f5c       0x54 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00403f5c                setSampleRate
 
 .text.enableSlot%143
-                0x00403fa0       0x50
+                0x00403fb0       0x50
  .text.enableSlot
-                0x00403fa0       0x50 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403fa0                enableSlot
+                0x00403fb0       0x50 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00403fb0                enableSlot
 
 .text.setFIFOAverage%144
-                0x00403ff0       0x4e
+                0x00404000       0x4e
  .text.setFIFOAverage
-                0x00403ff0       0x4e build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00403ff0                setFIFOAverage
+                0x00404000       0x4e build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00404000                setFIFOAverage
 
 .text.__overflow%145
-                0x0040403e       0x4e
+                0x0040404e       0x4e
  .text.__overflow
-                0x0040403e       0x4e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__overflow.o)
-                0x0040403e                __overflow
+                0x0040404e       0x4e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__overflow.o)
+                0x0040404e                __overflow
 
-.rodata%146     0x0040408c       0x4c
- .rodata        0x0040408c       0x4c build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
+.rodata%146     0x0040409c       0x4c
+ .rodata        0x0040409c       0x4c build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
 
 .text.DRV_BM71_UART_TransferFirstByte%147
-                0x004040d8       0x4c
+                0x004040e8       0x4c
  .text.DRV_BM71_UART_TransferFirstByte
-                0x004040d8       0x4c build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
-                0x004040d8                DRV_BM71_UART_TransferFirstByte
+                0x004040e8       0x4c build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
+                0x004040e8                DRV_BM71_UART_TransferFirstByte
 
 .text.USART1_Write%148
-                0x00404124       0x4c
+                0x00404134       0x4c
  .text.USART1_Write
-                0x00404124       0x4c build/DevBoard/production/_ext/1195404349/plib_usart1.o
-                0x00404124                USART1_Write
+                0x00404134       0x4c build/DevBoard/production/_ext/1195404349/plib_usart1.o
+                0x00404134                USART1_Write
 
 .text.writeRegister%149
-                0x00404170       0x4c
+                0x00404180       0x4c
  .text.writeRegister
-                0x00404170       0x4c build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00404170                writeRegister
+                0x00404180       0x4c build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00404180                writeRegister
 
 .text.setvbuf%150
-                0x004041bc       0x4c
- .text.setvbuf  0x004041bc       0x4c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setvbuf.o)
-                0x004041bc                setvbuf
+                0x004041cc       0x4c
+ .text.setvbuf  0x004041cc       0x4c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setvbuf.o)
+                0x004041cc                setvbuf
 
 .text.DRV_BM71_BLE_EnabTransparentMode%151
-                0x00404208       0x48
+                0x00404218       0x48
  .text.DRV_BM71_BLE_EnabTransparentMode
-                0x00404208       0x48 build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
-                0x00404208                DRV_BM71_BLE_EnabTransparentMode
+                0x00404218       0x48 build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
+                0x00404218                DRV_BM71_BLE_EnabTransparentMode
 
-.text.atoi%152  0x00404250       0x46
- .text.atoi     0x00404250       0x46 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(atoi.o)
-                0x00404250                atoi
+.text.atoi%152  0x00404260       0x46
+ .text.atoi     0x00404260       0x46 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(atoi.o)
+                0x00404260                atoi
 
 .text.DRV_BM71_UART_ReceiveEventHandler%153
-                0x00404298       0x44
+                0x004042a8       0x44
  .text.DRV_BM71_UART_ReceiveEventHandler
-                0x00404298       0x44 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
-                0x00404298                DRV_BM71_UART_ReceiveEventHandler
+                0x004042a8       0x44 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
+                0x004042a8                DRV_BM71_UART_ReceiveEventHandler
 
 .text.SYS_INT_SourceDisable%154
-                0x004042dc       0x44
+                0x004042ec       0x44
  .text.SYS_INT_SourceDisable
-                0x004042dc       0x44 build/DevBoard/production/_ext/1497937361/sys_int.o
-                0x004042dc                SYS_INT_SourceDisable
+                0x004042ec       0x44 build/DevBoard/production/_ext/1497937361/sys_int.o
+                0x004042ec                SYS_INT_SourceDisable
 
 .text._bleTasks%155
-                0x00404320       0x44
+                0x00404330       0x44
  .text._bleTasks
-                0x00404320       0x44 build/DevBoard/production/_ext/1360937237/app.o
-                0x00404320                _bleTasks
+                0x00404330       0x44 build/DevBoard/production/_ext/1360937237/app.o
+                0x00404330                _bleTasks
 
-.text%156       0x00404364       0x40
- .text          0x00404364       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
+.text%156       0x00404374       0x40
+ .text          0x00404374       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard/crtbegin.o
 
 .text.DRV_BM71_CommandSend1MS_event%157
-                0x004043a4       0x40
+                0x004043b4       0x40
  .text.DRV_BM71_CommandSend1MS_event
-                0x004043a4       0x40 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
-                0x004043a4                DRV_BM71_CommandSend1MS_event
+                0x004043b4       0x40 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
+                0x004043b4                DRV_BM71_CommandSend1MS_event
 
 .text.USART0_Initialize%158
-                0x004043e4       0x40
+                0x004043f4       0x40
  .text.USART0_Initialize
-                0x004043e4       0x40 build/DevBoard/production/_ext/1195404349/plib_usart0.o
-                0x004043e4                USART0_Initialize
+                0x004043f4       0x40 build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x004043f4                USART0_Initialize
 
 .text.USART0_Read%159
-                0x00404424       0x40
+                0x00404434       0x40
  .text.USART0_Read
-                0x00404424       0x40 build/DevBoard/production/_ext/1195404349/plib_usart0.o
-                0x00404424                USART0_Read
+                0x00404434       0x40 build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x00404434                USART0_Read
 
 .text.SYS_TIME_TimerAdd%160
-                0x00404464       0x40
+                0x00404474       0x40
  .text.SYS_TIME_TimerAdd
-                0x00404464       0x40 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00404474       0x40 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.adjust_size%161
-                0x004044a4       0x40
+                0x004044b4       0x40
  .text.adjust_size
-                0x004044a4       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+                0x004044b4       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.write%162
-                0x004044e4       0x40
- .text.write    0x004044e4       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(write.o)
-                0x004044e4                write
+                0x004044f4       0x40
+ .text.write    0x004044f4       0x40 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(write.o)
+                0x004044f4                write
 
 .text.DRV_BM71_BLE_EnabAdvertising%163
-                0x00404524       0x3e
+                0x00404534       0x3e
  .text.DRV_BM71_BLE_EnabAdvertising
-                0x00404524       0x3e build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
-                0x00404524                DRV_BM71_BLE_EnabAdvertising
+                0x00404534       0x3e build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
+                0x00404534                DRV_BM71_BLE_EnabAdvertising
 
 .text.__putc%164
-                0x00404562       0x3e
- .text.__putc   0x00404562       0x3e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__putc.o)
-                0x00404562                __putc_needed
-                0x00404562                __putc
+                0x00404572       0x3e
+ .text.__putc   0x00404572       0x3e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__putc.o)
+                0x00404572                __putc_needed
+                0x00404572                __putc
 
 .text.TWIHS0_Initialize%165
-                0x004045a0       0x3c
+                0x004045b0       0x3c
  .text.TWIHS0_Initialize
-                0x004045a0       0x3c build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
-                0x004045a0                TWIHS0_Initialize
+                0x004045b0       0x3c build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+                0x004045b0                TWIHS0_Initialize
 
 .text.SYS_TIME_GetTimerObject%166
-                0x004045dc       0x3c
+                0x004045ec       0x3c
  .text.SYS_TIME_GetTimerObject
-                0x004045dc       0x3c build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x004045ec       0x3c build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.SYS_TIME_TimerDestroy%167
-                0x00404618       0x3c
+                0x00404628       0x3c
  .text.SYS_TIME_TimerDestroy
-                0x00404618       0x3c build/DevBoard/production/_ext/1790450025/sys_time.o
-                0x00404618                SYS_TIME_TimerDestroy
+                0x00404628       0x3c build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00404628                SYS_TIME_TimerDestroy
 
 .text.__out%168
-                0x00404654       0x3a
- .text.__out    0x00404654       0x3a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__out.o)
-                0x00404654                __out
-                0x00404654                __out_needed
+                0x00404664       0x3a
+ .text.__out    0x00404664       0x3a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__out.o)
+                0x00404664                __out
+                0x00404664                __out_needed
 
 .text.SYS_TIME_ResourceUnlock%169
-                0x00404690       0x38
+                0x004046a0       0x38
  .text.SYS_TIME_ResourceUnlock
-                0x00404690       0x38 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x004046a0       0x38 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.setTimers%170
-                0x004046c8       0x38
+                0x004046d8       0x38
  .text.setTimers
-                0x004046c8       0x38 build/DevBoard/production/_ext/1360937237/main.o
-                0x004046c8                setTimers
+                0x004046d8       0x38 build/DevBoard/production/_ext/1360937237/main.o
+                0x004046d8                setTimers
 
 .text.__putc_unbuffered%171
-                0x00404700       0x38
+                0x00404710       0x38
  .text.__putc_unbuffered
-                0x00404700       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(putc.o)
-                0x00404700                __putc_unbuffered
+                0x00404710       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(putc.o)
+                0x00404710                __putc_unbuffered
 
 .text.bin_index%172
-                0x00404738       0x38
+                0x00404748       0x38
  .text.bin_index
-                0x00404738       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+                0x00404748       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.__fmt_state%173
-                0x00404770       0x38
+                0x00404780       0x38
  .text.__fmt_state
-                0x00404770       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
-                0x00404770                __fmt_state
+                0x00404780       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
+                0x00404780                __fmt_state
 
 .text.DRV_BM71_EUSART_Read%174
-                0x004047a8       0x34
+                0x004047b8       0x34
  .text.DRV_BM71_EUSART_Read
-                0x004047a8       0x34 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
-                0x004047a8                DRV_BM71_EUSART_Read
+                0x004047b8       0x34 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
+                0x004047b8                DRV_BM71_EUSART_Read
 
 .text.TWIHS0_InitiateRead%175
-                0x004047dc       0x34
+                0x004047ec       0x34
  .text.TWIHS0_InitiateRead
-                0x004047dc       0x34 build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+                0x004047ec       0x34 build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
 
 .text.SYS_TIME_ResourceLock%176
-                0x00404810       0x34
+                0x00404820       0x34
  .text.SYS_TIME_ResourceLock
-                0x00404810       0x34 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00404820       0x34 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text._bleEventHandler%177
-                0x00404844       0x34
+                0x00404854       0x34
  .text._bleEventHandler
-                0x00404844       0x34 build/DevBoard/production/_ext/1360937237/app.o
+                0x00404854       0x34 build/DevBoard/production/_ext/1360937237/app.o
 
 .text.DRV_BM71_SPPBuffClear%178
-                0x00404878       0x30
+                0x00404888       0x30
  .text.DRV_BM71_SPPBuffClear
-                0x00404878       0x30 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00404878                DRV_BM71_SPPBuffClear
+                0x00404888       0x30 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00404888                DRV_BM71_SPPBuffClear
 
-.rodata%179     0x004048a8       0x30
- .rodata        0x004048a8       0x30 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+.rodata%179     0x004048b8       0x30
+ .rodata        0x004048b8       0x30 build/DevBoard/production/_ext/1164684806/drv_bm71.o
 
 .text.DRV_BM71_CommandDecodeInit%180
-                0x004048d8       0x30
+                0x004048e8       0x30
  .text.DRV_BM71_CommandDecodeInit
-                0x004048d8       0x30 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
-                0x004048d8                DRV_BM71_CommandDecodeInit
+                0x004048e8       0x30 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
+                0x004048e8                DRV_BM71_CommandDecodeInit
 
 .text.SYS_TIME_UpdateTimerList%181
-                0x00404908       0x30
+                0x00404918       0x30
  .text.SYS_TIME_UpdateTimerList
-                0x00404908       0x30 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00404918       0x30 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.RTT_AlarmHandler%182
-                0x00404938       0x30
+                0x00404948       0x30
  .text.RTT_AlarmHandler
-                0x00404938       0x30 build/DevBoard/production/_ext/1360937237/main.o
+                0x00404948       0x30 build/DevBoard/production/_ext/1360937237/main.o
 
 .text.alloc_rev%183
-                0x00404968       0x30
+                0x00404978       0x30
  .text.alloc_rev
-                0x00404968       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+                0x00404978       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
-.text%184       0x00404998       0x30
- .text          0x00404998       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
-                0x00404998                __aeabi_uldivmod
+.text%184       0x004049a8       0x30
+ .text          0x004049a8       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x004049a8                __aeabi_uldivmod
 
-.text.trim%185  0x004049c8       0x2e
- .text.trim     0x004049c8       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+.text.trim%185  0x004049d8       0x2e
+ .text.trim     0x004049d8       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.TWIHS0_Write%186
-                0x004049f8       0x2c
+                0x00404a08       0x2c
  .text.TWIHS0_Write
-                0x004049f8       0x2c build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
-                0x004049f8                TWIHS0_Write
+                0x00404a08       0x2c build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+                0x00404a08                TWIHS0_Write
 
 .text.TWIHS0_WriteRead%187
-                0x00404a24       0x2c
+                0x00404a34       0x2c
  .text.TWIHS0_WriteRead
-                0x00404a24       0x2c build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
-                0x00404a24                TWIHS0_WriteRead
+                0x00404a34       0x2c build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+                0x00404a34                TWIHS0_WriteRead
 
 .text.USART0_ErrorClear%188
-                0x00404a50       0x2c
+                0x00404a60       0x2c
  .text.USART0_ErrorClear
-                0x00404a50       0x2c build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x00404a60       0x2c build/DevBoard/production/_ext/1195404349/plib_usart0.o
 
-.text.APP_Initialize%189
-                0x00404a7c       0x2c
- .text.APP_Initialize
-                0x00404a7c       0x2c build/DevBoard/production/_ext/1360937237/app.o
-                0x00404a7c                APP_Initialize
-
-.text.setADCRange%190
-                0x00404aa8       0x2c
+.text.setADCRange%189
+                0x00404a8c       0x2c
  .text.setADCRange
-                0x00404aa8       0x2c build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00404aa8                setADCRange
+                0x00404a8c       0x2c build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00404a8c                setADCRange
+
+.text.APP_Initialize%190
+                0x00404ab8       0x2c
+ .text.APP_Initialize
+                0x00404ab8       0x2c build/DevBoard/production/_ext/1360937237/app.o
+                0x00404ab8                APP_Initialize
 
 .text.__readv%191
-                0x00404ad4       0x2c
- .text.__readv  0x00404ad4       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(readv.o)
-                0x00404ad4                readv
+                0x00404ae4       0x2c
+ .text.__readv  0x00404ae4       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(readv.o)
+                0x00404ae4                readv
 
 .text.alloc_fwd%192
-                0x00404b00       0x2c
+                0x00404b10       0x2c
  .text.alloc_fwd
-                0x00404b00       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+                0x00404b10       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.__writev%193
-                0x00404b2c       0x2c
+                0x00404b3c       0x2c
  .text.__writev
-                0x00404b2c       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(writev.o)
-                0x00404b2c                writev
+                0x00404b3c       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(writev.o)
+                0x00404b3c                writev
 
 .text._sbrk%194
-                0x00404b58       0x2c
- .text._sbrk    0x00404b58       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(sbrk.o)
-                0x00404b58                _sbrk
+                0x00404b68       0x2c
+ .text._sbrk    0x00404b68       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(sbrk.o)
+                0x00404b68                _sbrk
 
 .text.setPulseWidth%195
-                0x00404b84       0x2a
+                0x00404b94       0x2a
  .text.setPulseWidth
-                0x00404b84       0x2a build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00404b84                setPulseWidth
+                0x00404b94       0x2a build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00404b94                setPulseWidth
 
 .text.fwrite%196
-                0x00404bae       0x2a
- .text.fwrite   0x00404bae       0x2a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fwrite.o)
-                0x00404bae                fwrite
-                0x00404bae                fwrite_unlocked
+                0x00404bbe       0x2a
+ .text.fwrite   0x00404bbe       0x2a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fwrite.o)
+                0x00404bbe                fwrite
+                0x00404bbe                fwrite_unlocked
 
 .text.__pop_float%197
-                0x00404bd8       0x2a
+                0x00404be8       0x2a
  .text.__pop_float
-                0x00404bd8       0x2a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_float.o)
-                0x00404bd8                __pop_float_needed
-                0x00404bd8                __pop_float
+                0x00404be8       0x2a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__pop_float.o)
+                0x00404be8                __pop_float_needed
+                0x00404be8                __pop_float
 
 .text.DRV_BM71_Timer1MS_event%198
-                0x00404c04       0x28
+                0x00404c14       0x28
  .text.DRV_BM71_Timer1MS_event
-                0x00404c04       0x28 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00404c04                DRV_BM71_Timer1MS_event
+                0x00404c14       0x28 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00404c14                DRV_BM71_Timer1MS_event
 
-.text.puts%199  0x00404c2c       0x28
- .text.puts     0x00404c2c       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(puts.o)
-                0x00404c2c                puts
+.text.puts%199  0x00404c3c       0x28
+ .text.puts     0x00404c3c       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(puts.o)
+                0x00404c3c                puts
 
 .text.__towrite_rw%200
-                0x00404c54       0x28
+                0x00404c64       0x28
  .text.__towrite_rw
-                0x00404c54       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite_rw.o)
-                0x00404c54                __towrite_rw
-                0x00404c54                __towrite_rw_needed
+                0x00404c64       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite_rw.o)
+                0x00404c64                __towrite_rw
+                0x00404c64                __towrite_rw_needed
 
 .text.DRV_BM71_CommandSendTask%201
-                0x00404c7c       0x24
+                0x00404c8c       0x24
  .text.DRV_BM71_CommandSendTask
-                0x00404c7c       0x24 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
-                0x00404c7c                DRV_BM71_CommandSendTask
+                0x00404c8c       0x24 build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
+                0x00404c8c                DRV_BM71_CommandSendTask
 
 .text.DRV_BM71_UART_Initialize%202
-                0x00404ca0       0x24
+                0x00404cb0       0x24
  .text.DRV_BM71_UART_Initialize
-                0x00404ca0       0x24 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
-                0x00404ca0                DRV_BM71_UART_Initialize
+                0x00404cb0       0x24 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
+                0x00404cb0                DRV_BM71_UART_Initialize
 
 .text.RTT_AlarmValueSet%203
-                0x00404cc4       0x24
+                0x00404cd4       0x24
  .text.RTT_AlarmValueSet
-                0x00404cc4       0x24 build/DevBoard/production/_ext/975541674/plib_rtt.o
-                0x00404cc4                RTT_AlarmValueSet
+                0x00404cd4       0x24 build/DevBoard/production/_ext/975541674/plib_rtt.o
+                0x00404cd4                RTT_AlarmValueSet
 
 .text.TC0_CH0_TimerInitialize%204
-                0x00404ce8       0x24
+                0x00404cf8       0x24
  .text.TC0_CH0_TimerInitialize
-                0x00404ce8       0x24 build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x00404ce8                TC0_CH0_TimerInitialize
+                0x00404cf8       0x24 build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x00404cf8                TC0_CH0_TimerInitialize
 
 .text.TC0_CH0_InterruptHandler%205
-                0x00404d0c       0x24
+                0x00404d1c       0x24
  .text.TC0_CH0_InterruptHandler
-                0x00404d0c       0x24 build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x00404d0c                TC0_CH0_InterruptHandler
+                0x00404d1c       0x24 build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x00404d1c                TC0_CH0_InterruptHandler
 
 .text.printf%206
-                0x00404d30       0x24
- .text.printf   0x00404d30       0x24 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(printf.o)
-                0x00404d30                __printf_oxX
-                0x00404d30                __printf_di
-                0x00404d30                printf
+                0x00404d40       0x24
+ .text.printf   0x00404d40       0x24 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(printf.o)
+                0x00404d40                __printf_oxX
+                0x00404d40                __printf_di
+                0x00404d40                printf
 
 .text.fputs%207
-                0x00404d54       0x22
- .text.fputs    0x00404d54       0x22 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fputs.o)
-                0x00404d54                fputs
-                0x00404d54                fputs_unlocked
+                0x00404d64       0x22
+ .text.fputs    0x00404d64       0x22 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(fputs.o)
+                0x00404d64                fputs
+                0x00404d64                fputs_unlocked
 
 .text.DRV_BM71_CommandDecodeMain%208
-                0x00404d78       0x20
+                0x00404d88       0x20
  .text.DRV_BM71_CommandDecodeMain
-                0x00404d78       0x20 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
-                0x00404d78                DRV_BM71_CommandDecodeMain
+                0x00404d88       0x20 build/DevBoard/production/_ext/1164684806/drv_bm71_command_decode.o
+                0x00404d88                DRV_BM71_CommandDecodeMain
 
 .text.SYS_TIME_GetElapsedCount%209
-                0x00404d98       0x20
+                0x00404da8       0x20
  .text.SYS_TIME_GetElapsedCount
-                0x00404d98       0x20 build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00404da8       0x20 build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .text.setHandlers%210
-                0x00404db8       0x20
+                0x00404dc8       0x20
  .text.setHandlers
-                0x00404db8       0x20 build/DevBoard/production/_ext/1360937237/main.o
-                0x00404db8                setHandlers
+                0x00404dc8       0x20 build/DevBoard/production/_ext/1360937237/main.o
+                0x00404dc8                setHandlers
 
 .text.lock_bin%211
-                0x00404dd8       0x20
+                0x00404de8       0x20
  .text.lock_bin
-                0x00404dd8       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
+                0x00404de8       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(malloc.o)
 
 .text.shutDown%212
-                0x00404df8       0x1e
+                0x00404e08       0x1e
  .text.shutDown
-                0x00404df8       0x1e build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00404df8                shutDown
+                0x00404e08       0x1e build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00404e08                shutDown
 
 .text.wakeUp%213
-                0x00404e16       0x1e
- .text.wakeUp   0x00404e16       0x1e build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00404e16                wakeUp
+                0x00404e26       0x1e
+ .text.wakeUp   0x00404e26       0x1e build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00404e26                wakeUp
 
 .text._clientCallBack%214
-                0x00404e34       0x1c
+                0x00404e44       0x1c
  .text._clientCallBack
-                0x00404e34       0x1c build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00404e44       0x1c build/DevBoard/production/_ext/1164684806/drv_bm71.o
 
 .text.DRV_BM71_CommandSendInit%215
-                0x00404e50       0x1c
+                0x00404e60       0x1c
  .text.DRV_BM71_CommandSendInit
-                0x00404e50       0x1c build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
-                0x00404e50                DRV_BM71_CommandSendInit
+                0x00404e60       0x1c build/DevBoard/production/_ext/1164684806/drv_bm71_command_send.o
+                0x00404e60                DRV_BM71_CommandSendInit
 
 .text.SUPC_SleepModeEnter%216
-                0x00404e6c       0x1c
+                0x00404e7c       0x1c
  .text.SUPC_SleepModeEnter
-                0x00404e6c       0x1c build/DevBoard/production/_ext/177051549/plib_supc.o
-                0x00404e6c                SUPC_SleepModeEnter
+                0x00404e7c       0x1c build/DevBoard/production/_ext/177051549/plib_supc.o
+                0x00404e7c                SUPC_SleepModeEnter
 
 .text.USART1_Initialize%217
-                0x00404e88       0x1c
+                0x00404e98       0x1c
  .text.USART1_Initialize
-                0x00404e88       0x1c build/DevBoard/production/_ext/1195404349/plib_usart1.o
-                0x00404e88                USART1_Initialize
+                0x00404e98       0x1c build/DevBoard/production/_ext/1195404349/plib_usart1.o
+                0x00404e98                USART1_Initialize
 
 .text._mon_putc%218
-                0x00404ea4       0x1c
+                0x00404eb4       0x1c
  .text._mon_putc
-                0x00404ea4       0x1c build/DevBoard/production/_ext/1583257634/xc32_monitor.o
-                0x00404ea4                _mon_putc
+                0x00404eb4       0x1c build/DevBoard/production/_ext/1583257634/xc32_monitor.o
+                0x00404eb4                _mon_putc
 
 .text.SYS_TIME_Counter64Update%219
-                0x00404ec0       0x1c
+                0x00404ed0       0x1c
  .text.SYS_TIME_Counter64Update
-                0x00404ec0       0x1c build/DevBoard/production/_ext/1790450025/sys_time.o
+                0x00404ed0       0x1c build/DevBoard/production/_ext/1790450025/sys_time.o
 
 .rodata.sysTimePlibAPI%220
-                0x00404edc       0x1c
+                0x00404eec       0x1c
  .rodata.sysTimePlibAPI
-                0x00404edc       0x1c build/DevBoard/production/_ext/1844592860/initialization.o
-                0x00404edc                sysTimePlibAPI
+                0x00404eec       0x1c build/DevBoard/production/_ext/1844592860/initialization.o
+                0x00404eec                sysTimePlibAPI
 
 .text.vfprintf%221
-                0x00404ef8       0x1c
+                0x00404f08       0x1c
  .text.vfprintf
-                0x00404ef8       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(vfprintf.o)
-                0x00404ef8                vfprintf
+                0x00404f08       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(vfprintf.o)
+                0x00404f08                vfprintf
 
-.rodata%222     0x00404f14       0x1c
- .rodata        0x00404f14       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
+.rodata%222     0x00404f24       0x1c
+ .rodata        0x00404f24       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__printf_core.o)
 
 .text.DRV_BM71_EUSART_Write%223
-                0x00404f30       0x18
+                0x00404f40       0x18
  .text.DRV_BM71_EUSART_Write
-                0x00404f30       0x18 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
-                0x00404f30                DRV_BM71_EUSART_Write
+                0x00404f40       0x18 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
+                0x00404f40                DRV_BM71_EUSART_Write
 
 .text.RTT_Enable%224
-                0x00404f48       0x18
+                0x00404f58       0x18
  .text.RTT_Enable
-                0x00404f48       0x18 build/DevBoard/production/_ext/975541674/plib_rtt.o
-                0x00404f48                RTT_Enable
+                0x00404f58       0x18 build/DevBoard/production/_ext/975541674/plib_rtt.o
+                0x00404f58                RTT_Enable
 
 .text.RTT_TimerValueGet%225
-                0x00404f60       0x18
+                0x00404f70       0x18
  .text.RTT_TimerValueGet
-                0x00404f60       0x18 build/DevBoard/production/_ext/975541674/plib_rtt.o
-                0x00404f60                RTT_TimerValueGet
+                0x00404f70       0x18 build/DevBoard/production/_ext/975541674/plib_rtt.o
+                0x00404f70                RTT_TimerValueGet
 
 .text.SUPC_Initialize%226
-                0x00404f78       0x18
+                0x00404f88       0x18
  .text.SUPC_Initialize
-                0x00404f78       0x18 build/DevBoard/production/_ext/177051549/plib_supc.o
-                0x00404f78                SUPC_Initialize
+                0x00404f88       0x18 build/DevBoard/production/_ext/177051549/plib_supc.o
+                0x00404f88                SUPC_Initialize
 
-.rodata%227     0x00404f90       0x18
- .rodata        0x00404f90       0x18 build/DevBoard/production/_ext/1360937237/app.o
+.rodata%227     0x00404fa0       0x18
+ .rodata        0x00404fa0       0x18 build/DevBoard/production/_ext/1360937237/app.o
 
 .text.__towrite%228
-                0x00404fa8       0x18
+                0x00404fb8       0x18
  .text.__towrite
-                0x00404fa8       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite.o)
-                0x00404fa8                __towrite
+                0x00404fb8       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__towrite.o)
+                0x00404fb8                __towrite
 
 .text.__syscall_ret%229
-                0x00404fc0       0x18
+                0x00404fd0       0x18
  .text.__syscall_ret
-                0x00404fc0       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(syscall_ret.o)
-                0x00404fc0                __syscall_ret
+                0x00404fd0       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(syscall_ret.o)
+                0x00404fd0                __syscall_ret
 
 .text.__fwrite%230
-                0x00404fd8       0x18
+                0x00404fe8       0x18
  .text.__fwrite
-                0x00404fd8       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fwrite.o)
-                0x00404fd8                __fwrite
-                0x00404fd8                __fwrite_needed
+                0x00404fe8       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fwrite.o)
+                0x00404fe8                __fwrite
+                0x00404fe8                __fwrite_needed
 
 .text.memcpy%231
-                0x00404ff0       0x16
- .text.memcpy   0x00404ff0       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
-                0x00404ff0                memcpy
+                0x00405000       0x16
+ .text.memcpy   0x00405000       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memcpy.o)
+                0x00405000                memcpy
 
 .text.__expand_heap%232
-                0x00405006       0x16
+                0x00405016       0x16
  .text.__expand_heap
-                0x00405006       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(expand_heap.o)
-                0x00405006                __expand_heap
+                0x00405016       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(expand_heap.o)
+                0x00405016                __expand_heap
 
 .text.DRV_BM71_GetPowerStatus%233
-                0x0040501c       0x14
+                0x0040502c       0x14
  .text.DRV_BM71_GetPowerStatus
-                0x0040501c       0x14 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x0040501c                DRV_BM71_GetPowerStatus
+                0x0040502c       0x14 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x0040502c                DRV_BM71_GetPowerStatus
 
 .text.DRV_BM71_SendDataOverBLE%234
-                0x00405030       0x14
+                0x00405040       0x14
  .text.DRV_BM71_SendDataOverBLE
-                0x00405030       0x14 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00405030                DRV_BM71_SendDataOverBLE
+                0x00405040       0x14 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00405040                DRV_BM71_SendDataOverBLE
 
-.rodata%235     0x00405044       0x14
- .rodata        0x00405044       0x14 build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
+.rodata%235     0x00405054       0x14
+ .rodata        0x00405054       0x14 build/DevBoard/production/_ext/1164684806/drv_bm71_ble.o
 
 .text.RTC_Initialize%236
-                0x00405058       0x14
+                0x00405068       0x14
  .text.RTC_Initialize
-                0x00405058       0x14 build/DevBoard/production/_ext/975541657/plib_rtc.o
-                0x00405058                RTC_Initialize
+                0x00405068       0x14 build/DevBoard/production/_ext/975541657/plib_rtc.o
+                0x00405068                RTC_Initialize
 
 .text.RTT_Initialize%237
-                0x0040506c       0x14
+                0x0040507c       0x14
  .text.RTT_Initialize
-                0x0040506c       0x14 build/DevBoard/production/_ext/975541674/plib_rtt.o
-                0x0040506c                RTT_Initialize
+                0x0040507c       0x14 build/DevBoard/production/_ext/975541674/plib_rtt.o
+                0x0040507c                RTT_Initialize
 
 .text.TWIHS0_IsBusy%238
-                0x00405080       0x14
+                0x00405090       0x14
  .text.TWIHS0_IsBusy
-                0x00405080       0x14 build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
-                0x00405080                TWIHS0_IsBusy
+                0x00405090       0x14 build/DevBoard/production/_ext/29817896/plib_twihs0_master.o
+                0x00405090                TWIHS0_IsBusy
 
 .text.setFIFOAlmostFull%239
-                0x00405094       0x14
+                0x004050a4       0x14
  .text.setFIFOAlmostFull
-                0x00405094       0x14 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405094                setFIFOAlmostFull
+                0x004050a4       0x14 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x004050a4                setFIFOAlmostFull
 
 .text.__init_stdout%240
-                0x004050a8       0x14
+                0x004050b8       0x14
  .text.__init_stdout
-                0x004050a8       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdout.o)
-                0x004050a8                __init_stdout
+                0x004050b8       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdout.o)
+                0x004050b8                __init_stdout
 
 .text.DRV_BM71_EventHandlerSet%241
-                0x004050bc       0x12
+                0x004050cc       0x12
  .text.DRV_BM71_EventHandlerSet
-                0x004050bc       0x12 build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x004050bc                DRV_BM71_EventHandlerSet
+                0x004050cc       0x12 build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x004050cc                DRV_BM71_EventHandlerSet
 
 .text.NVIC_INT_Disable%242
-                0x004050ce       0x12
+                0x004050de       0x12
  .text.NVIC_INT_Disable
-                0x004050ce       0x12 build/DevBoard/production/_ext/176903338/plib_nvic.o
-                0x004050ce                NVIC_INT_Disable
+                0x004050de       0x12 build/DevBoard/production/_ext/176903338/plib_nvic.o
+                0x004050de                NVIC_INT_Disable
 
 .text.NVIC_INT_Restore%243
-                0x004050e0       0x12
+                0x004050f0       0x12
  .text.NVIC_INT_Restore
-                0x004050e0       0x12 build/DevBoard/production/_ext/176903338/plib_nvic.o
-                0x004050e0                NVIC_INT_Restore
+                0x004050f0       0x12 build/DevBoard/production/_ext/176903338/plib_nvic.o
+                0x004050f0                NVIC_INT_Restore
 
 .text.setLEDMode%244
-                0x004050f2       0x12
+                0x00405102       0x12
  .text.setLEDMode
-                0x004050f2       0x12 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x004050f2                setLEDMode
+                0x00405102       0x12 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00405102                setLEDMode
 
 .text.stpcpy%245
-                0x00405104       0x12
- .text.stpcpy   0x00405104       0x12 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stpcpy.o)
-                0x00405104                __stpcpy
-                0x00405104                stpcpy
+                0x00405114       0x12
+ .text.stpcpy   0x00405114       0x12 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stpcpy.o)
+                0x00405114                __stpcpy
+                0x00405114                stpcpy
 
 .text.DRV_BM71_RESET_SetHigh%246
-                0x00405118       0x10
+                0x00405128       0x10
  .text.DRV_BM71_RESET_SetHigh
-                0x00405118       0x10 build/DevBoard/production/_ext/1164684806/drv_bm71_gpio.o
-                0x00405118                DRV_BM71_RESET_SetHigh
+                0x00405128       0x10 build/DevBoard/production/_ext/1164684806/drv_bm71_gpio.o
+                0x00405128                DRV_BM71_RESET_SetHigh
 
 .text.DRV_BM71_RESET_SetLow%247
-                0x00405128       0x10
+                0x00405138       0x10
  .text.DRV_BM71_RESET_SetLow
-                0x00405128       0x10 build/DevBoard/production/_ext/1164684806/drv_bm71_gpio.o
-                0x00405128                DRV_BM71_RESET_SetLow
+                0x00405138       0x10 build/DevBoard/production/_ext/1164684806/drv_bm71_gpio.o
+                0x00405138                DRV_BM71_RESET_SetLow
 
 .text.DRV_BM71_UART_TransmitEventHandler%248
-                0x00405138       0x10
+                0x00405148       0x10
  .text.DRV_BM71_UART_TransmitEventHandler
-                0x00405138       0x10 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
-                0x00405138                DRV_BM71_UART_TransmitEventHandler
+                0x00405148       0x10 build/DevBoard/production/_ext/1164684806/drv_bm71_uart.o
+                0x00405148                DRV_BM71_UART_TransmitEventHandler
 
 .text.EFC_Initialize%249
-                0x00405148       0x10
+                0x00405158       0x10
  .text.EFC_Initialize
-                0x00405148       0x10 build/DevBoard/production/_ext/975528730/plib_efc.o
-                0x00405148                EFC_Initialize
+                0x00405158       0x10 build/DevBoard/production/_ext/975528730/plib_efc.o
+                0x00405158                EFC_Initialize
 
 .text.PIOA_InterruptHandler%250
-                0x00405158       0x10
+                0x00405168       0x10
  .text.PIOA_InterruptHandler
-                0x00405158       0x10 build/DevBoard/production/_ext/975539406/plib_pio.o
-                0x00405158                PIOA_InterruptHandler
+                0x00405168       0x10 build/DevBoard/production/_ext/975539406/plib_pio.o
+                0x00405168                PIOA_InterruptHandler
 
 .text.setPulseAmplitudeRed%251
-                0x00405168       0x10
+                0x00405178       0x10
  .text.setPulseAmplitudeRed
-                0x00405168       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405168                setPulseAmplitudeRed
+                0x00405178       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00405178                setPulseAmplitudeRed
 
 .text.setPulseAmplitudeIR%252
-                0x00405178       0x10
+                0x00405188       0x10
  .text.setPulseAmplitudeIR
-                0x00405178       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405178                setPulseAmplitudeIR
+                0x00405188       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00405188                setPulseAmplitudeIR
 
 .text.enableAFULL%253
-                0x00405188       0x10
+                0x00405198       0x10
  .text.enableAFULL
-                0x00405188       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405188                enableAFULL
+                0x00405198       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00405198                enableAFULL
 
 .text.enablePROXINT%254
-                0x00405198       0x10
+                0x004051a8       0x10
  .text.enablePROXINT
-                0x00405198       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405198                enablePROXINT
+                0x004051a8       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x004051a8                enablePROXINT
 
 .text.enableDIETEMPRDY%255
-                0x004051a8       0x10
+                0x004051b8       0x10
  .text.enableDIETEMPRDY
-                0x004051a8       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x004051a8                enableDIETEMPRDY
+                0x004051b8       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x004051b8                enableDIETEMPRDY
 
 .text.softReset%256
-                0x004051b8       0x10
+                0x004051c8       0x10
  .text.softReset
-                0x004051b8       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x004051b8                softReset
+                0x004051c8       0x10 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x004051c8                softReset
 
 .text.setbuf%257
-                0x004051c8       0x10
- .text.setbuf   0x004051c8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setbuf.o)
-                0x004051c8                setbuf
+                0x004051d8       0x10
+ .text.setbuf   0x004051d8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(setbuf.o)
+                0x004051d8                setbuf
 
 .text.memset%258
-                0x004051d8       0x10
- .text.memset   0x004051d8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
-                0x004051d8                memset
+                0x004051e8       0x10
+ .text.memset   0x004051e8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(memset.o)
+                0x004051e8                memset
 
 .text.strlen%259
-                0x004051e8       0x10
- .text.strlen   0x004051e8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strlen.o)
-                0x004051e8                strlen
+                0x004051f8       0x10
+ .text.strlen   0x004051f8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strlen.o)
+                0x004051f8                strlen
 
 .text.__init_stdio%260
-                0x004051f8       0x10
+                0x00405208       0x10
  .text.__init_stdio
-                0x004051f8       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__init_stdio.o)
-                0x004051f8                __init_stdio_needed
-                0x004051f8                __init_stdio
+                0x00405208       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__init_stdio.o)
+                0x00405208                __init_stdio_needed
+                0x00405208                __init_stdio
 
-.rodata%261     0x00405208       0x20
- .rodata        0x00405208       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_a.o)
- .rodata        0x00405218       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_fp.o)
+.rodata%261     0x00405218       0x20
+ .rodata        0x00405218       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_a.o)
+ .rodata        0x00405228       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_fp.o)
 
 .text.setProximityThreshold%263
-                0x00405228        0xe
+                0x00405238        0xe
  .text.setProximityThreshold
-                0x00405228        0xe build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405228                setProximityThreshold
+                0x00405238        0xe build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00405238                setProximityThreshold
 
 .text.tolower%264
-                0x00405236        0xe
- .text.tolower  0x00405236        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(tolower.o)
-                0x00405236                tolower
+                0x00405246        0xe
+ .text.tolower  0x00405246        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(tolower.o)
+                0x00405246                tolower
 
 .text.toupper%265
-                0x00405244        0xe
- .text.toupper  0x00405244        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(toupper.o)
-                0x00405244                toupper
+                0x00405254        0xe
+ .text.toupper  0x00405254        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(toupper.o)
+                0x00405254                toupper
 
 .text.DRV_BM71_Status%266
-                0x00405254        0xc
+                0x00405264        0xc
  .text.DRV_BM71_Status
-                0x00405254        0xc build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00405254                DRV_BM71_Status
+                0x00405264        0xc build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00405264                DRV_BM71_Status
 
 .text.DRV_BM71_Timer_1ms%267
-                0x00405260        0xc
+                0x00405270        0xc
  .text.DRV_BM71_Timer_1ms
-                0x00405260        0xc build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x00405260                DRV_BM71_Timer_1ms
+                0x00405270        0xc build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x00405270                DRV_BM71_Timer_1ms
 
 .text.DRV_BM71_UpdateClientStatus%268
-                0x0040526c        0xc
+                0x0040527c        0xc
  .text.DRV_BM71_UpdateClientStatus
-                0x0040526c        0xc build/DevBoard/production/_ext/1164684806/drv_bm71.o
-                0x0040526c                DRV_BM71_UpdateClientStatus
+                0x0040527c        0xc build/DevBoard/production/_ext/1164684806/drv_bm71.o
+                0x0040527c                DRV_BM71_UpdateClientStatus
 
 .text.RTT_CallbackRegister%269
-                0x00405278        0xc
+                0x00405288        0xc
  .text.RTT_CallbackRegister
-                0x00405278        0xc build/DevBoard/production/_ext/975541674/plib_rtt.o
-                0x00405278                RTT_CallbackRegister
+                0x00405288        0xc build/DevBoard/production/_ext/975541674/plib_rtt.o
+                0x00405288                RTT_CallbackRegister
 
 .text.TC0_CH0_TimerStart%270
-                0x00405284        0xc
+                0x00405294        0xc
  .text.TC0_CH0_TimerStart
-                0x00405284        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x00405284                TC0_CH0_TimerStart
+                0x00405294        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x00405294                TC0_CH0_TimerStart
 
 .text.TC0_CH0_TimerStop%271
-                0x00405290        0xc
+                0x004052a0        0xc
  .text.TC0_CH0_TimerStop
-                0x00405290        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x00405290                TC0_CH0_TimerStop
+                0x004052a0        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x004052a0                TC0_CH0_TimerStop
 
 .text.TC0_CH0_TimerPeriodSet%272
-                0x0040529c        0xc
+                0x004052ac        0xc
  .text.TC0_CH0_TimerPeriodSet
-                0x0040529c        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x0040529c                TC0_CH0_TimerPeriodSet
+                0x004052ac        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x004052ac                TC0_CH0_TimerPeriodSet
 
 .text.TC0_CH0_TimerCompareSet%273
-                0x004052a8        0xc
+                0x004052b8        0xc
  .text.TC0_CH0_TimerCompareSet
-                0x004052a8        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x004052a8                TC0_CH0_TimerCompareSet
+                0x004052b8        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x004052b8                TC0_CH0_TimerCompareSet
 
 .text.TC0_CH0_TimerCounterGet%274
-                0x004052b4        0xc
+                0x004052c4        0xc
  .text.TC0_CH0_TimerCounterGet
-                0x004052b4        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x004052b4                TC0_CH0_TimerCounterGet
+                0x004052c4        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x004052c4                TC0_CH0_TimerCounterGet
 
 .text.TC0_CH0_TimerCallbackRegister%275
-                0x004052c0        0xc
+                0x004052d0        0xc
  .text.TC0_CH0_TimerCallbackRegister
-                0x004052c0        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x004052c0                TC0_CH0_TimerCallbackRegister
+                0x004052d0        0xc build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x004052d0                TC0_CH0_TimerCallbackRegister
 
 .text.USART0_WriteCallbackRegister%276
-                0x004052cc        0xc
+                0x004052dc        0xc
  .text.USART0_WriteCallbackRegister
-                0x004052cc        0xc build/DevBoard/production/_ext/1195404349/plib_usart0.o
-                0x004052cc                USART0_WriteCallbackRegister
+                0x004052dc        0xc build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x004052dc                USART0_WriteCallbackRegister
 
 .text.USART0_ReadCallbackRegister%277
-                0x004052d8        0xc
+                0x004052e8        0xc
  .text.USART0_ReadCallbackRegister
-                0x004052d8        0xc build/DevBoard/production/_ext/1195404349/plib_usart0.o
-                0x004052d8                USART0_ReadCallbackRegister
+                0x004052e8        0xc build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x004052e8                USART0_ReadCallbackRegister
 
 .text.USART0_WriteIsBusy%278
-                0x004052e4        0xc
+                0x004052f4        0xc
  .text.USART0_WriteIsBusy
-                0x004052e4        0xc build/DevBoard/production/_ext/1195404349/plib_usart0.o
-                0x004052e4                USART0_WriteIsBusy
+                0x004052f4        0xc build/DevBoard/production/_ext/1195404349/plib_usart0.o
+                0x004052f4                USART0_WriteIsBusy
 
 .text.SYS_Tasks%279
-                0x004052f0        0xc
+                0x00405300        0xc
  .text.SYS_Tasks
-                0x004052f0        0xc build/DevBoard/production/_ext/1844592860/tasks.o
-                0x004052f0                SYS_Tasks
+                0x00405300        0xc build/DevBoard/production/_ext/1844592860/tasks.o
+                0x00405300                SYS_Tasks
 
 .text.strcpy%280
-                0x004052fc        0xc
- .text.strcpy   0x004052fc        0xc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strcpy.o)
-                0x004052fc                strcpy
+                0x0040530c        0xc
+ .text.strcpy   0x0040530c        0xc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(strcpy.o)
+                0x0040530c                strcpy
 
 .text.initMAX30102%281
-                0x00405308        0xa
+                0x00405318        0xa
  .text.initMAX30102
-                0x00405308        0xa build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00405308                initMAX30102
+                0x00405318        0xa build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00405318                initMAX30102
 
 .text.TC0_CH0_TimerFrequencyGet%282
-                0x00405314        0x8
+                0x00405324        0x8
  .text.TC0_CH0_TimerFrequencyGet
-                0x00405314        0x8 build/DevBoard/production/_ext/522720201/plib_tc0.o
-                0x00405314                TC0_CH0_TimerFrequencyGet
+                0x00405324        0x8 build/DevBoard/production/_ext/522720201/plib_tc0.o
+                0x00405324                TC0_CH0_TimerFrequencyGet
 
 .text.SYS_INT_Disable%283
-                0x0040531c        0x8
+                0x0040532c        0x8
  .text.SYS_INT_Disable
-                0x0040531c        0x8 build/DevBoard/production/_ext/1497937361/sys_int.o
-                0x0040531c                SYS_INT_Disable
+                0x0040532c        0x8 build/DevBoard/production/_ext/1497937361/sys_int.o
+                0x0040532c                SYS_INT_Disable
 
 .text.SYS_INT_Restore%284
-                0x00405324        0x8
+                0x00405334        0x8
  .text.SYS_INT_Restore
-                0x00405324        0x8 build/DevBoard/production/_ext/1497937361/sys_int.o
-                0x00405324                SYS_INT_Restore
+                0x00405334        0x8 build/DevBoard/production/_ext/1497937361/sys_int.o
+                0x00405334                SYS_INT_Restore
 
 .rodata.sysTimeInitData%285
-                0x0040532c        0x8
+                0x0040533c        0x8
  .rodata.sysTimeInitData
-                0x0040532c        0x8 build/DevBoard/production/_ext/1844592860/initialization.o
-                0x0040532c                sysTimeInitData
+                0x0040533c        0x8 build/DevBoard/production/_ext/1844592860/initialization.o
+                0x0040533c                sysTimeInitData
 
-.text.putc%286  0x00405334        0x8
- .text.putc     0x00405334        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(putc.o)
-                0x00405334                putc
-                0x00405334                fputc
-                0x00405334                _IO_putc
-                0x00405334                putc_unlocked
+.text.putc%286  0x00405344        0x8
+ .text.putc     0x00405344        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(putc.o)
+                0x00405344                putc
+                0x00405344                fputc
+                0x00405344                _IO_putc
+                0x00405344                putc_unlocked
 
 .text.__get_stdout%287
-                0x0040533c        0x8
+                0x0040534c        0x8
  .text.__get_stdout
-                0x0040533c        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdout.o)
-                0x0040533c                __get_stdout
-                0x0040533c                __init_stdout_needed
+                0x0040534c        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stdout.o)
+                0x0040534c                __get_stdout
+                0x0040534c                __init_stdout_needed
 
 .text.__read%288
-                0x00405344        0x8
- .text.__read   0x00405344        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(read.o)
-                0x00405344                read
-                0x00405344                __read
+                0x00405354        0x8
+ .text.__read   0x00405354        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(read.o)
+                0x00405354                read
+                0x00405354                __read
 
 .text.close%289
-                0x0040534c        0x8
- .text.close    0x0040534c        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(close.o)
-                0x0040534c                close
+                0x0040535c        0x8
+ .text.close    0x0040535c        0x8 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(close.o)
+                0x0040535c                close
 
-.rodata%290     0x00405354        0x7
- .rodata        0x00405354        0x7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_s.o)
+.rodata%290     0x00405364        0x7
+ .rodata        0x00405364        0x7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__fmt_s.o)
 
 .text.__dummy%291
-                0x0040535c        0x6
- .text.__dummy  0x0040535c        0x6 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
-                0x0040535c                __stdio_seek_rw
+                0x0040536c        0x6
+ .text.__dummy  0x0040536c        0x6 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(stdin.o)
+                0x0040536c                __stdio_seek_rw
 
 .text.__fwrite_min%292
-                0x00405362        0x6
+                0x00405372        0x6
  .text.__fwrite_min
-                0x00405362        0x6 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__out.o)
-                0x00405362                __stdio_write_unbuffered
-                0x00405362                __stdio_write
+                0x00405372        0x6 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__out.o)
+                0x00405372                __stdio_write_unbuffered
+                0x00405372                __stdio_write
 
 .text.getRed%293
                 0x004009cc        0x4
@@ -4675,152 +4675,152 @@ __xc_reference_data
                 0x004009cc                getRed
 
 .text.getIR%294
-                0x00402864        0x4
- .text.getIR    0x00402864        0x4 build/DevBoard/production/_ext/1844592860/MAX30102.o
-                0x00402864                getIR
+                0x00402874        0x4
+ .text.getIR    0x00402874        0x4 build/DevBoard/production/_ext/1844592860/MAX30102.o
+                0x00402874                getIR
 
-.text%295       0x00405368        0x4
- .text          0x00405368        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
-                0x00405368                __aeabi_idiv0
-                0x00405368                __aeabi_ldiv0
+.text%295       0x00405378        0x4
+ .text          0x00405378        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v7e-m+dp/hard\libgcc.a(_dvmd_tls.o)
+                0x00405378                __aeabi_idiv0
+                0x00405378                __aeabi_ldiv0
 
 .text.lseek%296
-                0x0040536c        0x4
- .text.lseek    0x0040536c        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(lseek.o)
-                0x0040536c                lseek
+                0x0040537c        0x4
+ .text.lseek    0x0040537c        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libpic32c.a(lseek.o)
+                0x0040537c                lseek
 
 .text.Dummy_Handler%297
-                0x00402f86        0x2
+                0x00402f96        0x2
  .text.Dummy_Handler
-                0x00402f86        0x2 build/DevBoard/production/_ext/1844592860/interrupts.o
-                0x00402f86                DACC_Handler
-                0x00402f86                SVCall_Handler
-                0x00402f86                TC0_CH2_Handler
-                0x00402f86                TC3_CH1_Handler
-                0x00402f86                UART3_Handler
-                0x00402f86                UART2_Handler
-                0x00402f86                TRNG_Handler
-                0x00402f86                SysTick_Handler
-                0x00402f86                AFEC1_Handler
-                0x00402f86                PendSV_Handler
-                0x00402f86                TC0_CH1_Handler
-                0x00402f86                QSPI_Handler
-                0x00402f86                ISI_Handler
-                0x00402f86                MCAN0_INT0_Handler
-                0x00402f86                RSWDT_Handler
-                0x00402f86                TC1_CH2_Handler
-                0x00402f86                USBHS_Handler
-                0x00402f86                IXC_Handler
-                0x00402f86                CCF_Handler
-                0x00402f86                PIOB_Handler
-                0x00402f86                RTC_Handler
-                0x00402f86                WDT_Handler
-                0x00402f86                MCAN1_INT1_Handler
-                0x00402f86                HSMCI_Handler
-                0x00402f86                UART1_Handler
-                0x00402f86                Dummy_Handler
-                0x00402f86                TWIHS1_Handler
-                0x00402f86                TC3_CH2_Handler
-                0x00402f86                XDMAC_Handler
-                0x00402f86                UART4_Handler
-                0x00402f86                TC2_CH0_Handler
-                0x00402f86                PWM1_Handler
-                0x00402f86                USART1_Handler
-                0x00402f86                PWM0_Handler
-                0x00402f86                AFEC0_Handler
-                0x00402f86                CCW_Handler
-                0x00402f86                TC3_CH0_Handler
-                0x00402f86                SSC_Handler
-                0x00402f86                TC1_CH0_Handler
-                0x00402f86                ACC_Handler
-                0x00402f86                PMC_Handler
-                0x00402f86                GMAC_Handler
-                0x00402f86                TC2_CH2_Handler
-                0x00402f86                MCAN0_INT1_Handler
-                0x00402f86                GMAC_Q5_Handler
-                0x00402f86                SUPC_Handler
-                0x00402f86                TC2_CH1_Handler
-                0x00402f86                MCAN1_INT0_Handler
-                0x00402f86                EFC_Handler
-                0x00402f86                GMAC_Q1_Handler
-                0x00402f86                USART2_Handler
-                0x00402f86                SDRAMC_Handler
-                0x00402f86                GMAC_Q2_Handler
-                0x00402f86                PIOE_Handler
-                0x00402f86                SPI1_Handler
-                0x00402f86                TC1_CH1_Handler
-                0x00402f86                GMAC_Q3_Handler
-                0x00402f86                PIOD_Handler
-                0x00402f86                TWIHS2_Handler
-                0x00402f86                I2SC0_Handler
-                0x00402f86                UART0_Handler
-                0x00402f86                I2SC1_Handler
-                0x00402f86                PIOC_Handler
-                0x00402f86                GMAC_Q4_Handler
-                0x00402f86                FPU_Handler
-                0x00402f86                RSTC_Handler
-                0x00402f86                ICM_Handler
-                0x00402f86                AES_Handler
-                0x00402f86                SPI0_Handler
+                0x00402f96        0x2 build/DevBoard/production/_ext/1844592860/interrupts.o
+                0x00402f96                DACC_Handler
+                0x00402f96                SVCall_Handler
+                0x00402f96                TC0_CH2_Handler
+                0x00402f96                TC3_CH1_Handler
+                0x00402f96                UART3_Handler
+                0x00402f96                UART2_Handler
+                0x00402f96                TRNG_Handler
+                0x00402f96                SysTick_Handler
+                0x00402f96                AFEC1_Handler
+                0x00402f96                PendSV_Handler
+                0x00402f96                TC0_CH1_Handler
+                0x00402f96                QSPI_Handler
+                0x00402f96                ISI_Handler
+                0x00402f96                MCAN0_INT0_Handler
+                0x00402f96                RSWDT_Handler
+                0x00402f96                TC1_CH2_Handler
+                0x00402f96                USBHS_Handler
+                0x00402f96                IXC_Handler
+                0x00402f96                CCF_Handler
+                0x00402f96                PIOB_Handler
+                0x00402f96                RTC_Handler
+                0x00402f96                WDT_Handler
+                0x00402f96                MCAN1_INT1_Handler
+                0x00402f96                HSMCI_Handler
+                0x00402f96                UART1_Handler
+                0x00402f96                Dummy_Handler
+                0x00402f96                TWIHS1_Handler
+                0x00402f96                TC3_CH2_Handler
+                0x00402f96                XDMAC_Handler
+                0x00402f96                UART4_Handler
+                0x00402f96                TC2_CH0_Handler
+                0x00402f96                PWM1_Handler
+                0x00402f96                USART1_Handler
+                0x00402f96                PWM0_Handler
+                0x00402f96                AFEC0_Handler
+                0x00402f96                CCW_Handler
+                0x00402f96                TC3_CH0_Handler
+                0x00402f96                SSC_Handler
+                0x00402f96                TC1_CH0_Handler
+                0x00402f96                ACC_Handler
+                0x00402f96                PMC_Handler
+                0x00402f96                GMAC_Handler
+                0x00402f96                TC2_CH2_Handler
+                0x00402f96                MCAN0_INT1_Handler
+                0x00402f96                GMAC_Q5_Handler
+                0x00402f96                SUPC_Handler
+                0x00402f96                TC2_CH1_Handler
+                0x00402f96                MCAN1_INT0_Handler
+                0x00402f96                EFC_Handler
+                0x00402f96                GMAC_Q1_Handler
+                0x00402f96                USART2_Handler
+                0x00402f96                SDRAMC_Handler
+                0x00402f96                GMAC_Q2_Handler
+                0x00402f96                PIOE_Handler
+                0x00402f96                SPI1_Handler
+                0x00402f96                TC1_CH1_Handler
+                0x00402f96                GMAC_Q3_Handler
+                0x00402f96                PIOD_Handler
+                0x00402f96                TWIHS2_Handler
+                0x00402f96                I2SC0_Handler
+                0x00402f96                UART0_Handler
+                0x00402f96                I2SC1_Handler
+                0x00402f96                PIOC_Handler
+                0x00402f96                GMAC_Q4_Handler
+                0x00402f96                FPU_Handler
+                0x00402f96                RSTC_Handler
+                0x00402f96                ICM_Handler
+                0x00402f96                AES_Handler
+                0x00402f96                SPI0_Handler
 
 .text.NonMaskableInt_Handler%298
-                0x00403116        0x2
+                0x00403126        0x2
  .text.NonMaskableInt_Handler
-                0x00403116        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
-                0x00403116                NonMaskableInt_Handler
+                0x00403126        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
+                0x00403126                NonMaskableInt_Handler
 
 .text.HardFault_Handler%299
-                0x00403376        0x2
+                0x00403386        0x2
  .text.HardFault_Handler
-                0x00403376        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
-                0x00403376                HardFault_Handler
+                0x00403386        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
+                0x00403386                HardFault_Handler
 
 .text.DebugMonitor_Handler%300
-                0x0040345e        0x2
+                0x0040346e        0x2
  .text.DebugMonitor_Handler
-                0x0040345e        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
-                0x0040345e                DebugMonitor_Handler
+                0x0040346e        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
+                0x0040346e                DebugMonitor_Handler
 
 .text.MemoryManagement_Handler%301
-                0x00403ea2        0x2
+                0x00403eb2        0x2
  .text.MemoryManagement_Handler
-                0x00403ea2        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
-                0x00403ea2                MemoryManagement_Handler
+                0x00403eb2        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
+                0x00403eb2                MemoryManagement_Handler
 
 .text.BusFault_Handler%302
-                0x00404296        0x2
+                0x004042a6        0x2
  .text.BusFault_Handler
-                0x00404296        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
-                0x00404296                BusFault_Handler
+                0x004042a6        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
+                0x004042a6                BusFault_Handler
 
 .text.UsageFault_Handler%303
-                0x0040468e        0x2
+                0x0040469e        0x2
  .text.UsageFault_Handler
-                0x0040468e        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
-                0x0040468e                UsageFault_Handler
+                0x0040469e        0x2 build/DevBoard/production/_ext/1844592860/exceptions.o
+                0x0040469e                UsageFault_Handler
 
 .text.Dummy_App_Func%304
-                0x004049f6        0x2
+                0x00404a06        0x2
  .text.Dummy_App_Func
-                0x004049f6        0x2 build/DevBoard/production/_ext/1844592860/startup_xc32.o
-                0x004049f6                _on_reset
-                0x004049f6                _on_bootstrap
-                0x004049f6                __xc32_on_reset
-                0x004049f6                Dummy_App_Func
-                0x004049f6                __xc32_on_bootstrap
+                0x00404a06        0x2 build/DevBoard/production/_ext/1844592860/startup_xc32.o
+                0x00404a06                _on_reset
+                0x00404a06                _on_bootstrap
+                0x00404a06                __xc32_on_reset
+                0x00404a06                Dummy_App_Func
+                0x00404a06                __xc32_on_bootstrap
 
 .text.__dummy%305
-                0x00404c02        0x2
- .text.__dummy  0x00404c02        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
-                0x00404c02                __init_host
+                0x00404c12        0x2
+ .text.__dummy  0x00404c12        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__libc_start_main.o)
+                0x00404c12                __init_host
 
 .text.__dummy%306
-                0x00404d76        0x2
- .text.__dummy  0x00404d76        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__init_stdio.o)
-                0x00404d76                __init_stdin
-                0x00404d76                __init_stderr
+                0x00404d86        0x2
+ .text.__dummy  0x00404d86        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__init_stdio.o)
+                0x00404d86                __init_stdin
+                0x00404d86                __init_stderr
 
 .text.__dummy%307
-                0x00405116        0x2
- .text.__dummy  0x00405116        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stderr.o)
-                0x00405116                __stdio_seek
+                0x00405126        0x2
+ .text.__dummy  0x00405126        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v7e-m+dp/hard\libc-musl.a(__stderr.o)
+                0x00405126                __stdio_seek
