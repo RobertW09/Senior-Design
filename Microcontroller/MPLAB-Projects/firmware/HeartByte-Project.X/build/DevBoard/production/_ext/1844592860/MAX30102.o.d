@@ -1,4 +1,5 @@
-build/DevBoard/production/_ext/1360937237/main.o: ../src/main.c \
+build/DevBoard/production/_ext/1844592860/MAX30102.o: \
+ ../src/config/DevBoard/MAX30102.c ../src/config/DevBoard/MAX30102.h \
  ../src/config/DevBoard/definitions.h \
  ../src/config/DevBoard/peripheral/clk/plib_clk.h \
  ../src/config/DevBoard/peripheral/pio/plib_pio.h \
@@ -141,7 +142,9 @@ build/DevBoard/production/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/DevBoard/system/cache/sys_cache.h \
  ../src/config/DevBoard/osal/osal.h \
  ../src/config/DevBoard/system/debug/sys_debug.h ../src/app.h \
- ../src/config/DevBoard/MAX30102.h
+ ../src/config/DevBoard/definitions.h
+
+../src/config/DevBoard/MAX30102.h:
 
 ../src/config/DevBoard/definitions.h:
 
@@ -433,4 +436,4 @@ build/DevBoard/production/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/app.h:
 
-../src/config/DevBoard/MAX30102.h:
+../src/config/DevBoard/definitions.h:

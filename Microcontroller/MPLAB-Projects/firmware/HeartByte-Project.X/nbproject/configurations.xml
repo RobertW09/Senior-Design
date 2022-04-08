@@ -94,6 +94,7 @@
           <itemPath>../src/config/DevBoard/configuration.h</itemPath>
           <itemPath>../src/config/DevBoard/driver.h</itemPath>
           <itemPath>../src/config/DevBoard/driver_common.h</itemPath>
+          <itemPath>../src/config/DevBoard/MAX30102.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -304,6 +305,7 @@
           <itemPath>../src/config/DevBoard/startup_xc32.c</itemPath>
           <itemPath>../src/config/DevBoard/libc_syscalls.c</itemPath>
           <itemPath>../src/config/DevBoard/tasks.c</itemPath>
+          <itemPath>../src/config/DevBoard/MAX30102.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
