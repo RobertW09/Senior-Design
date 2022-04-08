@@ -5,19 +5,35 @@
       <map>
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1695" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/bg_gradient.xml" value="0.1695" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/circle_shape.xml" value="0.2215" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_chart.xml" value="0.2215" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_family.xml" value="0.2215" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1695" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_loading_heart_temp.xml" value="0.1695" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_real_heart.xml" value="0.1695" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_settings.xml" value="0.2215" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/login_image.xml" value="0.164" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/password_key.xml" value="0.195" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/rounded_edges.xml" value="0.1" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/splash_background.xml" value="0.1695" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_dashboard2.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_register.xml" value="0.15579710144927536" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_reset_password.xml" value="0.18802083333333333" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_view_analytics.xml" value="0.17831813576494426" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/content_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/content_dashboard2.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/fragment_second2.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/fragment_second3.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/menu/bottom_menu.xml" value="0.36102564102564105" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_display_message.xml" value="0.5" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.196875" />
         <entry key="..\:/School/SeniorDesign/RepoClone/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.33" />

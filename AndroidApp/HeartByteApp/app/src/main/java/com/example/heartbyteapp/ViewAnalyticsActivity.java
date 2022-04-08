@@ -33,7 +33,12 @@ public class ViewAnalyticsActivity extends AppCompatActivity {
                 new DataPoint(1, 5),
                 new DataPoint(2, 3),
                 new DataPoint(3, 2),
-                new DataPoint(4, 6)
+                new DataPoint(4, 1),
+                new DataPoint(6, 2),
+                new DataPoint(8, 4),
+                new DataPoint(12, 3),
+                new DataPoint(32, 62),
+
         });
         graph.addSeries(series);
 
