@@ -168,14 +168,14 @@ void SYS_Initialize ( void* data )
 
 	SUPC_Initialize();
 
+	RTC_Initialize();
+
   
 
  
     TC0_CH0_TimerInitialize(); 
      
     
-	RTC_Initialize();
-
 	TWIHS0_Initialize();
 
 	RTT_Initialize();
@@ -184,6 +184,8 @@ void SYS_Initialize ( void* data )
 
     USART0_Initialize();
 
+
+    DRV_BM71_Initialize();
 
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);

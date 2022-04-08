@@ -58,5 +58,18 @@ children:
         attributes: {id: enabled}
         children:
         - {type: Value, value: 'false'}
+  - type: DirectCapability
+    attributes: {id: USART0_UART}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: bluetooth_bm71}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: USART PLIB}
 - type: ElementPosition
   attributes: {x: '760', y: '131', id: usart0}
