@@ -1,0 +1,14 @@
+configName: DevBoard
+folderName: HeartByte-Project
+format_version: v1.0
+frameworkPath: ..\..\..\..\Users\rswal\Harmony3
+processor: ATSAME70Q21B
+projectName: HeartByte
+settings:
+  PackageFilter: bsp;bt;core;csp;dev_packs;harmony-services;quick_docs;usb
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME70_DFP\4.6.98\same70b\atdf\ATSAME70Q21B.atdf

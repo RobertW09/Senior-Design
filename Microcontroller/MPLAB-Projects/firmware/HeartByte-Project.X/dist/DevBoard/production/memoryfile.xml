@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/DevBoard/production/HeartByte-Project.X.production.elf">
+    <memory name="program">
+      <units>bytes</units>
+      <length>2097152</length>
+      <used>17045</used>
+      <free>2080107</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>393216</length>
+      <used>3153</used>
+      <free>390063</free>
+    </memory>
+  </executable>
+</project>
