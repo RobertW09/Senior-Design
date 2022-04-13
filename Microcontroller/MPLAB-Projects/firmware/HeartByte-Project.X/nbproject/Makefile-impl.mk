@@ -31,7 +31,7 @@ DEFAULTCONF=DevBoard
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=DevBoard 
+ALLCONFS=DevBoard SMD 
 
 
 # build
@@ -46,12 +46,14 @@ ALLCONFS=DevBoard
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=DevBoard clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=SMD clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=DevBoard build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=SMD build
 
 
 

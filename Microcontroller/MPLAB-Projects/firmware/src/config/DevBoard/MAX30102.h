@@ -27,6 +27,7 @@
 //Note that MAX30102 has the same I2C address and Part ID
 #define T_BUF               750 // this is the amount of time to wait between
                                 // I2C transfers
+#define RST_DELAY           30000
 
 #define A_FULL_FLAG         0x80
 #define PPG_RDY_FLAG        0x40

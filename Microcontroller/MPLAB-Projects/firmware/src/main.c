@@ -107,6 +107,7 @@ int main ( void )
 //    LED_Toggle();
     
     uint64_t i=0;
+    uint8_t init=0;
     struct tm sys_time;
     
     /* Initialize all modules */
@@ -143,7 +144,7 @@ int main ( void )
 //                if(!ppgPwrRdyInt)
 //                    SUPC_SleepModeEnter();
                 ppgSetup();
-                setPulseAmplitudeRed(&ppg, 0x0A);
+//                setPulseAmplitudeRed(&ppg, 0x0A);
                 startTimers();
                 state = INIT_MEASURE;
                 break;
@@ -162,11 +163,15 @@ int main ( void )
 //                readPostWakeUp();
 //                clearFIFO(&ppg);
                 measuredSamples = 0;
+                init = 0;
                 state = WAIT_FOR_INT;
                 break;
                 
             case WAIT_FOR_INT:
-                printf("~~WAIT_FOR_INT~~\n\r");
+                if(init==0) {
+                    init = 1;
+                    printf("~~WAIT_FOR_INT~~\n\r");
+                }
                 // set LPM to wait for interrupts
                 // Waiting for FIFO_ALMOST_FULL flag to then dump fifo data and
                 // fill the ir and red buffers. Once buffers are full, wait for
@@ -328,6 +333,7 @@ void loadBuffers(void) {
 // setup registers for ppg sensor
 void ppgSetup(void) {
     softReset(&ppg);
+    
     shutDown(&ppg);
     setFIFOAverage(&ppg, FIFO_AVG);
     
@@ -335,6 +341,7 @@ void ppgSetup(void) {
     
     // led mode
     setLEDMode(&ppg, 0x07);
+//    readPostWakeUp();
     setFIFOAlmostFull(&ppg, ALMOST_FULL);
 //    readPostWakeUp();
     // sampling config
@@ -348,22 +355,31 @@ void ppgSetup(void) {
 //    readPostWakeUp();
     
     // set proximity threshold
-    setProximityThreshold(&ppg, PROX_THRESH);
+//    setProximityThreshold(&ppg, PROX_THRESH);
+//    readPostWakeUp();
     
     // set interrupts
     enableAFULL(&ppg);
-    enablePROXINT(&ppg);
+//    readPostWakeUp();
+//    enablePROXINT(&ppg);
+//    readPostWakeUp();
     enableDIETEMPRDY(&ppg);
+//    readPostWakeUp();
     setPulseAmplitudeRed(&ppg, 0x1F);
+//    readPostWakeUp();
     
     setPulseAmplitudeIR(&ppg, 0x1F);
+//    readPostWakeUp();
     
     enableSlot(&ppg, 1, 0x01); //See pg 21 of datasheet
+//    readPostWakeUp();
     enableSlot(&ppg, 2, 0x02);
+//    readPostWakeUp();
     
      // fifo config
 //    readPostWakeUp();
     clearFIFO(&ppg);
+//    readPostWakeUp();
 }
 
 /*

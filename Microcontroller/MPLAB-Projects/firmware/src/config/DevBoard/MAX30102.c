@@ -197,21 +197,27 @@ void initMAX30102(struct MAX30102 *ppg)
 // This simply write the reset bit. We need to wait for the interrupt signal and
 // check the PWR_RDY bit of INTSTATUS2
 void softReset(struct MAX30102 *ppg) {
-    bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_RESET_MASK, MAX30102_RESET);
-//  bitMask(MAX30102_MODECONFIG, MAX30102_RESET_MASK, MAX30102_RESET);
-
-    // We want to avoid polling 
-    // Wait for sensor interrupt and PWR_RDY bit
+//    bool status;
+    volatile uint32_t rstDelay;
+    volatile uint16_t delay;
+    uint8_t value;
     
-  // Poll for bit to clear, reset is then complete
-  // Timeout after 100ms
-//  unsigned long startTime = millis();
-//  while (millis() - startTime < 100)
-//  {
-//    uint8_t response = readRegister8(_i2caddr, MAX30102_MODECONFIG);
-//    if ((response & MAX30102_RESET) == 0) break; //We're done!
-//    delay(1); //Let's not over burden the I2C bus
-//  }
+    bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_RESET_MASK, MAX30102_RESET);
+    
+    // busy wait some time before checking reset status
+    rstDelay = 0;
+j:  while(rstDelay<RST_DELAY) {rstDelay++;}
+
+    // check the reset status
+    TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_MODECONFIG, 1, &value, 1);
+    while(TWIHS0_IsBusy());
+    delay = 0;
+    while(delay<T_BUF){delay++;}
+    
+    // if the reset status is still 1, go back to the busy wait
+    if(value & MAX30102_RESET) {
+        goto j;
+    }
 }
 
 // Put IC into low power mode (datasheet pg. 19)

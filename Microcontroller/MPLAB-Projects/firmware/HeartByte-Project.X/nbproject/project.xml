@@ -20,6 +20,10 @@
                     <name>DevBoard</name>
                     <type>2</type>
                 </confElem>
+                <confElem>
+                    <name>SMD</name>
+                    <type>2</type>
+                </confElem>
             </confList>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
