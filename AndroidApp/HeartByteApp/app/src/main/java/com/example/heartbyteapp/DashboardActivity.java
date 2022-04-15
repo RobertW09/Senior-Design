@@ -198,7 +198,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         Toast.makeText(DashboardActivity.this, "Data has been pushed", Toast.LENGTH_LONG).show();
         //spo2
         UserDataPushSpO2 userDataPushSpO2 = new UserDataPushSpO2(x_time,spo2);
-        SpO2Ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userDataPushSpO2);
+        SpO2Ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userDataPushSpO2); //this pushes data
         Toast.makeText(DashboardActivity.this, "Data has been pushed", Toast.LENGTH_LONG).show();
 
         
