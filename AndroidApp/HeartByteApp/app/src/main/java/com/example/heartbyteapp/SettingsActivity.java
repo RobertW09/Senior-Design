@@ -73,6 +73,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
+            case R.id.settings_family_button:
+                startActivity(new Intent(this, FamilyActivity.class));
+                break;
         }
     }
 }
