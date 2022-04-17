@@ -119,24 +119,14 @@ static   uint8_t MAX30102_SLOT4_MASK = 		0x8F;
 
 //Begin Interrupt configuration
 uint8_t getINT1(struct MAX30102 *ppg) {
-    bool status;
     uint8_t value;
-    volatile uint16_t delay;
-    status = TWIHS0_WriteRead(MAX30102_ADDRESS, &MAX30102_INTSTAT1, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    delay = 0;
-    while(delay < T_BUF){delay++;}
-    return (status) ? value : -1;
+    value = readRegister(ppg->_i2caddr, MAX30102_INTSTAT1);
+    return value;
 }
 uint8_t getINT2(struct MAX30102 *ppg) {
-    bool status;
     uint8_t value;
-    volatile uint16_t delay;
-    status = TWIHS0_WriteRead(MAX30102_ADDRESS, &MAX30102_INTSTAT2, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    delay = 0;
-    while(delay<T_BUF){delay++;}
-    return (status) ? value : -1;
+    value = readRegister(ppg->_i2caddr, MAX30102_INTSTAT2);
+    return value;
 //    return (readRegister8(_i2caddr, MAX30102_INTSTAT2, 1));
 }
 
@@ -199,7 +189,6 @@ void initMAX30102(struct MAX30102 *ppg)
 void softReset(struct MAX30102 *ppg) {
 //    bool status;
     volatile uint32_t rstDelay;
-    volatile uint16_t delay;
     uint8_t value;
     
     bitMask(ppg->_i2caddr, MAX30102_MODECONFIG, MAX30102_RESET_MASK, MAX30102_RESET);
@@ -209,10 +198,7 @@ void softReset(struct MAX30102 *ppg) {
 j:  while(rstDelay<RST_DELAY) {rstDelay++;}
 
     // check the reset status
-    TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_MODECONFIG, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    delay = 0;
-    while(delay<T_BUF){delay++;}
+    value = readRegister(ppg->_i2caddr, MAX30102_MODECONFIG);
     
     // if the reset status is still 1, go back to the busy wait
     if(value & MAX30102_RESET) {
@@ -412,6 +398,7 @@ void disableSlots(struct MAX30102 *ppg) {
     buff[2] = 0;
     
     TWIHS0_Write(ppg->_i2caddr, buff, 2);
+    while(TWIHS0_IsBusy());
     delay = 0;
     while(delay<T_BUF){delay++;}
     
@@ -488,25 +475,16 @@ void setFIFOAlmostFull(struct MAX30102 *ppg, uint8_t almostFull) {
 
 //Read the FIFO Write Pointer
 uint8_t getWritePointer(struct MAX30102 *ppg) {
-    bool status;
     uint8_t value;
-    volatile uint16_t delay;
-    
-    status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_FIFOWRITEPTR, 1, &value, 1);
-    while(delay<T_BUF){delay++;}
-    return (status) ? value : -1;
+    value = readRegister(ppg->_i2caddr, MAX30102_FIFOWRITEPTR);
+    return value;
 }
 
 //Read the FIFO Read Pointer
 uint8_t getReadPointer(struct MAX30102 *ppg) {
-    bool status;
     uint8_t value;
-    volatile uint16_t delay;
-    
-    status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_FIFOREADPTR, 1, &value, 1);
-    delay = 0;
-    while(delay<T_BUF){delay++;}
-    return (status) ? value : -1;
+    value = readRegister(ppg->_i2caddr, MAX30102_FIFOREADPTR);
+    return value;
 }
 
 // Initiate temperature read. Need to wait for TMP_RDY interrupt
@@ -520,22 +498,14 @@ float readTemperature(struct MAX30102 *ppg) {
     int8_t tempInt;
     uint8_t tempFrac;
     uint8_t value;
-    bool status;
-    volatile uint16_t delay;
     
     // read integer part
-    status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_DIETEMPINT, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    delay = 0;
-    while(delay<T_BUF){delay++;}
-    tempInt = (status) ? value : -1;
+    value = readRegister(ppg->_i2caddr, MAX30102_DIETEMPINT);
+    tempInt = value;
     
     // read fractional part
-    status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_DIETEMPFRAC, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    delay = 0;
-    while(delay<T_BUF){delay++;}
-    tempFrac =  (status) ? value : -1;
+    value = readRegister(ppg->_i2caddr, MAX30102_DIETEMPFRAC);
+    tempFrac =  value;
 
     // Step 3: Calculate temperature (datasheet pg. 23)
     return (float)tempInt + ((float)tempFrac * 0.0625);
@@ -559,121 +529,20 @@ void setPROXINTTHRESH(struct MAX30102 *ppg, uint8_t val) {
 // Device ID and Revision
 //
 uint8_t readPartID(struct MAX30102 *ppg) {
-    bool status;
     uint8_t value;
-    volatile uint16_t delay;
+    
+    value = readRegister(ppg->_i2caddr, MAX30102_PARTID);
 
-    status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_PARTID, 1, &value, 1);
-    // wait for the wire to clear up
-    while(TWIHS0_IsBusy());
-    // busy wait for 1.3 uS
-    // See datasheet p. 4 of the data  sheet. t_buf
-    delay=0;
-    while(delay<T_BUF){delay++;}
-    return (status) ? value : -1;
+    return value;
 }
 
 uint8_t readRevisionID(struct MAX30102 *ppg) {
-    bool status;
     uint8_t value;
-    volatile uint16_t delay;
+    
+    value = readRegister(ppg->_i2caddr, MAX30102_REVISIONID);
 
-    status = TWIHS0_WriteRead(ppg->_i2caddr, &MAX30102_REVISIONID, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    ppg->revisionID = (status) ? value : -5;
-    delay=0;
-    while(delay<T_BUF){delay++;}
-    return (status) ? value : -1;
+    return value;
 }   
-
-
-//Setup the sensor
-//The MAX30102 has many settings. By default we select:
-// Sample Average = 4
-// Mode = MultiLED
-// ADC Range = 16384 (62.5pA per LSB)
-// Sample rate = 50
-//Use the default setup if you are just getting started with the MAX30102 sensor
-//void setup(uint8_t powerLevel, uint8_t sampleAverage, uint8_t leds, int sampleRate, int pulseWidth, int adcRange) {
-//    softReset(); //Reset all configuration, threshold, and data registers to POR values
-//
-//    //FIFO Configuration
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//    //The chip will average multiple samples of same type together if you wish
-//    if (sampleAverage == 1) setFIFOAverage(MAX30102_SAMPLEAVG_1); //No averaging per FIFO record
-//    else if (sampleAverage == 2) setFIFOAverage(MAX30102_SAMPLEAVG_2);
-//    else if (sampleAverage == 4) setFIFOAverage(MAX30102_SAMPLEAVG_4);
-//    else if (sampleAverage == 8) setFIFOAverage(MAX30102_SAMPLEAVG_8);
-//    else if (sampleAverage == 16) setFIFOAverage(MAX30102_SAMPLEAVG_16);
-//    else if (sampleAverage == 32) setFIFOAverage(MAX30102_SAMPLEAVG_32);
-//    else setFIFOAverage(MAX30102_SAMPLEAVG_4);
-//
-//    //    setFIFOAlmostFull(1); //Set to 31 samples to trigger an 'Almost Full' interrupt
-//    enableFIFORollover(); //Allow FIFO to wrap/roll over
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//
-//    //Mode Configuration
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//    if (leds == 3) setLEDMode(MAX30102_MODE_MULTILED); //Watch all three LED channels
-//    else if (leds == 2) setLEDMode(MAX30102_MODE_REDIRONLY); //Red and IR
-//    else setLEDMode(MAX30102_MODE_REDONLY); //Red only
-//    ledMode = leds; //Used to control how many bytes to read from FIFO buffer
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//
-//    //Particle Sensing Configuration
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//    if(adcRange < 4096) setADCRange(MAX30102_ADCRANGE_2048); //7.81pA per LSB
-//    else if(adcRange < 8192) setADCRange(MAX30102_ADCRANGE_4096); //15.63pA per LSB
-//    else if(adcRange < 16384) setADCRange(MAX30102_ADCRANGE_8192); //31.25pA per LSB
-//    else if(adcRange == 16384) setADCRange(MAX30102_ADCRANGE_16384); //62.5pA per LSB
-//    else setADCRange(MAX30102_ADCRANGE_2048);
-//
-//    if (sampleRate < 100) setSampleRate(MAX30102_SAMPLERATE_50); //Take 50 samples per second
-//    else if (sampleRate < 200) setSampleRate(MAX30102_SAMPLERATE_100);
-//    else if (sampleRate < 400) setSampleRate(MAX30102_SAMPLERATE_200);
-//    else if (sampleRate < 800) setSampleRate(MAX30102_SAMPLERATE_400);
-//    else if (sampleRate < 1000) setSampleRate(MAX30102_SAMPLERATE_800);
-//    else if (sampleRate < 1600) setSampleRate(MAX30102_SAMPLERATE_1000);
-//    else if (sampleRate < 3200) setSampleRate(MAX30102_SAMPLERATE_1600);
-//    else if (sampleRate == 3200) setSampleRate(MAX30102_SAMPLERATE_3200);
-//    else setSampleRate(MAX30102_SAMPLERATE_50);
-//
-//    //The longer the pulse width the longer range of detection you'll have
-//    //At 69us and 0.4mA it's about 2 inches
-//    //At 411us and 0.4mA it's about 6 inches
-//    if (pulseWidth < 118) setPulseWidth(MAX30102_PULSEWIDTH_69); //Page 26, Gets us 15 bit resolution
-//    else if (pulseWidth < 215) setPulseWidth(MAX30102_PULSEWIDTH_118); //16 bit resolution
-//    else if (pulseWidth < 411) setPulseWidth(MAX30102_PULSEWIDTH_215); //17 bit resolution
-//    else if (pulseWidth == 411) setPulseWidth(MAX30102_PULSEWIDTH_411); //18 bit resolution
-//    else setPulseWidth(MAX30102_PULSEWIDTH_69);
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//
-//    //LED Pulse Amplitude Configuration
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//    //Default is 0x1F which gets us 6.4mA
-//    //powerLevel = 0x02, 0.4mA - Presence detection of ~4 inch
-//    //powerLevel = 0x1F, 6.4mA - Presence detection of ~8 inch
-//    //powerLevel = 0x7F, 25.4mA - Presence detection of ~8 inch
-//    //powerLevel = 0xFF, 50.0mA - Presence detection of ~12 inch
-//
-//    setPulseAmplitudeRed(powerLevel);
-//    setPulseAmplitudeIR(powerLevel);
-//    //    setPulseAmplitudeGreen(powerLevel);
-//    setPulseAmplitudeProximity(powerLevel);
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//
-//    //Multi-LED Mode Configuration, Enable the reading of the three LEDs
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//    enableSlot(1, SLOT_RED_LED);
-//    if (ledMode > 1) enableSlot(2, SLOT_IR_LED);
-//    //    if (ledMode > 2) enableSlot(3, SLOT_GREEN_LED);
-//    //enableSlot(1, SLOT_RED_PILOT);
-//    //enableSlot(2, SLOT_IR_PILOT);
-//    //enableSlot(3, SLOT_GREEN_PILOT);
-//    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//
-//    clearFIFO(); //Reset the FIFO before we begin checking the sensor
-//}
 
 //
 // Data Collection
@@ -726,6 +595,7 @@ bool dumpFIFO(struct MAX30102 *ppg, uint8_t samples) {
     } else {
         return false;
     }
+    clearFIFO(ppg);
     return status;
 }
 
@@ -742,13 +612,9 @@ uint32_t * getIR(struct MAX30102 *ppg) {
 //Given a register, read it, mask it, and then set the thing
 void bitMask(uint8_t addr, uint8_t reg, uint8_t mask, uint8_t thing) {
     // Grab current register context
-    bool status;
     uint8_t originalContents, value;
-    status = TWIHS0_WriteRead(addr, &reg, 1, &value, 1);
-    while(TWIHS0_IsBusy());
-    volatile uint16_t i = 0;
-    while(i<T_BUF){i++;}
-    originalContents = (status) ? value : 0;
+    value = readRegister(addr, reg);
+    originalContents = value;
 
     // Zero-out the portions of the register we're interested in
     originalContents = originalContents & mask;
@@ -765,4 +631,13 @@ void writeRegister(uint8_t addr, uint8_t reg, uint8_t value) {
     while(TWIHS0_IsBusy());
     volatile uint16_t i = 0;
     while(i<T_BUF){i++;}
+}
+
+uint8_t readRegister(uint8_t addr, uint8_t reg) {
+    volatile uint16_t delay;
+    uint8_t value;
+    TWIHS0_WriteRead(addr, &reg, 1, &value, 1);
+    while(TWIHS0_IsBusy());
+    while(delay<T_BUF){delay++;}
+    return value;
 }

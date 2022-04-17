@@ -45,8 +45,6 @@ struct MAX30102{
     uint8_t pulseAmplitudeRed;
     uint8_t pulseAmplitudeIR;
     uint8_t pulseAmplitudeProx;
-
-    uint8_t revisionID; 
     
     // this could be adjusted to uint16_t if we want to reduce the data size
     uint32_t redSamplesBuffer[32];
@@ -130,6 +128,7 @@ uint8_t readPartID(struct MAX30102 *ppg);
 // Setup the IC with user selectable settings
 //void setup(uint8_t powerLevel = 0x1F, uint8_t sampleAverage = 4, uint8_t ledMode = 3, int sampleRate = 400, int pulseWidth = 411, int adcRange = 4096);
 void writeRegister(uint8_t addr, uint8_t reg, uint8_t value);
+uint8_t readRegister(uint8_t addr, uint8_t reg);
 
 void bitMask(uint8_t addr, uint8_t reg, uint8_t mask, uint8_t thing);
 

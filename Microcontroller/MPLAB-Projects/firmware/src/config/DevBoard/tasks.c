@@ -75,7 +75,7 @@ void SYS_Tasks ( void )
     
 
     /* Maintain Device Drivers */
-    DRV_BM71_Tasks();
+//    DRV_BM71_Tasks();
 
 
 
@@ -85,7 +85,7 @@ void SYS_Tasks ( void )
 
     /* Maintain the application's state machine. */
         /* Call Application task APP. */
-    APP_Tasks();
+//    APP_Tasks();
 
 
 

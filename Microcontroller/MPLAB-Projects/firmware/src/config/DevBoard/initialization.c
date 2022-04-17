@@ -173,7 +173,7 @@ void SYS_Initialize ( void* data )
   
 
  
-    TC0_CH0_TimerInitialize(); 
+//    TC0_CH0_TimerInitialize(); 
      
     
 	TWIHS0_Initialize();
@@ -182,16 +182,16 @@ void SYS_Initialize ( void* data )
 
     USART1_Initialize();
 
-    USART0_Initialize();
+//    USART0_Initialize();
 
 
-    DRV_BM71_Initialize();
+//    DRV_BM71_Initialize();
 
 
-    sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+//    sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
 
 
-    APP_Initialize();
+//    APP_Initialize();
 
 
     NVIC_Initialize();
