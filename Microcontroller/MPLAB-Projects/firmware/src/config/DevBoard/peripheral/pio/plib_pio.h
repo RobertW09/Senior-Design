@@ -62,6 +62,15 @@
 // *****************************************************************************
 
 
+/*** Macros for VDD_CTRL pin ***/
+#define VDD_CTRL_Set()               (PIOA_REGS->PIO_SODR = (1<<17))
+#define VDD_CTRL_Clear()             (PIOA_REGS->PIO_CODR = (1<<17))
+#define VDD_CTRL_Toggle()            (PIOA_REGS->PIO_ODSR ^= (1<<17))
+#define VDD_CTRL_OutputEnable()      (PIOA_REGS->PIO_OER = (1<<17))
+#define VDD_CTRL_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<17))
+#define VDD_CTRL_Get()               ((PIOA_REGS->PIO_PDSR >> 17) & 0x1)
+#define VDD_CTRL_PIN                  PIO_PIN_PA17
+
 /*** Macros for BM71_RX_IND pin ***/
 #define BM71_RX_IND_Set()               (PIOB_REGS->PIO_SODR = (1<<2))
 #define BM71_RX_IND_Clear()             (PIOB_REGS->PIO_CODR = (1<<2))
@@ -79,6 +88,15 @@
 #define LED_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<5))
 #define LED_Get()               ((PIOA_REGS->PIO_PDSR >> 5) & 0x1)
 #define LED_PIN                  PIO_PIN_PA5
+
+/*** Macros for VLED_CTRL pin ***/
+#define VLED_CTRL_Set()               (PIOA_REGS->PIO_SODR = (1<<2))
+#define VLED_CTRL_Clear()             (PIOA_REGS->PIO_CODR = (1<<2))
+#define VLED_CTRL_Toggle()            (PIOA_REGS->PIO_ODSR ^= (1<<2))
+#define VLED_CTRL_OutputEnable()      (PIOA_REGS->PIO_OER = (1<<2))
+#define VLED_CTRL_InputEnable()       (PIOA_REGS->PIO_ODR = (1<<2))
+#define VLED_CTRL_Get()               ((PIOA_REGS->PIO_PDSR >> 2) & 0x1)
+#define VLED_CTRL_PIN                  PIO_PIN_PA2
 
 /*** Macros for STBYRST pin ***/
 #define STBYRST_Set()               (PIOD_REGS->PIO_SODR = (1<<11))

@@ -151,21 +151,22 @@ int main ( void )
                 // and remove it from the led pins
                 // power onn the ppg sensor by inserting the pin then afterwards
                 // insert the 3.3v pin for the LED
-                printf("Waiting for PWR_RDY\n\r");
+                //
+                // NEED TO INSERT A PROCEDURE TO POWER OFF THE V_LED AND V_DD 
+                // USING GPIO. 
+                // 1) TURN OFF BOTH V_LED AND V_DD
+                // 2) TURN ON V_DD
+                // 3) WAIT FOR PWR_RDY
                 while(!ppgPwrRdyInt){};
-//                SUPC_SleepModeEnter();
-//                wakeUp();
-//                printf("Part ID:        %02X\n\r", readPartID(&ppg));
-//                printf("Revision ID:    %02X\n\r", readRevisionID(&ppg));
+                //SUPC_SleepModeEnter();
+                // 4) TURN ON V_LED
+                // 5) BEGIN MAX30102 SETUP PROCEDURE
+                printf("Waiting for PWR_RDY\n\r");
+                
+
                 
                 ppgSetup();
                 
-//                uint8_t value;
-//                value = getINT1(&ppg);
-//                printf("INT1: %02X\n\r", value);
-//                value = getINT2(&ppg);
-//                printf("INT2: %02X\n\r", value);
-//                setPulseAmplitudeRed(&ppg, 0x0A);
                 startTimers();
                 state = INIT_MEASURE;
                 break;
@@ -179,7 +180,7 @@ int main ( void )
                         sys_time.tm_hour, sys_time.tm_min, sys_time.tm_sec);
 
                 /* Start PPG Sensor for sampling */
-                wakeUp(&ppg);
+//                wakeUp(&ppg);
                 
                 printf("AFULL INT EN CHECK:\n\r");
                 reg = 0x02;
@@ -401,7 +402,8 @@ void ppgSetup(void) {
     
     // led mode
     printf("Set LED mode\n\r");
-    setLEDMode(&ppg, 0x07);
+//    setLEDMode(&ppg, 0x07); // multi led mode
+    setLEDMode(&ppg, LED_MODE); // SpO2 mode
     reg = 0x09;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
@@ -501,6 +503,7 @@ static void MAX30102_IntHandler(PIO_PIN pin, uintptr_t context) {
     // decode interrupts
     // PPG power is ready so we can move to INIT_MEASURE state
     if(int1 & PWR_RDY_FLAG) {
+        // insert procedure to turn on voltage to LEDs
         ppgPwrRdyInt = true;
         printf("PWR_RDY_INT Triggered\n\r");
         pid = readPartID(&ppg);
