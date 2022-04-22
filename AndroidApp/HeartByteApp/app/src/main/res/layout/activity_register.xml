@@ -67,19 +67,35 @@
         android:drawableStart="@drawable/password_key"
         android:drawablePadding="20dp"
         app:layout_constraintTop_toBottomOf="@id/CreateEmail"/>
+
+   <EditText
+       android:id="@+id/create_password_confirm_edittext"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@drawable/rounded_edges"
+       android:hint="Confirm Password"
+       android:textColor="@color/grey_font"
+       android:textColorHint="@color/grey_font"
+       android:drawableStart="@drawable/password_key"
+       android:drawablePadding="20dp"
+       android:layout_marginTop="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginLeft="20dp"
+       android:padding="10dp"
+       app:layout_constraintTop_toBottomOf="@id/CreatePassword"/>
     <Button
         android:id="@+id/CreateAccountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Account"
-        android:onClick="CreateAccount"
         android:textColor="@color/white_true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CreatePassword"
+        app:layout_constraintTop_toBottomOf="@id/create_password_confirm_edittext"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/grey_font"/>
+
 
     <TextView
         android:id="@+id/HaveAnAccount"

@@ -16,8 +16,10 @@
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/password_key.xml" value="0.195" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/rounded_edges.xml" value="0.1" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/splash_background.xml" value="0.1695" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_add_contacts.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_dashboard2.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_family.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
@@ -50,6 +52,20 @@
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_view_analytics.xml" value="0.375" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner.xml" value="0.2734375" />
         <entry key="..\:/SeniorDesign/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner_dropdown.xml" value="0.2734375" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/drawable/ic_family.xml" value="0.196" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_add_contacts.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_dashboard.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_family.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_measure.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_register.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_settings.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_view_analytics.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Angelie/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/mode_spinner_dropdown.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_login.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_main.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Georg/Documents/GitHub/Senior-Design/AndroidApp/HeartByteApp/app/src/main/res/layout/activity_register.xml" value="0.1" />
