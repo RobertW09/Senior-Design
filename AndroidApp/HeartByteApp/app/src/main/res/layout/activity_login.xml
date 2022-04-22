@@ -87,6 +87,16 @@
         app:layout_constraintTop_toBottomOf="@id/PasswordLogin"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/grey_font"/>
-
+    <Button
+        android:id="@+id/fuck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="164dp"
+        android:text="mainScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        android:onClick="gotoPage"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

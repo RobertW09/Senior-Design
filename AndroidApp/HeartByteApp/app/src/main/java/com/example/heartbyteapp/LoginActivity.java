@@ -74,6 +74,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
     }
+    public void gotoPage(View view){
+        Intent intent = new Intent(this, ble.class);
+        startActivity(intent);
+    }
 
     private void UserLogin() {
         String email = Email.getText().toString().trim();
