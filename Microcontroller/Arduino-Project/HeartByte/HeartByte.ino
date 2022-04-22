@@ -214,30 +214,26 @@ void setup()
     Serial.println("");
     PrintInfo();
     PrintHelp();
+
+    /*
+     * SETUP MAX30102 INTERRUPT LINES
+     */
     
-    if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) //Use default I2C port, 400kHz speed
+    if (!ppg.begin(Wire, I2C_SPEED_FAST)) //Use default I2C port, 400kHz speed
     {
         Serial.println("MAX30105 was not found. Please check wiring/power. ");
     }
     Serial.println("Place your index finger on the sensor with steady pressure.");
-
   
-    particleSensor.setup(); //Configure sensor with default settings
-    particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
-    particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
+    ppg.setup(); //Configure sensor with default settings
+    ppg.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
+    ppg.setPulseAmplitudeGreen(0); //Turn off Green LED
 
-      /*
-  if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) //Use default I2C port, 400kHz speed
-  {
-    Serial.println("MAX30105 was not found. Please check wiring/power. ");
-  }
-  Serial.println("Place your index finger on the sensor with steady pressure.");
-  */
 }
 
 void loop()
 {
-    long irValue = particleSensor.getIR();
+    long irValue = ppg.getIR();
     if (checkForBeat(irValue) == true)
     {
         //We sensed a beat!
