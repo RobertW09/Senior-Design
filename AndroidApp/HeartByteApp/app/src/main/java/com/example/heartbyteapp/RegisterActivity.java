@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView SignInReturn;
     private FirebaseAuth mAuth;
     // private var for user defined information
-    private EditText Name, CreateEmail, CreatePassword;
+    private EditText Name, CreateEmail, CreatePassword,ConfirmPassword;
     private Button CreateAccountButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         Name = (EditText)  findViewById(R.id.Name);
         CreateEmail = (EditText)  findViewById(R.id.CreateEmail);
         CreatePassword = (EditText)  findViewById(R.id.CreatePassword);
+        ConfirmPassword = (EditText) findViewById(R.id.create_password_confirm_edittext);
+
     }
 
     @Override
@@ -61,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String Email = CreateEmail.getText().toString().trim();
         String Password = CreatePassword.getText().toString().trim();
         String FullName = Name.getText().toString().trim();
+        String ConfirmPass = ConfirmPassword.getText().toString().trim();
 
         // checks
         if (FullName.isEmpty()){
@@ -88,6 +91,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             CreateEmail.requestFocus();
             return;
         }
+        if(Password != ConfirmPass){
+            ConfirmPassword.setError("Passwords don't match");
+            ConfirmPassword.requestFocus();
+            return;
+        }
+
+
         // Task is an API that represents asynchronous method call
         mAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

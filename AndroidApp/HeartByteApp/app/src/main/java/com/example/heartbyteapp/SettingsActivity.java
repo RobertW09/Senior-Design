@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -21,6 +23,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private Button InfoSettings;
     private Button FamilySettings;
     private Button LogoutSettings;
+
+    //Firebase
+    private FirebaseAuth mAuth;
 
 
 
@@ -63,6 +68,13 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.dashboard_button:
                 startActivity(new Intent(this, DashboardActivity.class));
+                break;
+            case R.id.settings_logout_button:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+            case R.id.settings_family_button:
+                startActivity(new Intent(this, FamilyActivity.class));
                 break;
         }
     }
