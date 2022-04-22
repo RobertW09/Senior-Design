@@ -13,4 +13,7 @@
     <color name="white_shadow">#FFFFFF</color>
     <color name="brown_poop">#7A5901</color>
     <color name="white_transparent">#1Affffff</color>
+    <color name="colorPrimary">#1DE9B6</color>
+    <color name="colorPrimaryDark">#1DE9B6</color>
+    <color name="colorAccent">#FF5722</color>
 </resources>
