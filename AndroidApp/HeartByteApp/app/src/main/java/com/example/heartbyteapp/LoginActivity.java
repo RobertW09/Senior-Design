@@ -48,11 +48,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
-    // send to the MainActivity (No longer in service)
-     //public void login(View view) {
-       // Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);
-    //}
 
     @Override
     // cases to switch into various different activities
@@ -73,10 +68,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         }
 
-    }
-    public void gotoPage(View view){
-        Intent intent = new Intent(this, ble.class);
-        startActivity(intent);
     }
 
     private void UserLogin() {
