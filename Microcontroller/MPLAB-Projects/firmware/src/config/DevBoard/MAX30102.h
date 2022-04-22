@@ -114,6 +114,8 @@ bool dumpFIFO(struct MAX30102 *ppg, uint8_t samples);
 
 uint8_t getWritePointer(struct MAX30102 *ppg);
 uint8_t getReadPointer(struct MAX30102 *ppg);
+void setWritePointer(struct MAX30102 *ppg, uint8_t value);
+void setReadPointer(struct MAX30102 *ppg, uint8_t value);
 void clearFIFO(struct MAX30102 *ppg); //Sets the read/write pointers to zero
 
 // Die Temperature

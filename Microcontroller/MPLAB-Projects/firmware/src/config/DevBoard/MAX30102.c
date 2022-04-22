@@ -32,7 +32,7 @@ static   uint8_t MAX30102_INTENABLE2 =		0x03;
 
 // FIFO Registers
 static   uint8_t MAX30102_FIFOWRITEPTR = 	0x04;
-//static   uint8_t MAX30102_FIFOOVERFLOW = 	0x05;
+static   uint8_t MAX30102_FIFOOVERFLOW = 	0x05;
 static   uint8_t MAX30102_FIFOREADPTR = 	0x06;
 static   uint8_t MAX30102_FIFODATA =		0x07;
 #define              FIFO_LENGTH                32;
@@ -441,15 +441,31 @@ void setFIFOAverage(struct MAX30102 *ppg, uint8_t numberOfSamples) {
 //Resets all points to start in a known state
 //Page 15 recommends clearing FIFO before beginning a read
 void clearFIFO(struct MAX30102 *ppg) {
-    uint8_t buff[4];
     volatile uint16_t delay;
+//    uint8_t buff[4];
     
-    buff[0] = MAX30102_FIFOWRITEPTR;
-    buff[1] = 0;
-    buff[2] = 0;
-    buff[3] = 0;
+//    buff[0] = MAX30102_FIFOWRITEPTR;
+//    buff[1] = 0;
+//    buff[2] = 0;
+//    buff[3] = 0;
+//    
+//    TWIHS0_Write(ppg->_i2caddr, buff, 4);
+//    while(TWIHS0_IsBusy());
+//    delay = 0;
+//    while(delay<T_BUF){delay++;}
     
-    TWIHS0_Write(ppg->_i2caddr, buff, 4);
+    writeRegister(ppg->_i2caddr, MAX30102_FIFOWRITEPTR, 0);
+    while(TWIHS0_IsBusy());
+    delay = 0;
+    while(delay<T_BUF){delay++;}
+    
+    writeRegister(ppg->_i2caddr, MAX30102_FIFOOVERFLOW, 0);
+    while(TWIHS0_IsBusy());
+    delay = 0;
+    while(delay<T_BUF){delay++;}
+    
+    
+    writeRegister(ppg->_i2caddr, MAX30102_FIFOREADPTR, 0);
     while(TWIHS0_IsBusy());
     delay = 0;
     while(delay<T_BUF){delay++;}
@@ -485,6 +501,14 @@ uint8_t getReadPointer(struct MAX30102 *ppg) {
     uint8_t value;
     value = readRegister(ppg->_i2caddr, MAX30102_FIFOREADPTR);
     return value;
+}
+
+void setWritePointer(struct MAX30102 *ppg, uint8_t value) {
+    writeRegister(ppg->_i2caddr, MAX30102_FIFOWRITEPTR, value);
+}
+
+void setReadPointer(struct MAX30102 *ppg, uint8_t value) {
+    writeRegister(ppg->_i2caddr, MAX30102_FIFOREADPTR, value);
 }
 
 // Initiate temperature read. Need to wait for TMP_RDY interrupt

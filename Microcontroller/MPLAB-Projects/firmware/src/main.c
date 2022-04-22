@@ -16,6 +16,15 @@
     machines of all modules in the system
  *******************************************************************************/
 
+/*
+ * PA02 <= MAX30102 VLED Switch
+ * PA03 <= TWI SDA
+ * PA04 <= TWI SCL
+ * PA05 <= LED3 (onboard led)
+ * PA06 <= MAX30102 Intr
+ * PA17 <= MAX30102 VDD Switch
+ */
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
@@ -34,8 +43,8 @@
 #define MAX_SAMPLES     50                      // number of samples to read
 #define FIFO_DUMP_AMT   31
 #define MAX_TIMESTAMPS  50                      // number of timestamps to record
-#define FIFO_AVG        4                       // average every 4 samples
-#define SAMPLE_RATE     400                    // sps
+#define FIFO_AVG        1                       // average every 4 samples
+#define SAMPLE_RATE     00                    // sps
 #define ALMOST_FULL     32-FIFO_DUMP_AMT     // int at 31 samples
 #define LED_MODE        3                       // IR + RED
 #define ADC_RANGE       4096                    // nA
@@ -112,10 +121,12 @@ enum STATES state;
 int main ( void )
 {
 //    LED_Toggle();
+    volatile uint64_t delay;
     uint8_t reg, value;
     uint64_t i=0;
     uint64_t init=0;
     struct tm sys_time;
+    
     
     /* Initialize all modules */
     SYS_Initialize ( NULL );
@@ -152,21 +163,32 @@ int main ( void )
                 // power onn the ppg sensor by inserting the pin then afterwards
                 // insert the 3.3v pin for the LED
                 //
+                
                 // NEED TO INSERT A PROCEDURE TO POWER OFF THE V_LED AND V_DD 
                 // USING GPIO. 
-                // 1) TURN OFF BOTH V_LED AND V_DD
-                // 2) TURN ON V_DD
+                // 1) TURN OFF BOTH V_LED AND V_DD - Set high voltage on pins
+                printf("VDD and VLED OFF\n\r");
+                VDD_CTRL_Set();
+                VLED_CTRL_Set();
+                delay = 0;
+                while(delay<0xFFFF){delay++;}
+                // 2) TURN ON V_DD - low voltage on VDD_CTRL
+                printf("VDD ON\n\r");
                 // 3) WAIT FOR PWR_RDY
-                while(!ppgPwrRdyInt){};
-                //SUPC_SleepModeEnter();
-                // 4) TURN ON V_LED
-                // 5) BEGIN MAX30102 SETUP PROCEDURE
                 printf("Waiting for PWR_RDY\n\r");
-                
-
-                
+                VDD_CTRL_Clear();
+                while(!ppgPwrRdyInt){SUPC_SleepModeEnter();}
+                // 4) TURN ON V_LED - low voltage on VLED_CTRL
+                printf("VLED ON\n\r");
+                VLED_CTRL_Clear();
+                delay = 0;
+                while(delay<0xFFFF){delay++;}
+                // 5) BEGIN MAX30102 SETUP PROCEDURE - ppg setup
+                pid = readPartID(&ppg);
+                rid = readRevisionID(&ppg);
+                printf("Part ID: %2X\n\r", pid);
+                printf("Revision ID: %2X\n\r", rid);
                 ppgSetup();
-                
                 startTimers();
                 state = INIT_MEASURE;
                 break;
@@ -181,18 +203,33 @@ int main ( void )
 
                 /* Start PPG Sensor for sampling */
 //                wakeUp(&ppg);
+                printf("Clear FIFO\n\r");
+                clearFIFO(&ppg);
                 
-                printf("AFULL INT EN CHECK:\n\r");
+                printf("Enable almost full interrupt\n\r");
+                enableAFULL(&ppg);
                 reg = 0x02;
                 value = readRegister(ppg._i2caddr, reg);
                 printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
                 
-                printf("LED MODE CHECK:\n\r");
-                reg = 0x09;
+                printf("Set almost full threshold\n\r");
+                setFIFOAlmostFull(&ppg, ALMOST_FULL);
+                reg = 0x08;
                 value = readRegister(ppg._i2caddr, reg);
                 printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
                 
-                clearFIFO(&ppg);
+                
+//                printf("AFULL INT EN CHECK:\n\r");
+//                reg = 0x02;
+//                value = readRegister(ppg._i2caddr, reg);
+//                printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+//                
+//                printf("LED MODE CHECK:\n\r");
+//                reg = 0x09;
+//                value = readRegister(ppg._i2caddr, reg);
+//                printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+                
+                
                 measuredSamples = 0;
                 init = 0;
                 state = WAIT_FOR_INT;
@@ -202,7 +239,7 @@ int main ( void )
                 if(init==0) {
                     printf("~~WAIT_FOR_INT~~\n\r");
                 }
-                if((init&0xFFFFFF) == 0) {
+                if((init&0x3FFFFFF) == 0) {
                     printf("FIFO PTR CHECK\n\r");
                     reg = 0x04;
                     value = getWritePointer(&ppg);
@@ -210,6 +247,14 @@ int main ( void )
                     reg = 0x06;
                     value = getReadPointer(&ppg);
                     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+                    
+                    printf("FIFO DATA\n\r");
+                    for(i=0; i<5; i++) {
+                        setReadPointer(&ppg, i);
+                        reg = 0x07;
+                        value = readRegister(ppg._i2caddr, reg);
+                        printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+                    }
                 } 
                 // set LPM to wait for interrupts
                 // Waiting for FIFO_ALMOST_FULL flag to then dump fifo data and
@@ -222,7 +267,7 @@ int main ( void )
             case MEASURE_COMPLETE:
                 printf("~~MEASURE_COMPLETE~~\n\r");
                 // MAX30102 LPM - maintains register state
-                shutDown(&ppg);
+//                shutDown(&ppg);
                 // "Transmit" Data
                 for(i=0; i<MAX_SAMPLES; i++){
                     printf("%d\n\r", irBuffer[i]);
@@ -386,31 +431,30 @@ void ppgSetup(void) {
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
     
-    printf("Shut down PPG sensor\n\r");
-    shutDown(&ppg);
-    reg = 0x09;
-    readRegister(ppg._i2caddr, reg);
-    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+//    printf("Shut down PPG sensor\n\r");
+//    shutDown(&ppg);
+//    reg = 0x09;
+//    readRegister(ppg._i2caddr, reg);
+//    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
     
     printf("Set FIFO average\n\r");
+//    setFIFOAverage(&ppg, 4); // from sample code
     setFIFOAverage(&ppg, FIFO_AVG);
     reg = 0x08;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
     
-//    enableFIFORollover(&ppg);
+    printf("Enable FIFO Rollover\n\r");
+    enableFIFORollover(&ppg);
+    value = readRegister(ppg._i2caddr, reg);
+    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
     
     // led mode
     printf("Set LED mode\n\r");
-//    setLEDMode(&ppg, 0x07); // multi led mode
-    setLEDMode(&ppg, LED_MODE); // SpO2 mode
+//    setLEDMode(&ppg, 0x02); // Red Mode
+    setLEDMode(&ppg, 0x07); // multi led mode
+//    setLEDMode(&ppg, LED_MODE); // SpO2 mode
     reg = 0x09;
-    value = readRegister(ppg._i2caddr, reg);
-    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
-
-    printf("Set almost full threshold\n\r");
-    setFIFOAlmostFull(&ppg, ALMOST_FULL);
-    reg = 0x08;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
     
@@ -418,45 +462,62 @@ void ppgSetup(void) {
     // 16 bit samples at 250 Hz (1000 Hz with decimate of 4)
     
     printf("Set ADC Range\n\r");
+//    setADCRange(&ppg, 2048); // from sample code
     setADCRange(&ppg, ADC_RANGE);
     reg = 0x0A;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
 
     printf("Set sample rate\n\r");
+//    setSampleRate(&ppg, 50); // from sample code
     setSampleRate(&ppg, SAMPLE_RATE);
     reg = 0x0A;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
 
     printf("Set pulsewidth\n\r");
+//    setPulseWidth(&ppg, 69); // from sample code
     setPulseWidth(&ppg, PULSE_WIDTH);
     reg = 0x0A;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
 
-    printf("Enable almost full interrupt\n\r");
-    enableAFULL(&ppg);
-    reg = 0x02;
-    value = readRegister(ppg._i2caddr, reg);
-    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
-
-    printf("set red pulse amplitude\n\r");
-    setPulseAmplitudeRed(&ppg, 0x1F);
+    
+    
+    printf("Set red pulse amplitude\n\r");
+    setPulseAmplitudeRed(&ppg, 0x17);
     reg = 0x0C;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
 
     printf("Set IR pulse amplitude\n\r");
-    setPulseAmplitudeIR(&ppg, 0x1F);
+    setPulseAmplitudeIR(&ppg, 0x17);
     reg = 0x0D;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
     
+    printf("Writing to magical invisible register\n\r");
+    reg = 0x10;
+    value = 0x1F;
+    writeRegister(ppg._i2caddr, reg, value);
+    reg = 0x0E;
+    writeRegister(ppg._i2caddr, reg, value);
+    
+    
+    printf("Checking magical invisible register\n\r");
+    reg = 0x10;
+    value = readRegister(ppg._i2caddr, reg);
+    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+    reg = 0x0E;
+    value = readRegister(ppg._i2caddr, reg);
+    printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+    
+    // sample only uses slot 1
     printf("Enable led schedule\n\r");
     printf("Slot 1: Red; Slot 2: IR\n\r");
     enableSlot(&ppg, 1, 0x01); //See pg 21 of datasheet
     enableSlot(&ppg, 2, 0x02);
+    enableSlot(&ppg, 3, 0x03);
     reg = 0x11;
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
@@ -464,15 +525,16 @@ void ppgSetup(void) {
      // fifo config
     printf("clear FIFO\n\r");
     clearFIFO(&ppg);
-    reg = 0x4;
+    reg = 0x4; // write ptr
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
-    reg = 0x5;
+    reg = 0x5; // overflow counter
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
-    reg = 0x6;
+    reg = 0x6; // read ptr
     value = readRegister(ppg._i2caddr, reg);
     printf("RD: Reg: %02X; Value: %02X\n\r", reg, value);
+    
 }
 
 /*
@@ -495,6 +557,9 @@ static void RTT_AlarmHandler(RTT_INTERRUPT_TYPE status, uintptr_t context) {
 }
 static void MAX30102_IntHandler(PIO_PIN pin, uintptr_t context) {
     uint8_t int1, int2;
+    volatile uint16_t delay;
+    delay = 0;
+    while(delay<0xEFFF){delay++;}
     int1 = getINT1(&ppg);
     int2 = getINT2(&ppg);
     printf("Interrupt triggered\n\r");
@@ -506,13 +571,6 @@ static void MAX30102_IntHandler(PIO_PIN pin, uintptr_t context) {
         // insert procedure to turn on voltage to LEDs
         ppgPwrRdyInt = true;
         printf("PWR_RDY_INT Triggered\n\r");
-        pid = readPartID(&ppg);
-        rid = readRevisionID(&ppg);
-        printf("Part ID: %2X\n\r", pid);
-        printf("Revision ID: %2X\n\r", rid);
-        ppgSetup();
-        startTimers();
-        state = INIT_MEASURE;
     }
     
     // Sensor ready for temperature measurement
