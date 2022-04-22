@@ -88,5 +88,4 @@
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/grey_font"/>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

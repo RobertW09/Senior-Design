@@ -91,11 +91,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             CreateEmail.requestFocus();
             return;
         }
+        /*
         if(Password != ConfirmPass){
             ConfirmPassword.setError("Passwords don't match");
             ConfirmPassword.requestFocus();
             return;
         }
+         */
 
 
         // Task is an API that represents asynchronous method call
