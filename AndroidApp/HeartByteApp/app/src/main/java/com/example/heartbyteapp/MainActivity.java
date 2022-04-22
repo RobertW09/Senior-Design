@@ -16,6 +16,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -135,4 +136,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
         }
     }
+
+    public void gotoBLE(View view){
+        Intent intent = new Intent(this, ble.class);
+        startActivity(intent);
+    }
+    
+
 }

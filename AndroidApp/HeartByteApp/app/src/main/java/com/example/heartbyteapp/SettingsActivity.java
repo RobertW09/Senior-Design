@@ -23,6 +23,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private Button InfoSettings;
     private Button FamilySettings;
     private Button LogoutSettings;
+    private Button BluetoothSetting;
 
     //Firebase
     private FirebaseAuth mAuth;
@@ -49,6 +50,8 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         FamilySettings.setOnClickListener(this);
         LogoutSettings = (Button) findViewById(R.id.settings_logout_button);
         LogoutSettings.setOnClickListener(this);
+        BluetoothSetting = (Button) findViewById(R.id.settings_bluetooth_button);
+        BluetoothSetting.setOnClickListener(this);
 
 
 
@@ -75,6 +78,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.settings_family_button:
                 startActivity(new Intent(this, FamilyActivity.class));
+                break;
+            case R.id.settings_bluetooth_button:
+                startActivity(new Intent(this, ble.class));
                 break;
         }
     }
