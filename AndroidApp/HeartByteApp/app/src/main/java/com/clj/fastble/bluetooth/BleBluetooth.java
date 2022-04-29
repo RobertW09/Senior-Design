@@ -193,8 +193,8 @@ public class BleBluetooth {
     }
 
     public synchronized void disconnect() {
-        isActiveDisconnect = true;
-        disconnectGatt();
+        isActiveDisconnect = false;
+        //disconnectGatt();
     }
 
     public synchronized void destroy() {
@@ -266,6 +266,7 @@ public class BleBluetooth {
                     }
                 }
                 break;
+
 
                 case BleMsg.MSG_DISCONNECTED: {
                     lastState = LastState.CONNECT_DISCONNECT;

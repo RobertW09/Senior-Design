@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class CharacteristicOperationFragment extends Fragment {
     public static final int PROPERTY_WRITE_NO_RESPONSE = 3;
     public static final int PROPERTY_NOTIFY = 4;
     public static final int PROPERTY_INDICATE = 5;
+    private static final String TAG = "MyActivity";
 
     private LinearLayout layout_container;
     private final List<String> childList = new ArrayList<>();
@@ -83,32 +85,31 @@ public class CharacteristicOperationFragment extends Fragment {
                     btn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            BleManager.getInstance().read(
-                                    bleDevice,
-                                    characteristic.getService().getUuid().toString(),
-                                    characteristic.getUuid().toString(),
-                                    new BleReadCallback() {
+                                BleManager.getInstance().read(
+                                        bleDevice,
+                                        characteristic.getService().getUuid().toString(),
+                                        characteristic.getUuid().toString(),
+                                        new BleReadCallback() {
+                                            @Override
+                                            public void onReadSuccess(final byte[] data) {
+                                                runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        addText(txt, HexUtil.formatHexString(data, true));
+                                                    }
+                                                });
+                                            }
 
-                                        @Override
-                                        public void onReadSuccess(final byte[] data) {
-                                            runOnUiThread(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    addText(txt, HexUtil.formatHexString(data, true));
-                                                }
-                                            });
-                                        }
-
-                                        @Override
-                                        public void onReadFailure(final BleException exception) {
-                                            runOnUiThread(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    addText(txt, exception.toString());
-                                                }
-                                            });
-                                        }
-                                    });
+                                            @Override
+                                            public void onReadFailure(final BleException exception) {
+                                                runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        addText(txt, exception.toString());
+                                                    }
+                                                });
+                                            }
+                                        });
                         }
                     });
                     layout_add.addView(view_add);

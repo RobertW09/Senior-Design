@@ -283,7 +283,7 @@ public class ble extends AppCompatActivity implements View.OnClickListener {
             public void onDisConnected(boolean isActiveDisConnected, BleDevice bleDevice, BluetoothGatt gatt, int status) {
                 progressDialog.dismiss();
 
-                mDeviceAdapter.removeDevice(bleDevice);
+                //mDeviceAdapter.removeDevice(bleDevice);
                 mDeviceAdapter.notifyDataSetChanged();
 
                 if (isActiveDisConnected) {
@@ -416,5 +416,6 @@ public class ble extends AppCompatActivity implements View.OnClickListener {
             }
         }
     }
+
 
 }

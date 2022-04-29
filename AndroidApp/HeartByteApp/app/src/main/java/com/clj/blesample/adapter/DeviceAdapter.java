@@ -28,10 +28,10 @@ public class DeviceAdapter extends BaseAdapter {
     }
 
     public void addDevice(BleDevice bleDevice) {
-        removeDevice(bleDevice);
+        //removeDevice(bleDevice);
         bleDeviceList.add(bleDevice);
     }
-
+    /*
     public void removeDevice(BleDevice bleDevice) {
         for (int i = 0; i < bleDeviceList.size(); i++) {
             BleDevice device = bleDeviceList.get(i);
@@ -40,6 +40,7 @@ public class DeviceAdapter extends BaseAdapter {
             }
         }
     }
+     */
 
     public void clearConnectedDevice() {
         for (int i = 0; i < bleDeviceList.size(); i++) {
