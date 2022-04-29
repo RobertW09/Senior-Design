@@ -111,7 +111,7 @@
         app:layout_constraintLeft_toRightOf="@id/userinfo_weight_edittext"
         />
     <Button
-        android:id="@+id/CreateAccountButton"
+        android:id="@+id/userinfo_update_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Update User Info"
