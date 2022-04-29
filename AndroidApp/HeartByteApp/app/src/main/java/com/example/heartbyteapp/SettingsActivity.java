@@ -82,6 +82,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             case R.id.settings_bluetooth_button:
                 startActivity(new Intent(this, ble.class));
                 break;
+            case R.id.settings_user_info_button:
+                startActivity(new Intent(this, UserInfoActivity.class));
+                break;
         }
     }
 }
