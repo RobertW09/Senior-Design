@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
-
         // Setup Toolbar
         Toolbar toolbar = (Toolbar)findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
