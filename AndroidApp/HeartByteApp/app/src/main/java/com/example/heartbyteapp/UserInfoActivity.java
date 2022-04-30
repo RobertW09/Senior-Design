@@ -15,12 +15,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Set;
 
-public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
+public class    UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     // Class Variables
     private  String TempEmail,TempName,TempAge,TempWeight,TempHeight;
@@ -29,7 +31,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     // Firebase Connection
 
     private DatabaseReference AccountDetRef;
-    private FirebaseUser User;
+    private FirebaseUser user;
     private String UserID;
 
 
@@ -60,8 +62,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         SettingsButton =(Button) findViewById(R.id.settings_button);
         SettingsButton.setOnClickListener(this);
         //call userAuth object
-        User= FirebaseAuth.getInstance().getCurrentUser();
-        UserID = User.getUid();
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        UserID = user.getUid();
         AccountDetRef = FirebaseDatabase.getInstance().getReference("Users").child("AccountDetails");
 
 
@@ -75,16 +77,25 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void DisplayUserData() {
-        AccountDetRef.child(UserID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-           DataSnapshot dataSnapshot = task.getResult();
-           TempName = String.valueOf(dataSnapshot.child("fullname").getValue());
-           TempEmail = String.valueOf(dataSnapshot.child("email").getValue());
-            }
-        });
-        Name.setText(TempName);
-        Email.setText(TempEmail);
+         EditText userinfo_name_edittext = (EditText) findViewById(R.id.userinfo_name_edittext);
+         EditText userinfo_email_edittext = (EditText) findViewById(R.id.userinfo_email_edittext);
+       AccountDetRef.child(UserID).addListenerForSingleValueEvent(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+               User userprofile = snapshot.getValue(User.class);
+               if (userprofile != null){
+                   String name = userprofile.fullname;
+                   String email = userprofile.email;
+                   userinfo_name_edittext.setText(name);
+                   userinfo_email_edittext.setText(email);
+               }
+           }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+
+           }
+       });
     }
 
     @Override
