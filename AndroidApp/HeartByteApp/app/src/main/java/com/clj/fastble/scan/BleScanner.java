@@ -1,6 +1,7 @@
 package com.clj.fastble.scan;
 
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Handler;
@@ -119,12 +120,13 @@ public class BleScanner {
 
         mBleScanPresenter.prepare(names, mac, fuzzy, needConnect, timeOut, imp);
 
-        boolean success = BleManager.getInstance().getBluetoothAdapter()
+        @SuppressLint("MissingPermission") boolean success = BleManager.getInstance().getBluetoothAdapter()
                 .startLeScan(serviceUuids, mBleScanPresenter);
         mBleScanState = success ? BleScanState.STATE_SCANNING : BleScanState.STATE_IDLE;
         mBleScanPresenter.notifyScanStarted(success);
     }
 
+    @SuppressLint("MissingPermission")
     public synchronized void stopLeScan() {
         BleManager.getInstance().getBluetoothAdapter().stopLeScan(mBleScanPresenter);
         mBleScanState = BleScanState.STATE_IDLE;

@@ -177,6 +177,7 @@ public class CharacteristicListFragment extends Fragment {
                 property.append("Indicate");
                 property.append(" , ");
             }
+            // removes comma? lmaoo
             if (property.length() > 1) {
                 property.delete(property.length() - 2, property.length() - 1);
             }

@@ -1,5 +1,6 @@
 package com.clj.fastble.bluetooth;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
@@ -147,6 +148,7 @@ public class BleBluetooth {
         return connect(bleDevice, autoConnect, callback, 0);
     }
 
+    @SuppressLint("MissingPermission")
     public synchronized BluetoothGatt connect(BleDevice bleDevice,
                                               boolean autoConnect,
                                               BleGattCallback callback,
@@ -209,6 +211,7 @@ public class BleBluetooth {
         mainHandler.removeCallbacksAndMessages(null);
     }
 
+    @SuppressLint("MissingPermission")
     private synchronized void disconnectGatt() {
         if (bluetoothGatt != null) {
             bluetoothGatt.disconnect();
@@ -228,6 +231,7 @@ public class BleBluetooth {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private synchronized void closeBluetoothGatt() {
         if (bluetoothGatt != null) {
             bluetoothGatt.close();
