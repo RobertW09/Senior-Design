@@ -46,12 +46,12 @@ public class    UserInfoActivity extends AppCompatActivity implements View.OnCli
         Name.setOnClickListener(this);
         Email = (EditText) findViewById(R.id.userinfo_email_edittext);
         Email.setOnClickListener(this);
-        Age = (EditText) findViewById(R.id.userinfo_age_edittext);
-        Age.setOnClickListener(this);
-        Height = (EditText) findViewById(R.id.userinfo_height_edittext);
-        Height.setOnClickListener(this);
-        Weight = (EditText) findViewById(R.id.userinfo_weight_edittext);
-        Weight.setOnClickListener(this);
+        //Age = (EditText) findViewById(R.id.userinfo_age_edittext);
+        //Age.setOnClickListener(this);
+        //Height = (EditText) findViewById(R.id.userinfo_height_edittext);
+        //Height.setOnClickListener(this);
+        //Weight = (EditText) findViewById(R.id.userinfo_weight_edittext);
+        //Weight.setOnClickListener(this);
         UpDateUserButton = (Button) findViewById(R.id.userinfo_update_button);
         UpDateUserButton.setOnClickListener(this);
         // Bottom nav Buttons
@@ -86,6 +86,7 @@ public class    UserInfoActivity extends AppCompatActivity implements View.OnCli
                if (userprofile != null){
                    String name = userprofile.fullname;
                    String email = userprofile.email;
+                   //Integer Age = userprofile.age;
                    userinfo_name_edittext.setText(name);
                    userinfo_email_edittext.setText(email);
                }
