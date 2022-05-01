@@ -22,11 +22,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HeartByteApp">
         <activity
+            android:name=".DashboardActivityBP"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivitySpO2"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivityHR"
+            android:exported="false" />
+        <activity
             android:name=".UserInfoActivity"
             android:exported="false" />
         <activity
             android:name=".ble"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AddContactsActivity"
             android:exported="false" />
@@ -77,7 +86,7 @@
         </activity>
         <activity
             android:name="com.clj.blesample.operation.OperationActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"

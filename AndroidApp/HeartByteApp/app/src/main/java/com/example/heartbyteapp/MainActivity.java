@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
             case R.id.dashboard_button:
-                startActivity(new Intent(this, DashboardActivity.class));
+                startActivity(new Intent(this, DashboardActivityHR.class));
                 break;
         }
     }
