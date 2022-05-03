@@ -1,4 +1,5 @@
 package com.example.heartbyteapp;
+// This class can be erased
 
 public class ChartDataPoints{
     public int heartRate;

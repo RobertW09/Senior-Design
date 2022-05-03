@@ -1,5 +1,6 @@
 package com.example.heartbyteapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -11,8 +12,36 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 public class DashboardActivityHR extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     private Button SettingsButton, DashboardButton, HomeButton;
+    //Firebase conenction
+    private FirebaseUser user;
+    private String userID;
+    DatabaseReference HRref;
+    Query QueryHrWeek;
+    LineChart linechart;
+    LineDataSet linedataset = new LineDataSet(null,null);
+    ArrayList<ILineDataSet> ilinedataset = new ArrayList<>();
+    LineData linedata;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +54,60 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
         HomeButton.setOnClickListener(this);
         DashboardButton = (Button) findViewById(R.id.dashboard_button);
         DashboardButton.setOnClickListener(this);
+        linechart = findViewById(R.id.dashbaord_hrgraph_mpchart);
     // Spinner Set up
         Spinner spinner = (Spinner) findViewById(R.id.dashboard_data_selection_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.dashboard_spinner, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.mode_spinner_dropdown);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        // Database child nodes
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        userID = user.getUid();
+        HRref = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("HeartRate").child(userID);
+        // get current unix time with offset of -14400 to make it eastern
+        Long CurrentUnixTime = System.currentTimeMillis()/1000 - 14400;
+        Long StartUnixTime = CurrentUnixTime - 604800;
+        QueryHrWeek = HRref.orderByChild("time").startAt(StartUnixTime);
+        PullData();
+    }
+
+    private void PullData() {
+        QueryHrWeek.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Entry> dataVals = new ArrayList<Entry>();
+                if(snapshot.hasChildren()){
+                    for(DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPoints datapoint = mydatasnapshot.getValue(HealthDataPoints.class);
+                        dataVals.add(new Entry(datapoint.getTime(),datapoint.getHeartRate()));
+                    }
+                    DisplayChart(dataVals);
+                }
+                else {
+                    linechart.clear();
+                    linechart.invalidate();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+
+            }
+        });
+    }
+
+    private void DisplayChart(ArrayList<Entry> dataVals) {
+        linedataset.setValues(dataVals);
+        linedataset.setLabel("test label");
+        ilinedataset.clear();
+        ilinedataset.add(linedataset);
+        linedata = new LineData(ilinedataset);
+        linechart.clear();
+        linechart.setData(linedata);
+        linechart.invalidate();
     }
 
     @Override

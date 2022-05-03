@@ -24,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.core.Tag;
@@ -86,11 +87,11 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         //graph child nodes set up
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid(); // refrence current user and gets unique ID
-        ChartRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("HeartRate");
-        SpO2Ref = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("SpO2");
+        ChartRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("HeartRate").child(userID);
+        SpO2Ref = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("SpO2").child(userID);
 
         //graph
-        graphView = (GraphView) findViewById(R.id.graph);
+        graphView  = (GraphView) findViewById(R.id.graph);
         series = new LineGraphSeries();
         graphView.addSeries(series);
         //adjust the graph
@@ -120,7 +121,9 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onStart() {
         super.onStart();
-        ChartRef.child(userID).addValueEventListener(new ValueEventListener() {
+        // important test :D
+        Query query  = ChartRef.limitToLast(5);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ChartDataPoints data = snapshot.getValue(ChartDataPoints.class);
