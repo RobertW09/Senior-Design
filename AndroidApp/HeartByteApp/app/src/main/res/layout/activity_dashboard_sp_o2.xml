@@ -7,12 +7,23 @@
     tools:context=".DashboardActivitySpO2"
     android:background="@drawable/ic_blue720x1280">
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/dashbaord_spo2graph_mpchart"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white_true"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <Spinner
         android:id="@+id/dashboard_data_selection_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/dashbaord_spo2graph_mpchart"/>
 
     <!-- botton nav -->
     <LinearLayout

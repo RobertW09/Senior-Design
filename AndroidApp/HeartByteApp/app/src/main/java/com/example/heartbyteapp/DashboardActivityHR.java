@@ -2,6 +2,7 @@ package com.example.heartbyteapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -57,11 +58,20 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
         DashboardButton = (Button) findViewById(R.id.dashboard_button);
         DashboardButton.setOnClickListener(this);
         linechart = findViewById(R.id.dashbaord_hrgraph_mpchart);
-        // format unix time to date
+        // configure chart
+        linechart.getAxisRight().setEnabled(false);
+        linechart.getDescription().setEnabled(false);
+        linechart.getLegend().setEnabled(false);
+        linedataset.setDrawCircles(false);
+        linedataset.setDrawFilled(true);
+        linedataset.setFillDrawable(ContextCompat.getDrawable(this, R.drawable.chart_gradient));
+        linedataset.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        linedataset.setDrawValues(false);
+        // configure axis
         XAxis xAxis = linechart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
-        
+
 
     // Spinner Set up
         Spinner spinner = (Spinner) findViewById(R.id.dashboard_data_selection_spinner);
@@ -88,7 +98,7 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
                 ArrayList<Entry> dataVals = new ArrayList<Entry>();
                 if(snapshot.hasChildren()){
                     for(DataSnapshot mydatasnapshot : snapshot.getChildren()){
-                        HealthDataPoints datapoint = mydatasnapshot.getValue(HealthDataPoints.class);
+                        HealthDataPointsHR datapoint = mydatasnapshot.getValue(HealthDataPointsHR.class);
                         dataVals.add(new Entry(datapoint.getTime(),datapoint.getHeartRate()));
                     }
                     DisplayChart(dataVals);
