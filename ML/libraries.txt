@@ -1,0 +1,15 @@
+List of libraries that I needed to install. Easily done with pip
+tensorflow
+https://www.tensorflow.org/install
+
+wfdb
+https://github.com/MIT-LCP/wfdb-python
+
+heartpy
+https://python-heart-rate-analysis-toolkit.readthedocs.io/en/latest/quickstart.html
+
+sklearn
+https://scikit-learn.org/stable/install.html
+
+kapre
+https://kapre.readthedocs.io/en/latest/

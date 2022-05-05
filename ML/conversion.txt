@@ -1,0 +1,1 @@
+tflite_convert --keras_model_file=./pretrained/lstm_ppg_nonmixed.h5 --output_file=./converted/lstm_ppg_nonmixed.tflite
