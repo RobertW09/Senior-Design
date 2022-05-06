@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">HeartByteApp</string>
+    <string name="title_activity_ble_setup">ble_setup</string>
     <string name="heartbyte">HeartByte</string>
     <string name="button_analytics">View History</string>
     <string name="button_hr">Measure HR</string>
@@ -35,6 +36,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
