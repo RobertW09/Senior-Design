@@ -4,7 +4,7 @@ import numpy as np
 import scipy.io
 import csv
 import sys
-
+from scipy.fftpack import fft
 
 if(len(sys.argv) == 3):
     model_path = sys.argv[1]
@@ -77,12 +77,23 @@ with open('ppg_trace.txt') as f:
     lines = f.readlines()
 
 ppg_data = []
-for x in lines:
-    ppg_data.append(int(x[:len(x)-1]))
 
-print("Measured data Max and Min")
-print(max(ppg_data))
-print(min(ppg_data[:850]))
+# from dataset
+# for x in lines:
+#     temp = float(x[:len(x)-1])
+#     ppg_data.append(temp)
+
+# from measure set
+for x in lines:
+    temp = int(x[:len(x)-1])
+    ppg_data.append(temp)
+offset = max(ppg_data) + 1
+for i in range(len(ppg_data)):
+    ppg_data[i] = (-1 * ppg_data[i]) + offset
+
+# print("Measured data Max and Min")
+# print(max(ppg_data))
+# print(min(ppg_data[:850]))
 
 
 # downscale data
@@ -92,15 +103,151 @@ print(min(ppg_data[:850]))
 # print(max(ppg_data))
 # print(min(ppg_data[:850]))
 
+# offset data
+# A = min(ppg_data[:850])
+# for i in range(len(ppg_data)):
+#     ppg_data[i] = ppg_data[i] - A
+# print(max(ppg_data))
+# print(min(ppg_data[:850]))
 
-plt.plot(ppg_data)
+plt.figure()
+plt.title("Raw")
+plt.plot(ppg_data[:850])
+plt.tick_params(
+    axis='y',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    left=True,      # ticks along the bottom edge are off
+    top=False,         # ticks along the top edge are off
+    labelleft=False) # labels along the bottom edge are off
+
+# Number of samplepoints
+# N = 875.0
+# Sample spacing
+# T = 1.0 / 100.0
+# ppg_data_float = []
+# for x in ppg_data:
+#     ppg_data_float.append(float(x))
+# ppgf = np.fft.fftshift(ppg_data_float)
+# plt.figure()
+# plt.title("Raw Magnitude")
+# plt.plot(np.abs(ppgf))
+# plt.grid()
+# plt.figure()
+# plt.title("Raw Phase")
+# plt.plot(np.angle(ppgf))
+# plt.grid
+
+
+
+
+# iterative filtering
+buffer_length = 4
+buff = np.zeros(buffer_length, dtype=int)
+delta_buff = np.zeros(buffer_length, dtype=int)
+fullness = 1
+delta = 0
+low_thresh = -1
+high_thresh = 1
+count = 0
+current = 0
+previous = ppg_data[0]
+delta_list = []
+for i in range(len(ppg_data)):
+    # current buffer index
+    ind = (count) % 4
+    # get current value and load into buffers
+    buff[ind] = ppg_data[i]
+    current = buff[ind]
+    # calculate the average of the most recent 4 samples
+    sum = 0
+    for e in buff:
+        sum += e
+    avg = int(sum / (fullness))
+    # get the average of the most recent deltas
+    sum = 0
+    for e in delta_buff:
+        sum += e
+    delta = int(sum / (fullness))
+    # if the average of the most recent deltas is within a threshold
+    # use the average data to maintain a small curve
+    delta_list.append(delta)
+    if(delta <= high_thresh and delta >= low_thresh):
+        ppg_data[i] = avg
+    # save the new delta into the buffer
+    delta_buff[ind] = int((current - previous)>>1)
+    previous = current
+    if(fullness < buffer_length):
+        fullness += 1
+    count += 1
+
+plt.figure()
+plt.title("Filtered Iterative")
+plt.plot(ppg_data[:870])
 plt.tick_params(
     axis='y',          # changes apply to the x-axis
     which='both',      # both major and minor ticks are affected
     left=False,      # ticks along the bottom edge are off
     top=False,         # ticks along the top edge are off
     labelleft=False) # labels along the bottom edge are off
-plt.figure()
+
+buffer_length = 4
+buff = np.zeros(buffer_length, dtype=int)
+delta_buff = np.zeros(buffer_length, dtype=int)
+fullness = 1
+delta = 0
+low_thresh = -1
+high_thresh = 1
+count = 0
+current = 0
+previous = ppg_data[0]
+delta_list = []
+for i in range(len(ppg_data)):
+    # current buffer index
+    ind = (count) % 4
+    # get current value and load into buffers
+    buff[ind] = ppg_data[i]
+    current = buff[ind]
+    # calculate the average of the most recent 4 samples
+    sum = 0
+    for e in buff:
+        sum += e
+    avg = int(sum / (fullness))
+    # get the average of the most recent deltas
+    sum = 0
+    for e in delta_buff:
+        sum += e
+    delta = int(sum / (fullness))
+    # if the average of the most recent deltas is within a threshold
+    # use the average data to maintain a small curve
+    delta_list.append(delta)
+    if(delta <= high_thresh and delta >= low_thresh):
+        ppg_data[i] = avg
+    # save the new delta into the buffer
+    delta_buff[ind] = int((current - previous)>>1)
+    previous = current
+    if(fullness < buffer_length):
+        fullness += 1
+    count += 1
+
+#gaussian filtering
+# data_buffer = np.zeros(len(ppg_data))
+# kernel = [6, 24, 36, 24, 6]
+# kernel = [2, 4, 2]
+# shift = 4
+# length = len(ppg_data)
+# for i in range(length):
+#     sum = 0
+#     for j in range(len(kernel)):
+#         if ((i-j) < 0) or ((i+j) > length-1):
+#             continue
+#         sum += kernel[j] * ppg_data[i]
+#     data_buffer[i] = (sum>>shift)
+# ppg_data = data_buffer
+
+# plt.figure()
+# plt.title("Delta")
+# plt.plot(delta_list[:len(delta_list)-1])
+# print(delta_list)
 
 # low pass FIR filter
 # FIRCoeffs = [172, 321, 579, 927, 1360, 1858, 2390, 2916, 3391, 3768, 4012, 4096]
@@ -121,20 +268,36 @@ plt.figure()
 #     offset += 1
 #     offset %= 32
 #     ppg_data[i] = z
-# # plot filtered data
+# plot filtered data
+plt.figure()
+plt.title("Filtered Iterative + Gaussian")
+plt.plot(ppg_data[:870])
+plt.tick_params(
+    axis='y',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    left=False,      # ticks along the bottom edge are off
+    top=False,         # ticks along the top edge are off
+    labelleft=False) # labels along the bottom edge are off
 
-# plt.plot(ppg_data)
-# plt.tick_params(
-#     axis='y',          # changes apply to the x-axis
-#     which='both',      # both major and minor ticks are affected
-#     left=False,      # ticks along the bottom edge are off
-#     top=False,         # ticks along the top edge are off
-#     labelleft=False) # labels along the bottom edge are off
+# Number of samplepoints
+# N = 875.0
+# Sample spacing
+# T = 1.0 / 100.0
+# ppg_data_float = []
+# for x in ppg_data:
+#     ppg_data_float.append(float(x))
+# ppgf = np.fft.fftshift(ppg_data_float)
 # plt.figure()
-# plt.show()
+# plt.title("Filtered Magnitude")
+# plt.plot(np.abs(ppgf))
+# plt.grid()
+# plt.figure()
+# plt.title("Filtered Phase")
+# plt.plot(np.angle(ppgf))
+# plt.grid
 
 
-input_data = np.array(ppg_data[:875], dtype=np.float32)
+input_data = np.array(delta_list[:875], dtype=np.float32)
 input_data = input_data.reshape((1, 875, 1))
 
 # perform inference
@@ -146,5 +309,9 @@ output_data = interpreter.get_tensor(output_details[0]['index'])
 output_data1 = interpreter.get_tensor(output_details[1]['index'])
 
 print("Results:")
+print("SBP")
 print(output_data)
+print("DBP")
 print(output_data1)
+
+plt.show()
