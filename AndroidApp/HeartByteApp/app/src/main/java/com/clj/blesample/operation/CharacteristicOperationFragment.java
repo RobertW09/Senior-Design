@@ -96,6 +96,19 @@ public class CharacteristicOperationFragment extends Fragment {
                                                     @Override
                                                     public void run() {
                                                         addText(txt, HexUtil.formatHexString(data, true));
+                                                        short temp = 0;
+                                                        for(int i = 0;i<data.length;i=i+2){
+                                                            if ((i+1)<data.length-1){
+                                                                temp = (short) ((short) (data[i+1]<<8)|(data[i]));
+                                                            }
+                                                            else{
+                                                                temp = (short) ((short) (data[i+1]<<8));
+                                                            }
+                                                            //temp is the data we are sending over
+
+
+
+                                                        }
 
                                                     }
                                                 });
