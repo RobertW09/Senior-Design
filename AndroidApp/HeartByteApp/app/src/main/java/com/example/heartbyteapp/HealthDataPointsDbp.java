@@ -1,16 +1,17 @@
 package com.example.heartbyteapp;
 
 public class HealthDataPointsDbp {
-    int time, dbp;
+    int dbp;
+    long time;
 
     public HealthDataPointsDbp(){
     }
 
-    public HealthDataPointsDbp(int time, int dbp){
+    public HealthDataPointsDbp(long time, int dbp){
         this.dbp = dbp;
         this.time = time;
     }
-    public int getTime(){
+    public long getTime(){
         return time;
     }
     public  int getDbp(){

@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -27,6 +28,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,13 +39,15 @@ public class DashboardActivityBP extends AppCompatActivity  implements AdapterVi
     private FirebaseUser user;
     private String userID;
     DatabaseReference DbpRef, SbpRef;
-    Query QuerySbpWeek,QueryDbpWeek;
+    Query QuerySbpWeek,QueryDbpWeek, QuerySbpDaily,QueryDbpDaily;
     LineChart linechart;
     LineDataSet linedataset = new LineDataSet(null,null);
     ArrayList<ILineDataSet> ilinedataset = new ArrayList<>();
     LineData linedata;
     ArrayList<Entry> Dbp,Sbp;
-
+    Integer WeeklyAvg, DailyAvg;
+    TextView Daily_Dbp_Avg_Textview,Daily_Sbp_Avg_Textview, Weekly_Dbp_Avg_Textview, Weekly_Sbp_Avg_Textview;
+    ArrayList<Entry> dataVals2, dataVals;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +70,7 @@ public class DashboardActivityBP extends AppCompatActivity  implements AdapterVi
         linedataset.setFillDrawable(ContextCompat.getDrawable(this, R.drawable.chart_gradient));
         linedataset.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         linedataset.setDrawValues(false);
+        // bruh
 
         //configure axis
         XAxis xAxis = linechart.getXAxis();
@@ -81,26 +87,189 @@ public class DashboardActivityBP extends AppCompatActivity  implements AdapterVi
         // Database child nodes
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
-        DbpRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("Dbp").child(userID);
-        SbpRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("Sbp").child(userID);
+        DbpRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("BloodPressure").child("Dbp").child(userID);
+        SbpRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("BloodPressure").child("Sbp").child(userID);
 
         // get current unix time with ofset of -14400 to make it eastern
         Long CurrentUnixTime = System.currentTimeMillis()/1000 - 14400;
         Long StartUnixTime = CurrentUnixTime - 604800;
+        Long StartUnixTimeD = CurrentUnixTime - 86400;
         QueryDbpWeek= DbpRef.orderByChild("time").startAt(StartUnixTime);
         QuerySbpWeek = SbpRef.orderByChild("time").startAfter(StartUnixTime);
+        QuerySbpDaily = SbpRef.orderByChild("time").startAt(StartUnixTimeD);
+        QueryDbpDaily = DbpRef.orderByChild("time").startAt(StartUnixTimeD);
         // pull data for Sbp,Dbp
         DbpDataPull();
         SbpDataPull();
+        DailyAvgSbp();
+        DailyAvgDbp();
+        WeeklyAvgSbp();
+        WeeklyAvgDbp();
+        //bruh
+        Daily_Sbp_Avg_Textview = (TextView) findViewById(R.id.daily_average_sbp_textview);
+        Daily_Dbp_Avg_Textview = (TextView) findViewById(R.id.daily_average_dbp_textview);
+        Weekly_Sbp_Avg_Textview = (TextView) findViewById(R.id.weekly_average_sbp_textview);
+        Weekly_Dbp_Avg_Textview = (TextView) findViewById(R.id.weekly_average_dbp_textview);
 
-        // display data
-        DisplayChart(Dbp,Sbp);
+
+        // get array data
+        QueryDbpDaily.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                 dataVals = new ArrayList<Entry>();
+                if (snapshot.hasChildren()) {
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()) {
+                        HealthDataPointsDbp datapoint = mydatasnapshot.getValue(HealthDataPointsDbp.class);
+                        dataVals.add(new Entry(datapoint.getTime(), datapoint.getDbp()));
+                    }
+                    Dbp = dataVals;
+                } else {
+                    linechart.clear();
+                    linechart.invalidate();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        QuerySbpDaily.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataVals2 = new ArrayList<Entry>();
+                if(snapshot.hasChildren()){
+                    for(DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsSbp datapoint = mydatasnapshot.getValue(HealthDataPointsSbp.class);
+                        dataVals2.add(new Entry(datapoint.getTime(),datapoint.getSbp()));
+                    }
+                    Sbp = dataVals2;
+                }
+                else {
+                    linechart.clear();
+                    linechart.invalidate();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
         // retrieve previous spinner position
         Intent intent = getIntent();
         int SpinnerPrevPosition  = intent.getIntExtra("i",0);
         spinner.setSelection(SpinnerPrevPosition);
+        // display data
+        DisplayChart(dataVals,dataVals2);
+    }
+
+    private void WeeklyAvgDbp() {
+        QueryDbpWeek.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsDbp datapoint  = mydatasnapshot.getValue(HealthDataPointsDbp.class);
+                        HR.add(datapoint.getDbp());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    WeeklyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(WeeklyAvg);
+                    Weekly_Dbp_Avg_Textview.setText(HrText);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void WeeklyAvgSbp() {
+        QuerySbpWeek.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsSbp datapoint  = mydatasnapshot.getValue(HealthDataPointsSbp.class);
+                        HR.add(datapoint.getSbp());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    WeeklyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(WeeklyAvg);
+                    Weekly_Sbp_Avg_Textview.setText(HrText);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void DailyAvgDbp() {
+        QueryDbpDaily.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsDbp datapoint  = mydatasnapshot.getValue(HealthDataPointsDbp.class);
+                        HR.add(datapoint.getDbp());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    DailyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(DailyAvg);
+                    Daily_Dbp_Avg_Textview.setText(HrText);
+                }else{
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void DailyAvgSbp() {
+        QuerySbpDaily.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsSbp datapoint  = mydatasnapshot.getValue(HealthDataPointsSbp.class);
+                        HR.add(datapoint.getSbp());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    DailyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(DailyAvg);
+                    Daily_Sbp_Avg_Textview.setText(HrText);
+                }else{
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void DisplayChart(ArrayList<Entry> dbp, ArrayList<Entry> sbp) {
@@ -120,7 +289,7 @@ public class DashboardActivityBP extends AppCompatActivity  implements AdapterVi
         QueryDbpWeek.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<Entry> dataVals = new ArrayList<Entry>();
+                dataVals = new ArrayList<Entry>();
                 if (snapshot.hasChildren()) {
                     for (DataSnapshot mydatasnapshot : snapshot.getChildren()) {
                         HealthDataPointsDbp datapoint = mydatasnapshot.getValue(HealthDataPointsDbp.class);
@@ -144,13 +313,13 @@ public class DashboardActivityBP extends AppCompatActivity  implements AdapterVi
         QuerySbpWeek.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<Entry> dataVals = new ArrayList<Entry>();
+                 dataVals2 = new ArrayList<Entry>();
                 if(snapshot.hasChildren()){
                     for(DataSnapshot mydatasnapshot : snapshot.getChildren()){
                         HealthDataPointsSbp datapoint = mydatasnapshot.getValue(HealthDataPointsSbp.class);
-                        dataVals.add(new Entry(datapoint.getTime(),datapoint.getSbp()));
+                        dataVals2.add(new Entry(datapoint.getTime(),datapoint.getSbp()));
                     }
-                    Sbp = dataVals;
+                    Sbp = dataVals2;
                 }
                 else {
                     linechart.clear();

@@ -17,9 +17,9 @@ public class MyApplication extends Application {
         return model;
     }
 
-    public ByteBuffer inference(ByteBuffer input) {
+    public void inference(ByteBuffer input) {
 
-    }
+    };
 
     public void downloadModel() {
         CustomModelDownloadConditions conditions = new CustomModelDownloadConditions.Builder()
