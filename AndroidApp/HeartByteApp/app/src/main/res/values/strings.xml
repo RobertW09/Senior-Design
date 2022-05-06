@@ -3,6 +3,7 @@
     <string name="heartbyte">HeartByte</string>
     <string name="button_analytics">View History</string>
     <string name="button_hr">Measure HR</string>
+    <string name="button_ppg">Measure PPG</string>
     <string name="text_status">HeartByte Status: </string>
     <string name="text_battery">000%</string>
     <string name="text_connection">Disconnected</string>

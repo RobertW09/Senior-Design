@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
 
     <Button
-        android:id="@+id/hr_button"
+        android:id="@+id/hr_spo2_button"
         android:layout_width="170dp"
         android:layout_height="90dp"
         android:layout_marginTop="100dp"
@@ -43,7 +43,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/users_name_text"
+        />
+
+    <Button
+        android:id="@+id/connectToESP"
+        android:layout_width="141dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
+        android:background="#03A9F4"
+        android:text="connect To ESP!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/users_name_text" />
+    <Button
+        android:id="@+id/ppg_button"
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="200dp"
+        android:background="#03A9F4"
+        android:onClick="measurePPG"
+        android:text="@string/button_ppg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/users_name_text"
+        />
 
     <!--        app:layout_constraintHorizontal_bias="0.497"-->
 
@@ -51,12 +77,12 @@
         android:id="@+id/mode_spinner"
         android:layout_width="150dp"
         android:layout_height="75dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/spinner_default"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hr_button" />
+        app:layout_constraintTop_toBottomOf="@+id/ppg_button" />
 
     <LinearLayout
         android:layout_width="match_parent"

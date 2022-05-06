@@ -96,6 +96,7 @@ public class CharacteristicOperationFragment extends Fragment {
                                                     @Override
                                                     public void run() {
                                                         addText(txt, HexUtil.formatHexString(data, true));
+
                                                     }
                                                 });
                                             }

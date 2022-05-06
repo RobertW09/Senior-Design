@@ -89,11 +89,21 @@
         <entry key="app/src/main/res/layout/activity_ble.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.35015327343042346" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.7813177578691124" />
         <entry key="app/src/main/res/layout/activity_measure.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/activity_measure_ppg.xml" value="0.19655797101449277" />
+        <entry key="app/src/main/res/layout/activity_operation.xml" value="0.1347517730496454" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.1347517730496454" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1347517730496454" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.24479166666666666" />
+        <entry key="app/src/main/res/layout/adapter_characteristic.xml" value="0.1347517730496454" />
         <entry key="app/src/main/res/layout/adapter_device.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/adapter_service.xml" value="0.1347517730496454" />
+        <entry key="app/src/main/res/layout/fragment_characteric_list.xml" value="0.1347517730496454" />
+        <entry key="app/src/main/res/layout/fragment_characteric_operation.xml" value="0.1347517730496454" />
+        <entry key="app/src/main/res/layout/fragment_service_list.xml" value="0.1347517730496454" />
+        <entry key="app/src/main/res/layout/mode_spinner.xml" value="0.1347517730496454" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1715" />
       </map>
     </option>

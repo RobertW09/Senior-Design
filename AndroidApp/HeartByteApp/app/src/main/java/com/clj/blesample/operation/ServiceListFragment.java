@@ -57,6 +57,7 @@ public class ServiceListFragment extends Fragment {
 
     private void showData() {
         BleDevice bleDevice = ((OperationActivity) getActivity()).getBleDevice();
+        //send over ble device?
         String name = bleDevice.getName();
         String mac = bleDevice.getMac();
         BluetoothGatt gatt = BleManager.getInstance().getBluetoothGatt(bleDevice);
