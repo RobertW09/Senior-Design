@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +26,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.ml.modeldownloader.CustomModel;
+import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions;
+import com.google.firebase.ml.modeldownloader.DownloadType;
+import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
@@ -68,9 +73,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mode_spin.setAdapter(adapter);
 
 
-     user = FirebaseAuth.getInstance().getCurrentUser();
-     refrence = FirebaseDatabase.getInstance().getReference("Users").child("AccountDetails");
-     userID = user.getUid(); // refrence current user and gets unique ID
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        refrence = FirebaseDatabase.getInstance().getReference("Users").child("AccountDetails");
+        userID = user.getUid(); // refrence current user and gets unique ID
+
+        ((MyApplication) this.getApplication()).downloadModel();
 
         final TextView user_name_textview = (TextView) findViewById(R.id.users_name_text);
 
