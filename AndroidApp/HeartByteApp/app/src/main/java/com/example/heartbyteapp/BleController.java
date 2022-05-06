@@ -25,6 +25,7 @@ public class BleController {
 
     private Context mCont;
 
+
     private BluetoothManager bluetoothManager =  (BluetoothManager) mCont.getSystemService(Context.BLUETOOTH_SERVICE);
     private BluetoothLeScanner bleScanner;
     private BluetoothAdapter bleAdapter;

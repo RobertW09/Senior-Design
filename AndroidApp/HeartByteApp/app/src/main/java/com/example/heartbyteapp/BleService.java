@@ -27,6 +27,8 @@ import java.util.UUID;
 
 public class BleService extends Service {
 
+
+
     public static final String TAG = "BLE Service";
     public final static String ACTION_GATT_CONNECTED =
             "com.example.bluetooth.le.ACTION_GATT_CONNECTED";
@@ -69,6 +71,8 @@ public class BleService extends Service {
 
     public BleService() {
     }
+
+
 
     public boolean initialize() {
 
@@ -227,12 +231,15 @@ public class BleService extends Service {
                     spo2_db.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userdatapushspo2);
                     // perform machine learning
                     ByteBuffer ml_in = ByteBuffer.allocateDirect(ppg.length*4);
-                    ByteBuffer ml_out = ByteBuffer.allocateDirect(2);
+                    ByteBuffer ml_out = ByteBuffer.allocateDirect(2*4);
                     for(int i=0; i<ppg.length; i++) {
                         ml_in.putFloat((float)ppg[i]);
                     }
-                    
 
+                    MyApplication app = (MyApplication)getApplication();
+                    app.inference(ml_in, ml_out);
+                    sbp = ml_out.get(0);
+                    dbp = ml_out.get(1);
 
                     UserDataPushSBP userdatapushsbp = new UserDataPushSBP(ts,sbp);
                     sbp_db.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userdatapushsbp);
@@ -255,6 +262,15 @@ public class BleService extends Service {
         sendBroadcast(intent);
     }
 
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return Service.START_STICKY;
+    }
+
+    @Override
+    public void onDestroy(){
+        close();
+    }
 
     @Nullable
     @Override
@@ -276,6 +292,7 @@ public class BleService extends Service {
     }
 
     private void close() {
+
         if (blGatt == null) {
             return;
         }

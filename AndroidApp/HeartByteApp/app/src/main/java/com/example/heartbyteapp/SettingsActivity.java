@@ -42,7 +42,7 @@ public class SettingsActivity<mBluetoothAdapter, LeDeviceListAdapter, BluetoothL
     //Firebase
     private FirebaseAuth mAuth;
 
-    private BleController bleCtrl;
+    private BleController bleCtrl = new BleController(this);;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,6 @@ public class SettingsActivity<mBluetoothAdapter, LeDeviceListAdapter, BluetoothL
                 break;
             case R.id.settings_bluetooth_button:
 //                startActivity(new Intent(this, ble.class));
-                bleCtrl = new BleController(this);
                 bleCtrl.findBleDevice();
                 bleCtrl.launchService();
                 break;
