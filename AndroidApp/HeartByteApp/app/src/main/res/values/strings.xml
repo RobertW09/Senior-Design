@@ -11,6 +11,13 @@
         <item>Resting</item>
         <item>Active</item>
     </string-array>
+    <!--  Strings for Spinners-->
+    <string-array name="dashboard_spinner">
+        <item>Heart Rate</item>
+        <item>SpO2</item>
+        <item>Blood Pressure</item>
+    </string-array>
+    <!-- -->
     <string name="text_analytics">User Analytics</string>
     <string name="text_measure">Measuring HR…</string>
     <string name="hint_email">Email</string>

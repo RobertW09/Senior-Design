@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivityHR"
+    android:background="@drawable/ic_blue720x1280">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/dashbaord_hrgraph_mpchart"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white_true"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <Spinner
+        android:id="@+id/dashboard_data_selection_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="230dp"
+        app:layout_constraintTop_toBottomOf="@id/dashbaord_hrgraph_mpchart"/>
+    <TextView
+        android:id="@+id/daily_average_hr_top_textview"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="16dp"
+        android:text="Daily Avg"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/top_rounded_edges"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashbaord_hrgraph_mpchart"
+        />
+    <TextView
+        android:id="@+id/daily_average_hr_textview"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/bottom_rounded_edges"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_average_hr_top_textview"/>
+
+    <TextView
+        android:id="@+id/weekly_average_hr_top_textview"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        android:text="Weekly Avg"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/top_rounded_edges"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_average_hr_textview"
+        />
+    <TextView
+        android:id="@+id/weekly_average_hr_textview"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/bottom_rounded_edges"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weekly_average_hr_top_textview"/>
+
+    <!-- bottom nav -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:drawableTop="@drawable/ic_baseline_home_24"
+            />
+
+        <Button
+            android:id="@+id/dashboard_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:drawableTop="@drawable/ic_chart"/>
+
+        <Button
+            android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_settings"
+            android:text="Settings" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

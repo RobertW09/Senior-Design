@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Button SettingsButton;
     private Button HomeButton;
     private Button DashboardButton;
-
+    private Button TestButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         HomeButton.setOnClickListener(this);
         DashboardButton = (Button) findViewById(R.id.dashboard_button);
         DashboardButton.setOnClickListener(this);
+
+        TestButton =(Button) findViewById(R.id.test_button);
+        TestButton.setOnClickListener(this);
 
 
 
@@ -132,7 +135,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
             case R.id.dashboard_button:
-                startActivity(new Intent(this, DashboardActivity.class));
+                startActivity(new Intent(this, DashboardActivityHR.class));
+                break;
+            case R.id.test_button:
+                startActivity((new Intent(this,DashboardActivity.class)));
                 break;
         }
     }

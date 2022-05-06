@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -21,10 +21,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HeartByteApp">
-
-        <activity android:name=".ble"
-            android:exported="true">
-        </activity>
+        <activity
+            android:name=".DashboardActivityBP"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivitySpO2"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivityHR"
+            android:exported="false" />
+        <activity
+            android:name=".UserInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ble"
+            android:exported="true" />
         <activity
             android:name=".AddContactsActivity"
             android:exported="false" />
@@ -73,15 +84,16 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.clj.blesample.operation.OperationActivity"
-            android:exported="true">
-        </activity>
+        <activity
+            android:name="com.clj.blesample.operation.OperationActivity"
+            android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
