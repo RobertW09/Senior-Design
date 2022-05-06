@@ -67,8 +67,8 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
         linedataset.setDrawCircles(false);
         linedataset.setDrawFilled(true);
         linedataset.setFillDrawable(ContextCompat.getDrawable(this, R.drawable.chart_gradient));
-        linedataset.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        linedataset.setDrawValues(false);
+        //linedataset.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        linedataset.setDrawValues(true);
         // configure axis
         XAxis xAxis = linechart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -161,7 +161,7 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
     }
 
     private void PullData() {
-        QueryHrWeek.addValueEventListener(new ValueEventListener() {
+        QueryHrDaily.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ArrayList<Entry> dataVals = new ArrayList<Entry>();

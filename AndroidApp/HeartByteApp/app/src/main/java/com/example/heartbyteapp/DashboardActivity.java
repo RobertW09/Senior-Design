@@ -60,7 +60,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     // initialize FirebaseAuth Instance
     DatabaseReference DbRef;
     DatabaseReference ChartRef;
-    DatabaseReference SpO2Ref;
+    DatabaseReference SpO2Ref,DbpRef,SbpRef;
 
 
 
@@ -88,8 +88,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid(); // refrence current user and gets unique ID
         ChartRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("HeartRate").child(userID);
-        SpO2Ref = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("SpO2").child(userID);
-
+        SpO2Ref = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("Dbp").child(userID);
+        DbRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("Sbp").child(userID);
+        DbpRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("BloodPressure").child("Dbp").child(userID);
+        SbpRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("BloodPressure").child("Sbp").child(userID);
         //graph
         graphView  = (GraphView) findViewById(R.id.graph);
         series = new LineGraphSeries();
@@ -155,7 +157,6 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     //change activities
     @Override
     public void onClick(View view) {
-        DbRef = FirebaseDatabase.getInstance().getReference("Users").child("PPG_Data").child("HeartRate");
 
 
         switch (view.getId()){
@@ -194,16 +195,21 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             return;
         }
         //unix time
-        Long x_time = System.currentTimeMillis()/1000;
+        Long time = System.currentTimeMillis()/1000;
 
-        UserDataPush userdatapush = new UserDataPush(x_time,y_heartrate);
-        DbRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userdatapush);
-        Toast.makeText(DashboardActivity.this, "Data has been pushed", Toast.LENGTH_LONG).show();
+        //UserDataPush userdatapush = new UserDataPush(x_time,y_heartrate);
+        //DbRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userdatapush);
+        //Toast.makeText(DashboardActivity.this, "Data has been pushed", Toast.LENGTH_LONG).show();
         //spo2
-        UserDataPushSpO2 userDataPushSpO2 = new UserDataPushSpO2(x_time,spo2);
-        SpO2Ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userDataPushSpO2);
-        Toast.makeText(DashboardActivity.this, "Data has been pushed", Toast.LENGTH_LONG).show();
+        //UserDataPushSpO2 userDataPushSpO2 = new UserDataPushSpO2(x_time,spo2);
+        //SpO2Ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(userDataPushSpO2);
+        //Toast.makeText(DashboardActivity.this, "Data has been pushed", Toast.LENGTH_LONG).show();
+        // blood pressure
 
+        UserDataPushSbp userDataPushSbp = new UserDataPushSbp(time,y_heartrate);
+        SbpRef.push().setValue(userDataPushSbp);
+        UserDataPushDbp userDataPushDbp = new UserDataPushDbp(time,spo2);
+        DbpRef.push().setValue(userDataPushDbp);
         
     }
 }

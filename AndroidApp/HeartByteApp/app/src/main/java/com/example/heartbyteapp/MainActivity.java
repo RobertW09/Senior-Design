@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         refrence = FirebaseDatabase.getInstance().getReference("Users").child("AccountDetails");
         userID = user.getUid(); // refrence current user and gets unique ID
 
-        ((MyApplication) this.getApplication()).downloadModel();
+
+
+
 
         final TextView user_name_textview = (TextView) findViewById(R.id.users_name_text);
 

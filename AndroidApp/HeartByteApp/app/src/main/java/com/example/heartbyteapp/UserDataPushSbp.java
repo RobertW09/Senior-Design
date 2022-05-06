@@ -1,20 +1,19 @@
 package com.example.heartbyteapp;
 
-public class HealthDataPointsSbp {
+public class UserDataPushSbp {
     int sbp;
     long time;
 
-    public HealthDataPointsSbp(){
+    public UserDataPushSbp(){
     }
-
-    public HealthDataPointsSbp(long time, int sbp){
+    public UserDataPushSbp(long time, int sbp){
         this.sbp = sbp;
         this.time = time;
     }
-    public long getTime(){
-        return time;
-    }
     public int getSbp(){
         return sbp;
+    }
+    public long getTime(){
+        return time;
     }
 }
