@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         refrence = FirebaseDatabase.getInstance().getReference("Users").child("AccountDetails");
         userID = user.getUid(); // refrence current user and gets unique ID
 
-        ((MyApplication) this.getApplication()).downloadModel();
+
 
         final TextView user_name_textview = (TextView) findViewById(R.id.users_name_text);
 
@@ -151,8 +151,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void gotoBLE(View view){
-        Intent intent = new Intent(this, ble.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, ble.class);
+//        startActivity(intent);
     }
     
 

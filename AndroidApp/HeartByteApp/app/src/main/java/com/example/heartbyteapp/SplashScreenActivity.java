@@ -16,6 +16,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
                 @Override
                 public void run(){
+                    MyApplication app = (MyApplication)getApplication();
+                    app.downloadModel();
                     Intent i = new Intent (SplashScreenActivity.this, LoginActivity.class);
                     startActivity(i);
 

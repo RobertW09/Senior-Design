@@ -2,16 +2,30 @@ package com.example.heartbyteapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
+import android.bluetooth.le.BluetoothLeScanner;
+import android.bluetooth.le.ScanCallback;
+import android.bluetooth.le.ScanResult;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+
+public class SettingsActivity<mBluetoothAdapter, LeDeviceListAdapter, BluetoothLeService> extends AppCompatActivity implements View.OnClickListener {
 
 
     // bottom  nav buttons
@@ -28,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     //Firebase
     private FirebaseAuth mAuth;
 
-
+    private BleController bleCtrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +94,15 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, FamilyActivity.class));
                 break;
             case R.id.settings_bluetooth_button:
-                startActivity(new Intent(this, ble.class));
+//                startActivity(new Intent(this, ble.class));
+                bleCtrl = new BleController(this);
+                bleCtrl.findBleDevice();
+                bleCtrl.launchService();
                 break;
             case R.id.settings_user_info_button:
                 startActivity(new Intent(this, UserInfoActivity.class));
                 break;
         }
     }
+
 }

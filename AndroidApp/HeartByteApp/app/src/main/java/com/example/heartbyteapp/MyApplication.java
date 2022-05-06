@@ -8,17 +8,24 @@ import com.google.firebase.ml.modeldownloader.CustomModelDownloadConditions;
 import com.google.firebase.ml.modeldownloader.DownloadType;
 import com.google.firebase.ml.modeldownloader.FirebaseModelDownloader;
 
+
+import org.tensorflow.lite.Interpreter;
+
 import java.nio.ByteBuffer;
 
 public class MyApplication extends Application {
     private CustomModel model;
+    private Interpreter interpreter;
 
     public CustomModel getModel() {
         return model;
     }
 
-    public ByteBuffer inference(ByteBuffer input) {
-
+    public void inference(ByteBuffer input, ByteBuffer output) {
+        // input and output shape
+        // in: [1, 875, 1] dtype=float
+        // out: [1, 1] dtype=float
+        interpreter.run(input, output);
     }
 
     public void downloadModel() {
@@ -34,6 +41,7 @@ public class MyApplication extends Application {
                         // the ML feature, or switch from the local model to the remote
                         // model, etc.
                         model = newModel;
+                        interpreter = new Interpreter(model.getFile());
                     }
                 });
     }
