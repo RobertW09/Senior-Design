@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -28,6 +29,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DashboardActivitySpO2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     private Button SettingsButton, DashboardButton, HomeButton;
@@ -35,11 +37,13 @@ public class DashboardActivitySpO2 extends AppCompatActivity implements AdapterV
     private FirebaseUser user;
     private String userID;
     DatabaseReference SpO2ref;
-    Query QueryHrWeek;
+    Query QuerySpO2Weekly,QuerySpO2Daily;
     LineChart linechart;
     LineDataSet linedataset = new LineDataSet(null,null);
     ArrayList<ILineDataSet> ilinedataset = new ArrayList<>();
     LineData linedata;
+    Integer WeeklyAvg, DailyAvg;
+    TextView Weekly_SpO2_Avg_Textview,Daily_SpO2_Avg_Textview;
 
 
     @Override
@@ -54,6 +58,12 @@ public class DashboardActivitySpO2 extends AppCompatActivity implements AdapterV
         DashboardButton = (Button) findViewById(R.id.dashboard_button);
         DashboardButton.setOnClickListener(this);
         linechart = findViewById(R.id.dashbaord_spo2graph_mpchart);
+        // ag data
+        // Avg data to be displayed
+        // Avg data to be displayed
+        Weekly_SpO2_Avg_Textview = (TextView) findViewById(R.id.weekly_average_spo2_textview);
+        Daily_SpO2_Avg_Textview = (TextView) findViewById(R.id.daily_average_spo2_textview);
+
         //configure chart
         linechart.getAxisRight().setEnabled(false);
         linechart.getDescription().setEnabled(false);
@@ -82,8 +92,14 @@ public class DashboardActivitySpO2 extends AppCompatActivity implements AdapterV
         // get current unix time with ofset of -14400 to make it eastern
         Long CurrentUnixTime = System.currentTimeMillis()/1000 - 14400;
         Long StartUnixTime = CurrentUnixTime - 604800;
-        QueryHrWeek = SpO2ref.orderByChild("time").startAt(StartUnixTime);
+        Long StartUnixTimeD = CurrentUnixTime - 86400;
+        QuerySpO2Weekly = SpO2ref.orderByChild("time").startAt(StartUnixTime);
+        QuerySpO2Daily = SpO2ref.orderByChild("time").startAt(StartUnixTimeD);
+
         PullData();
+        // Weekly and daily data
+        WeeklyAvg();
+        DailyAvg();
 
 
 
@@ -93,8 +109,63 @@ public class DashboardActivitySpO2 extends AppCompatActivity implements AdapterV
         spinner.setSelection(SpinnerPrevPosition);
     }
 
+    private void DailyAvg() {
+        QuerySpO2Daily.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsHR datapoint  = mydatasnapshot.getValue(HealthDataPointsHR.class);
+                        HR.add(datapoint.getHeartRate());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    DailyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(DailyAvg);
+                    Daily_SpO2_Avg_Textview.setText(HrText);
+                }else{
+                    Daily_SpO2_Avg_Textview.setText("No Heart Rate Captured");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void WeeklyAvg() {
+        QuerySpO2Weekly.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalSpo2 = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsSpO2 datapoint  = mydatasnapshot.getValue(HealthDataPointsSpO2.class);
+                        HR.add(datapoint.getSpo2());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalSpo2= totalSpo2 + HR.get(i);
+                    WeeklyAvg = totalSpo2/ HR.size();
+                    String HrText = String.valueOf(WeeklyAvg);
+                    Weekly_SpO2_Avg_Textview.setText(HrText);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void PullData() {
-        QueryHrWeek.addValueEventListener(new ValueEventListener() {
+        QuerySpO2Weekly.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ArrayList<Entry> dataVals = new ArrayList<Entry>();

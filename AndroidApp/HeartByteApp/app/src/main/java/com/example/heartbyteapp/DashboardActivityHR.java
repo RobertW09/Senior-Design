@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,13 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,18 +29,21 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.List;
 
 public class DashboardActivityHR extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     private Button SettingsButton, DashboardButton, HomeButton;
+    TextView Weekly_HR_Avg_Textview,Daily_HR_Avg_Textview;
+
     //Firebase conenction
     private FirebaseUser user;
     private String userID;
-    DatabaseReference HRref;
-    Query QueryHrWeek;
+    DatabaseReference HRref, WeekAvgRef, DayAvgRef;
+    Query QueryHrWeek, QueryHrDaily;
     LineChart linechart;
     LineDataSet linedataset = new LineDataSet(null,null);
     ArrayList<ILineDataSet> ilinedataset = new ArrayList<>();
+    Integer WeeklyAvg, DailyAvg;
     LineData linedata;
 
 
@@ -71,7 +73,9 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
         XAxis xAxis = linechart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
-
+        // Avg data to be displayed
+        Weekly_HR_Avg_Textview = (TextView) findViewById(R.id.weekly_average_hr_textview);
+        Daily_HR_Avg_Textview = (TextView) findViewById(R.id.daily_average_hr_textview);
 
     // Spinner Set up
         Spinner spinner = (Spinner) findViewById(R.id.dashboard_data_selection_spinner);
@@ -87,8 +91,73 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
         // get current unix time with offset of -14400 to make it eastern
         Long CurrentUnixTime = System.currentTimeMillis()/1000 - 14400;
         Long StartUnixTime = CurrentUnixTime - 604800;
+        Long StartUnixTimeD = CurrentUnixTime - 86400;
         QueryHrWeek = HRref.orderByChild("time").startAt(StartUnixTime);
+        QueryHrDaily = HRref.orderByChild("time").startAt(StartUnixTimeD);
         PullData();
+
+        //Weekly avg data
+
+
+        WeeklyAvg();
+
+        DailyAvg();
+    }
+
+    private void DailyAvg() {
+        QueryHrDaily.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsHR datapoint  = mydatasnapshot.getValue(HealthDataPointsHR.class);
+                        HR.add(datapoint.getHeartRate());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    DailyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(DailyAvg);
+                    Daily_HR_Avg_Textview.setText(HrText);
+                }else{
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void WeeklyAvg() {
+        QueryHrWeek.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                List<Integer> HR = new ArrayList<Integer>();
+                int totalHR = 0;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot mydatasnapshot : snapshot.getChildren()){
+                        HealthDataPointsHR datapoint  = mydatasnapshot.getValue(HealthDataPointsHR.class);
+                        HR.add(datapoint.getHeartRate());
+                    }
+                    for (int i = 0; i<HR.size(); i++)
+                        totalHR = totalHR + HR.get(i);
+                    WeeklyAvg = totalHR / HR.size();
+                    String HrText = String.valueOf(WeeklyAvg);
+                    Weekly_HR_Avg_Textview.setText(HrText);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void PullData() {
@@ -119,7 +188,6 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
 
     private void DisplayChart(ArrayList<Entry> dataVals) {
         linedataset.setValues(dataVals);
-        linedataset.setLabel("test label");
         ilinedataset.clear();
         ilinedataset.add(linedataset);
         linedata = new LineData(ilinedataset);
