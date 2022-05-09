@@ -1,5 +1,8 @@
 package com.example.heartbyteapp;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class HealthDataPointsHR {
     int time, heartRate;
 

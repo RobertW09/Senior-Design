@@ -28,7 +28,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DashboardActivityHR extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
@@ -168,6 +170,16 @@ public class DashboardActivityHR extends AppCompatActivity implements AdapterVie
                 if(snapshot.hasChildren()){
                     for(DataSnapshot mydatasnapshot : snapshot.getChildren()){
                         HealthDataPointsHR datapoint = mydatasnapshot.getValue(HealthDataPointsHR.class);
+
+                        //long timestamp_in_stringE = datapoint.getTime();
+                        long timestamp_in_string = datapoint.getTime();
+                        //String date = new java.text.SimpleDateFormat("MM dd").format(new java.util.Date(timestamp_in_string));
+//                        long timestamp_in_string = datapoint.getTime() / 1000;
+                      Date df = new java.util.Date(timestamp_in_string);
+                       String vv = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS").format(df);
+//                        int i=Integer.parseInt(vv);
+                        vv = vv.replaceAll("\\s", "");
+                        //int i=Integer.parseInt(vv);
                         dataVals.add(new Entry(datapoint.getTime(),datapoint.getHeartRate()));
                     }
                     DisplayChart(dataVals);

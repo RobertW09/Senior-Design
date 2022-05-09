@@ -52,7 +52,7 @@ public class BleManager {
     private static final int DEFAULT_OPERATE_TIME = 5000;
     private static final int DEFAULT_CONNECT_RETRY_COUNT = 0;
     private static final int DEFAULT_CONNECT_RETRY_INTERVAL = 5000;
-    private static final int DEFAULT_MTU = 23;
+    private static final int DEFAULT_MTU = 512;
     private static final int DEFAULT_MAX_MTU = 512;
     private static final int DEFAULT_WRITE_DATA_SPLIT_COUNT = 20;
     private static final int DEFAULT_CONNECT_OVER_TIME = 10000;
