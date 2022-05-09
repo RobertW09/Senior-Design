@@ -89,7 +89,7 @@ for x in lines:
     ppg_data.append(temp)
 offset = max(ppg_data) + 1
 for i in range(len(ppg_data)):
-    ppg_data[i] = (-1 * ppg_data[i]) + offset
+    ppg_data[i] = (-1 * ppg_data[i]) + 2*offset
 
 # print("Measured data Max and Min")
 # print(max(ppg_data))
@@ -109,16 +109,22 @@ for i in range(len(ppg_data)):
 #     ppg_data[i] = ppg_data[i] - A
 # print(max(ppg_data))
 # print(min(ppg_data[:850]))
-
+x_data = []
+print(max(ppg_data[100:500]))
+print(min(ppg_data[100:500]))
+for i in range(100,500):
+    x_data.append(i)
 plt.figure()
 plt.title("Raw")
-plt.plot(ppg_data[:850])
+plt.plot(x_data, ppg_data[100:500])
+plt.ylabel("Current (nA)")
+plt.xlabel("milliseconds")
 plt.tick_params(
     axis='y',          # changes apply to the x-axis
     which='both',      # both major and minor ticks are affected
     left=True,      # ticks along the bottom edge are off
     top=False,         # ticks along the top edge are off
-    labelleft=False) # labels along the bottom edge are off
+    labelleft=True) # labels along the bottom edge are off
 
 # Number of samplepoints
 # N = 875.0
@@ -180,54 +186,61 @@ for i in range(len(ppg_data)):
         fullness += 1
     count += 1
 
+x_data = []
+print(max(ppg_data[100:500]))
+print(min(ppg_data[100:500]))
+for i in range(100,500):
+    x_data.append(i)
 plt.figure()
-plt.title("Filtered Iterative")
-plt.plot(ppg_data[:870])
+plt.title("Filtered")
+plt.plot(x_data, ppg_data[100:500])
+plt.ylabel("Current (nA)")
+plt.xlabel("milliseconds")
 plt.tick_params(
     axis='y',          # changes apply to the x-axis
     which='both',      # both major and minor ticks are affected
-    left=False,      # ticks along the bottom edge are off
+    left=True,      # ticks along the bottom edge are off
     top=False,         # ticks along the top edge are off
-    labelleft=False) # labels along the bottom edge are off
+    labelleft=True) # labels along the bottom edge are off
 
-buffer_length = 4
-buff = np.zeros(buffer_length, dtype=int)
-delta_buff = np.zeros(buffer_length, dtype=int)
-fullness = 1
-delta = 0
-low_thresh = -1
-high_thresh = 1
-count = 0
-current = 0
-previous = ppg_data[0]
-delta_list = []
-for i in range(len(ppg_data)):
-    # current buffer index
-    ind = (count) % 4
-    # get current value and load into buffers
-    buff[ind] = ppg_data[i]
-    current = buff[ind]
-    # calculate the average of the most recent 4 samples
-    sum = 0
-    for e in buff:
-        sum += e
-    avg = int(sum / (fullness))
-    # get the average of the most recent deltas
-    sum = 0
-    for e in delta_buff:
-        sum += e
-    delta = int(sum / (fullness))
-    # if the average of the most recent deltas is within a threshold
-    # use the average data to maintain a small curve
-    delta_list.append(delta)
-    if(delta <= high_thresh and delta >= low_thresh):
-        ppg_data[i] = avg
-    # save the new delta into the buffer
-    delta_buff[ind] = int((current - previous)>>1)
-    previous = current
-    if(fullness < buffer_length):
-        fullness += 1
-    count += 1
+# buffer_length = 4
+# buff = np.zeros(buffer_length, dtype=int)
+# delta_buff = np.zeros(buffer_length, dtype=int)
+# fullness = 1
+# delta = 0
+# low_thresh = -1
+# high_thresh = 1
+# count = 0
+# current = 0
+# previous = ppg_data[0]
+# delta_list = []
+# for i in range(len(ppg_data)):
+#     # current buffer index
+#     ind = (count) % 4
+#     # get current value and load into buffers
+#     buff[ind] = ppg_data[i]
+#     current = buff[ind]
+#     # calculate the average of the most recent 4 samples
+#     sum = 0
+#     for e in buff:
+#         sum += e
+#     avg = int(sum / (fullness))
+#     # get the average of the most recent deltas
+#     sum = 0
+#     for e in delta_buff:
+#         sum += e
+#     delta = int(sum / (fullness))
+#     # if the average of the most recent deltas is within a threshold
+#     # use the average data to maintain a small curve
+#     delta_list.append(delta)
+#     if(delta <= high_thresh and delta >= low_thresh):
+#         ppg_data[i] = avg
+#     # save the new delta into the buffer
+#     delta_buff[ind] = int((current - previous)>>1)
+#     previous = current
+#     if(fullness < buffer_length):
+#         fullness += 1
+#     count += 1
 
 #gaussian filtering
 # data_buffer = np.zeros(len(ppg_data))
@@ -269,15 +282,15 @@ for i in range(len(ppg_data)):
 #     offset %= 32
 #     ppg_data[i] = z
 # plot filtered data
-plt.figure()
-plt.title("Filtered Iterative + Gaussian")
-plt.plot(ppg_data[:870])
-plt.tick_params(
-    axis='y',          # changes apply to the x-axis
-    which='both',      # both major and minor ticks are affected
-    left=False,      # ticks along the bottom edge are off
-    top=False,         # ticks along the top edge are off
-    labelleft=False) # labels along the bottom edge are off
+# plt.figure()
+# plt.title("Filtered Iterative + Gaussian")
+# plt.plot(ppg_data[:870])
+# plt.tick_params(
+#     axis='y',          # changes apply to the x-axis
+#     which='both',      # both major and minor ticks are affected
+#     left=False,      # ticks along the bottom edge are off
+#     top=False,         # ticks along the top edge are off
+#     labelleft=False) # labels along the bottom edge are off
 
 # Number of samplepoints
 # N = 875.0
