@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 //import com.clj.blesample.R;
+import com.example.heartbyteapp.MyApplication;
 import com.example.heartbyteapp.R;
 import com.clj.fastble.BleManager;
 import com.clj.fastble.callback.BleIndicateCallback;
@@ -94,6 +95,7 @@ public class CharacteristicOperationFragment extends Fragment {
                                             runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
+                                                    MyApplication myApp = (MyApplication)getApplication();
                                                     addText(txt, HexUtil.formatHexString(data, true));
                                                 }
                                             });
@@ -329,6 +331,7 @@ public class CharacteristicOperationFragment extends Fragment {
             layout_container.addView(view);
         }
     }
+
 
     private void runOnUiThread(Runnable runnable) {
         if (isAdded() && getActivity() != null)
